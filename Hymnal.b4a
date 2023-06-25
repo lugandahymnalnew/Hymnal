@@ -1,0 +1,250 @@
+﻿Build1=Default,com.LugandaHymnalNew,Full,NoAds
+File1=all.js
+File10=try.js
+File2=app logo.png
+File3=concent.bal
+File4=dom.bal
+File5=error.bal
+File6=Layout.bal
+File7=menu.bal
+File8=sidelogo.png
+File9=song.bal
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=core
+Library2=gestures
+Library3=okhttputils2
+Library4=phone
+Library5=runtimepermissions
+Library6=sql
+Library7=webviewextras2
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=abaana
+Module10=Starter
+Module2=codes
+Module3=customwebviewerror
+Module4=don
+Module5=ebil
+Module6=emisi
+Module7=err
+Module8=songs
+Module9=SSLUtils
+NumberOfFiles=10
+NumberOfLibraries=7
+NumberOfModules=10
+Version=12.2
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Ennyimba Za Kristo
+	#VersionCode: 11
+	#VersionName: 1.0.43
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: True
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	'Private xui As XUI
+	
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	Private WV As WebView
+	Private ScrollView1 As Panel
+	Private Label8 As Label
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	'Activity.LoadLayout("")
+	codes.CreateCode
+	If codes.VerCode = codes.VeridCode Then
+		Try
+			If codes.m.ContainsKey("copied") Then
+				Log("yeah: "&codes.m.Get("copied"))
+				If codes.m.ContainsKey("copied") Then
+					If codes.m.Get("app") <> LogAppVersion Then
+						moveFiles
+						codes.update_Setting("app",LogAppVersion)
+					End If
+				Else
+					codes.AddSetting("app",LogAppVersion)
+				End If
+			Else
+				moveFiles
+				codes.AddSetting("app",LogAppVersion)
+				codes.AddSetting("copied","true")
+				Log("Error")
+			End If
+		Catch
+			File.Delete(File.DirInternal, "MyDb.db")
+			Activity_Create(True)
+			Return
+		End Try
+		Try
+			Activity.LoadLayout("menu")
+			Label8.Text = "Version: "&LogAppVersion&CRLF&"By Rogers Kitamirike"&CRLF&"+256 757 035774"
+		Catch
+			Log(LastException.Message)
+			File.Delete(File.DirInternal, "MyDb.db")
+			Activity_Create(True)
+			Return
+		End Try
+		'Log("see: "&codes.VerCode)
+		'Log("see1: "&codes.VeridCode)
+	Else
+		Log("see: "&codes.VerCode)
+		Log("see1: "&codes.VeridCode)
+		Log(codes.Vers)
+		Activity.LoadLayout("concent")
+		WV.Initialize("WV")
+		ScrollView1.Initialize("ScrollView1")
+		Activity.AddView(ScrollView1,10dip, 10dip, 100%x - 20dip, 100%y - 110dip)
+		ScrollView1.Color = Colors.White
+		'ScrollView1.SetLayout(10dip, 10dip, 100%x - 20dip, 100%y - 80dip)
+		ScrollView1.AddView(WV,5,5,ScrollView1.Width-10, ScrollView1.Height - 10)
+		WV.LoadUrl("file:///android_asset/src%5Cpages%5Cagree.html")
+		ProgressDialogShow2("Welcome", False)
+		WV.ZoomEnabled = False
+		WV.JavaScriptEnabled = True
+	End If
+End Sub
+Private Sub WV_PageFinished (Url As String)
+	ProgressDialogHide
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Private Sub menu_but_Click
+	StartActivity(songs)
+End Sub
+
+Private Sub Endag_but_Click
+	ToastMessageShow("Please, Wait for the next update",True)
+	Open_web("https://ictgoldenstar.blogspot.com/2022/08/ennyimba-za-kristo-2-privacy-policy.html")
+End Sub
+Sub Open_web(Link As String)
+	Dim p As PhoneIntents
+	StartActivity(p.OpenBrowser(Link))
+	Log("true")
+End Sub
+Private Sub baana_but_Click
+	StartActivity(abaana)
+End Sub
+
+Private Sub Emisi_but_Click
+	StartActivity(emisi)
+End Sub
+
+Private Sub ebil_but_Click
+	StartActivity(ebil)
+End Sub
+
+Private Sub don_but_Click
+	StartActivity(don)
+End Sub
+
+Private Sub err_but_Click
+	StartActivity(err)
+	'Dim p As PhoneIntents
+	'StartActivity(p.OpenBrowser("https://discord.com/channels/1110157665755213907/1110157666610847825"))
+End Sub
+
+Private Sub allow_Click
+	codes.ConsentF
+	Activity_Create(True)
+End Sub
+
+Private Sub deny_Click
+	Activity.Finish
+End Sub
+
+Sub LogAppVersion As String
+	Dim pm As PackageManager
+    Dim info As String
+	info = pm.GetVersionName("com.LugandaHymnalNew")
+	Return info
+End Sub
+
+Sub moveFiles
+	Dim kit As List = File.ListFiles(File.DirAssets)
+	ProgressDialogShow2("files initialising, please wait",False)
+	For Each ki As String In kit
+		Log(ki)
+		Select Case ki
+			Case "webkit", "webapk_dex_version.txt", "webapk8.dex", "stored-locales", "resources.pak", _
+            "src\pages\1 - Copy (244) - Copy.html", "song.bal", "layout.bal", "menu.bal", "images", _
+            "icudtl.dat", "app logo.png", "b4x_fontawesome.otf", "b4x_materialicons.ttf", "chrome_100_percent.pak"
+				Log("Skipped")
+			Case Else
+				If File.Exists(File.DirInternal, ki) Then
+					Try
+						File.Delete(File.DirInternal, ki)
+						Wait For (File.CopyAsync(File.DirAssets, ki, File.DirInternal, ki)) Complete (Success As Boolean)
+						Log("Success: " & Success)
+					Catch
+						ToastMessageShow("simple error",True)
+						Log(LastException.Message)
+					End Try
+				Else
+					Wait For (File.CopyAsync(File.DirAssets, ki, File.DirInternal, ki)) Complete (Success As Boolean)
+					Log("Success: " & Success)
+				End If
+		End Select
+	Next
+	ProgressDialogHide
+End Sub
+Sub DownloadAndSaveFile(link As String, fileName As String)
+	If File.Exists(File.DirInternal, fileName) Then
+		Msgbox2Async("Do you want to overwrite?", "File exists", "Yes", "Cancel", "No", Null, "false")
+		Wait For MsgBox_Result(Result As Int)
+		If Result = DialogResponse.POSITIVE Then
+			File.Delete(File.DirInternal, fileName)
+		Else
+			Return
+		End If
+	End If
+	ProgressDialogShow2("please wait, while song is beng downloaded",False)
+	Dim j As HttpJob
+	j.Initialize("", Me)
+	j.Download(link)
+	Wait For (j) JobDone(j As HttpJob)
+	If j.Success Then
+		Dim out As OutputStream = File.OpenOutput(File.DirInternal, fileName, False)
+		File.Copy2(j.GetInputStream, out)
+		out.Close
+	Else 
+		Select j.Response.StatusCode
+			Case -1:
+				MsgboxAsync("Error: try", "Connection error")
+			Case 404:
+				MsgboxAsync("Error: Song has not yet been added, but please keep on trying. or report this error", "Sorry for inconvinience")
+			Case Else
+				MsgboxAsync("Error: the error is unknown", "There was an error")
+		End Select
+	End If
+	ProgressDialogHide
+	j.Release
+End Sub
+

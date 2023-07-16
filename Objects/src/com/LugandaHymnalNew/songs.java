@@ -336,17 +336,17 @@ public class songs extends Activity implements B4AActivity{
     }
 
 public anywheresoftware.b4a.keywords.Common __c = null;
-public static anywheresoftware.b4a.phone.Phone _vvv5 = null;
-public static String _vvv6 = "";
-public static String _vvv7 = "";
-public static anywheresoftware.b4a.objects.MediaPlayerWrapper _vvv0 = null;
-public static anywheresoftware.b4a.objects.Timer _vvvv1 = null;
-public static int _vvvv2 = 0;
-public static boolean _vvvv3 = false;
-public uk.co.martinpearman.b4a.webkit.DefaultJavascriptInterface _vvvvvvvvvvv2 = null;
-public uk.co.martinpearman.b4a.webkit.WebViewExtras _vvvvvvvvvvv3 = null;
-public uk.co.martinpearman.b4a.webkit.DefaultWebChromeClient _vvvvvvvvvvv4 = null;
-public uk.co.martinpearman.b4a.webkit.DefaultWebViewClient _vvvvvvvvvvv5 = null;
+public static anywheresoftware.b4a.phone.Phone _p = null;
+public static String _sn = "";
+public static String _sb = "";
+public static anywheresoftware.b4a.objects.MediaPlayerWrapper _mp = null;
+public static anywheresoftware.b4a.objects.Timer _timer1 = null;
+public static int _counter = 0;
+public static boolean _sw = false;
+public uk.co.martinpearman.b4a.webkit.DefaultJavascriptInterface _ji = null;
+public uk.co.martinpearman.b4a.webkit.WebViewExtras _wve = null;
+public uk.co.martinpearman.b4a.webkit.DefaultWebChromeClient _dwv = null;
+public uk.co.martinpearman.b4a.webkit.DefaultWebViewClient _dwv1 = null;
 public static long _s_start = 0L;
 public anywheresoftware.b4a.objects.EditTextWrapper _err_txt = null;
 public anywheresoftware.b4a.objects.PanelWrapper _panel1 = null;
@@ -356,27 +356,27 @@ public anywheresoftware.b4a.objects.SeekBarWrapper _barvolume = null;
 public anywheresoftware.b4a.objects.PanelWrapper _panel3 = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnup = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btndown = null;
-public static boolean _vvvvvvvvvvv6 = false;
-public static long _vvvvvvvvvvvv4 = 0L;
-public static long _vvvvvvvvvvvv1 = 0L;
-public static long _vvvvvvvvvvvv0 = 0L;
-public static int _vvvvvvvvvvv7 = 0;
-public static int _vvvvvvvvvvvv5 = 0;
+public static boolean _load = false;
+public static long _leng = 0L;
+public static long _pos = 0L;
+public static long _inpos = 0L;
+public static int _count = 0;
+public static int _loos = 0;
 public anywheresoftware.b4a.objects.WebViewWrapper _webview1 = null;
-public static boolean _vvvvvvvvvvv0 = false;
-public static boolean _vvvvvvvvvvvv3 = false;
+public static boolean _playing1 = false;
+public static boolean _loopable = false;
 public anywheresoftware.b4a.objects.PanelWrapper _panel2 = null;
-public anywheresoftware.b4a.objects.RuntimePermissions _vvvvvvvvvvvvv1 = null;
-public com.LugandaHymnalNew.main _vvvv6 = null;
-public com.LugandaHymnalNew.codes _vvvv7 = null;
-public com.LugandaHymnalNew.starter _vvvv0 = null;
-public com.LugandaHymnalNew.don _vvvvv2 = null;
-public com.LugandaHymnalNew.customwebviewerror _vvvvv3 = null;
-public com.LugandaHymnalNew.err _vvvvv4 = null;
-public com.LugandaHymnalNew.abaana _vvvvv5 = null;
-public com.LugandaHymnalNew.ebil _vvvvv6 = null;
-public com.LugandaHymnalNew.emisi _vvvvv7 = null;
-public com.LugandaHymnalNew.httputils2service _vvvvv0 = null;
+public anywheresoftware.b4a.objects.RuntimePermissions _rp = null;
+public com.LugandaHymnalNew.main _main = null;
+public com.LugandaHymnalNew.codes _codes = null;
+public com.LugandaHymnalNew.starter _starter = null;
+public com.LugandaHymnalNew.don _don = null;
+public com.LugandaHymnalNew.customwebviewerror _customwebviewerror = null;
+public com.LugandaHymnalNew.err _err = null;
+public com.LugandaHymnalNew.abaana _abaana = null;
+public com.LugandaHymnalNew.ebil _ebil = null;
+public com.LugandaHymnalNew.emisi _emisi = null;
+public com.LugandaHymnalNew.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -392,25 +392,25 @@ String _url = "";
  //BA.debugLineNum = 55;BA.debugLine="Activity.LoadLayout(\"song\")";
 mostCurrent._activity.LoadLayout("song",mostCurrent.activityBA);
  //BA.debugLineNum = 56;BA.debugLine="JI.Initialize";
-mostCurrent._vvvvvvvvvvv2.Initialize(mostCurrent.activityBA);
+mostCurrent._ji.Initialize(mostCurrent.activityBA);
  //BA.debugLineNum = 58;BA.debugLine="WVE.Initialize(WebView1)";
-mostCurrent._vvvvvvvvvvv3.Initialize((android.webkit.WebView)(mostCurrent._webview1.getObject()));
+mostCurrent._wve.Initialize((android.webkit.WebView)(mostCurrent._webview1.getObject()));
  //BA.debugLineNum = 59;BA.debugLine="DWV.Initialize(\"WebView1\")";
-mostCurrent._vvvvvvvvvvv4.Initialize(mostCurrent.activityBA,"WebView1");
+mostCurrent._dwv.Initialize(mostCurrent.activityBA,"WebView1");
  //BA.debugLineNum = 60;BA.debugLine="DWV1.Initialize(\"WebView1\")";
-mostCurrent._vvvvvvvvvvv5.Initialize(mostCurrent.activityBA,"WebView1");
+mostCurrent._dwv1.Initialize(mostCurrent.activityBA,"WebView1");
  //BA.debugLineNum = 61;BA.debugLine="WVE.AddJavascriptInterface(JI,\"B4A\")";
-mostCurrent._vvvvvvvvvvv3.AddJavascriptInterface((Object)(mostCurrent._vvvvvvvvvvv2),"B4A");
+mostCurrent._wve.AddJavascriptInterface((Object)(mostCurrent._ji),"B4A");
  //BA.debugLineNum = 62;BA.debugLine="WVE.SetWebChromeClient(DWV)";
-mostCurrent._vvvvvvvvvvv3.SetWebChromeClient((android.webkit.WebChromeClient)(mostCurrent._vvvvvvvvvvv4.getObject()));
+mostCurrent._wve.SetWebChromeClient((android.webkit.WebChromeClient)(mostCurrent._dwv.getObject()));
  //BA.debugLineNum = 63;BA.debugLine="WVE.SetWebViewClient(DWV1)";
-mostCurrent._vvvvvvvvvvv3.SetWebViewClient((android.webkit.WebViewClient)(mostCurrent._vvvvvvvvvvv5.getObject()));
+mostCurrent._wve.SetWebViewClient((android.webkit.WebViewClient)(mostCurrent._dwv1.getObject()));
  //BA.debugLineNum = 64;BA.debugLine="WebView1.ZoomEnabled = False";
 mostCurrent._webview1.setZoomEnabled(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 65;BA.debugLine="Panel1.Visible = True";
 mostCurrent._panel1.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 72;BA.debugLine="WVE.GetSettings.SetAllowFileAccess(True) ' Enable";
-mostCurrent._vvvvvvvvvvv3.GetSettings().SetAllowFileAccess(anywheresoftware.b4a.keywords.Common.True);
+mostCurrent._wve.GetSettings().SetAllowFileAccess(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 73;BA.debugLine="Dim internalPath As String = File.Combine(File.Di";
 _internalpath = anywheresoftware.b4a.keywords.Common.File.Combine(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"src%5Cmenu.html");
  //BA.debugLineNum = 74;BA.debugLine="Dim Url As String = \"file://\" & internalPath";
@@ -422,9 +422,9 @@ anywheresoftware.b4a.keywords.Common.ProgressDialogShow2(mostCurrent.activityBA,
  //BA.debugLineNum = 78;BA.debugLine="WebView1.SendToBack";
 mostCurrent._webview1.SendToBack();
  //BA.debugLineNum = 79;BA.debugLine="load = True";
-_vvvvvvvvvvv6 = anywheresoftware.b4a.keywords.Common.True;
+_load = anywheresoftware.b4a.keywords.Common.True;
  //BA.debugLineNum = 80;BA.debugLine="count = 0";
-_vvvvvvvvvvv7 = (int) (0);
+_count = (int) (0);
  //BA.debugLineNum = 81;BA.debugLine="End Sub";
 return "";
 }
@@ -437,7 +437,7 @@ if (mostCurrent._webview1.getUrl().contains("menu.html")) {
  //BA.debugLineNum = 171;BA.debugLine="Activity.Finish";
 mostCurrent._activity.Finish();
  //BA.debugLineNum = 172;BA.debugLine="StartActivity(Main)";
-anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._vvvv6.getObject()));
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(mostCurrent._main.getObject()));
  }else {
  //BA.debugLineNum = 176;BA.debugLine="WebView1.LoadUrl(\"file:///data/user/0/com.Lugan";
 mostCurrent._webview1.LoadUrl("file:///data/user/0/com.LugandaHymnalNew/files/src%5Cmenu.html");
@@ -456,8 +456,8 @@ public static String  _activity_pause(boolean _userclosed) throws Exception{
  //BA.debugLineNum = 100;BA.debugLine="If UserClosed = True Then";
 if (_userclosed==anywheresoftware.b4a.keywords.Common.True) { 
  //BA.debugLineNum = 101;BA.debugLine="If playing1 Then MP.Stop";
-if (_vvvvvvvvvvv0) { 
-_vvv0.Stop();};
+if (_playing1) { 
+_mp.Stop();};
  //BA.debugLineNum = 102;BA.debugLine="Return";
 if (true) return "";
  };
@@ -467,22 +467,22 @@ return "";
 public static String  _activity_resume() throws Exception{
  //BA.debugLineNum = 83;BA.debugLine="Sub Activity_Resume";
  //BA.debugLineNum = 84;BA.debugLine="If playing1 Then";
-if (_vvvvvvvvvvv0) { 
+if (_playing1) { 
  //BA.debugLineNum = 85;BA.debugLine="If MP.IsPlaying = True Then";
-if (_vvv0.IsPlaying()==anywheresoftware.b4a.keywords.Common.True) { 
+if (_mp.IsPlaying()==anywheresoftware.b4a.keywords.Common.True) { 
  //BA.debugLineNum = 87;BA.debugLine="If pos < MP.Position + 6000 Then";
-if (_vvvvvvvvvvvv1<_vvv0.getPosition()+6000) { 
+if (_pos<_mp.getPosition()+6000) { 
  //BA.debugLineNum = 88;BA.debugLine="pos = MP.Position + 6000";
-_vvvvvvvvvvvv1 = (long) (_vvv0.getPosition()+6000);
+_pos = (long) (_mp.getPosition()+6000);
  }else {
  //BA.debugLineNum = 90;BA.debugLine="pos = ((pos-6000)/(MP.Duration))*MP.Duration +";
-_vvvvvvvvvvvv1 = (long) (((_vvvvvvvvvvvv1-6000)/(double)(_vvv0.getDuration()))*_vvv0.getDuration()+_vvv0.getPosition()+6000);
+_pos = (long) (((_pos-6000)/(double)(_mp.getDuration()))*_mp.getDuration()+_mp.getPosition()+6000);
  };
  }else {
  //BA.debugLineNum = 93;BA.debugLine="stop1";
-_vvvvvvvvvvvv2();
+_stop1();
  //BA.debugLineNum = 94;BA.debugLine="Log(\"me\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("02621451","me",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("22621451","me",0);
  };
  };
  //BA.debugLineNum = 97;BA.debugLine="End Sub";
@@ -497,37 +497,37 @@ _ckcount = 0;
 if (_userchanged==anywheresoftware.b4a.keywords.Common.False) { 
 if (true) return "";};
  //BA.debugLineNum = 337;BA.debugLine="If loopable Then";
-if (_vvvvvvvvvvvv3) { 
+if (_loopable) { 
  //BA.debugLineNum = 338;BA.debugLine="pos = Value / 100 * MP.Duration";
-_vvvvvvvvvvvv1 = (long) (_value/(double)100*_vvv0.getDuration());
+_pos = (long) (_value/(double)100*_mp.getDuration());
  //BA.debugLineNum = 339;BA.debugLine="MP.Position = pos";
-_vvv0.setPosition((int) (_vvvvvvvvvvvv1));
+_mp.setPosition((int) (_pos));
  }else {
  //BA.debugLineNum = 341;BA.debugLine="If (Value / 100 * leng) < 6000 Then";
-if ((_value/(double)100*_vvvvvvvvvvvv4)<6000) { 
+if ((_value/(double)100*_leng)<6000) { 
  //BA.debugLineNum = 342;BA.debugLine="MP.Position = MP.Duration - (6000-(Value / 100";
-_vvv0.setPosition((int) (_vvv0.getDuration()-(6000-(_value/(double)100*_vvvvvvvvvvvv4))));
+_mp.setPosition((int) (_mp.getDuration()-(6000-(_value/(double)100*_leng))));
  //BA.debugLineNum = 343;BA.debugLine="pos = Value / 100 * leng";
-_vvvvvvvvvvvv1 = (long) (_value/(double)100*_vvvvvvvvvvvv4);
+_pos = (long) (_value/(double)100*_leng);
  //BA.debugLineNum = 344;BA.debugLine="Log((Value / 100 *leng))";
-anywheresoftware.b4a.keywords.Common.LogImpl("03866634",BA.NumberToString((_value/(double)100*_vvvvvvvvvvvv4)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23866634",BA.NumberToString((_value/(double)100*_leng)),0);
  //BA.debugLineNum = 345;BA.debugLine="count = 0";
-_vvvvvvvvvvv7 = (int) (0);
+_count = (int) (0);
  }else {
  //BA.debugLineNum = 347;BA.debugLine="MP.Position = ((Value / 100 * leng) - 6000) Mod";
-_vvv0.setPosition((int) (((_value/(double)100*_vvvvvvvvvvvv4)-6000)%_vvv0.getDuration()));
+_mp.setPosition((int) (((_value/(double)100*_leng)-6000)%_mp.getDuration()));
  //BA.debugLineNum = 348;BA.debugLine="Log(\"get count: \"&MP.Position&\":\"&MP.Duration)";
-anywheresoftware.b4a.keywords.Common.LogImpl("03866638","get count: "+BA.NumberToString(_vvv0.getPosition())+":"+BA.NumberToString(_vvv0.getDuration()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23866638","get count: "+BA.NumberToString(_mp.getPosition())+":"+BA.NumberToString(_mp.getDuration()),0);
  //BA.debugLineNum = 349;BA.debugLine="pos = Value / 100 * leng";
-_vvvvvvvvvvvv1 = (long) (_value/(double)100*_vvvvvvvvvvvv4);
+_pos = (long) (_value/(double)100*_leng);
  //BA.debugLineNum = 350;BA.debugLine="ckcount = ((Value / 100 * leng) - 6000) / MP.Du";
-_ckcount = (int) (((_value/(double)100*_vvvvvvvvvvvv4)-6000)/(double)_vvv0.getDuration());
+_ckcount = (int) (((_value/(double)100*_leng)-6000)/(double)_mp.getDuration());
  //BA.debugLineNum = 351;BA.debugLine="count = ckcount + 1";
-_vvvvvvvvvvv7 = (int) (_ckcount+1);
+_count = (int) (_ckcount+1);
  };
  };
  //BA.debugLineNum = 356;BA.debugLine="Log(\"get count: \"&count&\" : \"&loos)";
-anywheresoftware.b4a.keywords.Common.LogImpl("03866646","get count: "+BA.NumberToString(_vvvvvvvvvvv7)+" : "+BA.NumberToString(_vvvvvvvvvvvv5),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23866646","get count: "+BA.NumberToString(_count)+" : "+BA.NumberToString(_loos),0);
  //BA.debugLineNum = 357;BA.debugLine="timer1_Tick 'immediately update the progress labe";
 _timer1_tick();
  //BA.debugLineNum = 358;BA.debugLine="End Sub";
@@ -536,11 +536,11 @@ return "";
 public static String  _barvolume_valuechanged(int _value,boolean _userchanged) throws Exception{
  //BA.debugLineNum = 327;BA.debugLine="Sub barVolume_ValueChanged (Value As Int, UserChan";
  //BA.debugLineNum = 328;BA.debugLine="MP.SetVolume(barVolume.Value / 100, barVolume.Val";
-_vvv0.SetVolume((float) (mostCurrent._barvolume.getValue()/(double)100),(float) (mostCurrent._barvolume.getValue()/(double)100));
+_mp.SetVolume((float) (mostCurrent._barvolume.getValue()/(double)100),(float) (mostCurrent._barvolume.getValue()/(double)100));
  //BA.debugLineNum = 329;BA.debugLine="Log(\"Value: \"&barVolume.Value)";
-anywheresoftware.b4a.keywords.Common.LogImpl("03801090","Value: "+BA.NumberToString(mostCurrent._barvolume.getValue()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23801090","Value: "+BA.NumberToString(mostCurrent._barvolume.getValue()),0);
  //BA.debugLineNum = 331;BA.debugLine="codes.update_Setting(\"Volume\",barVolume.Value)";
-mostCurrent._vvvv7._update_setting /*String*/ (mostCurrent.activityBA,"Volume",BA.NumberToString(mostCurrent._barvolume.getValue()));
+mostCurrent._codes._update_setting /*String*/ (mostCurrent.activityBA,"Volume",BA.NumberToString(mostCurrent._barvolume.getValue()));
  //BA.debugLineNum = 332;BA.debugLine="End Sub";
 return "";
 }
@@ -562,7 +562,7 @@ anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Y
  }else {
  //BA.debugLineNum = 142;BA.debugLine="Try";
 try { //BA.debugLineNum = 143;BA.debugLine="codes.SendEmail(SN, err_txt.Text)";
-mostCurrent._vvvv7._vvv4 /*String*/ (mostCurrent.activityBA,_vvv6,mostCurrent._err_txt.getText());
+mostCurrent._codes._sendemail /*String*/ (mostCurrent.activityBA,_sn,mostCurrent._err_txt.getText());
  } 
        catch (Exception e7) {
 			processBA.setLastException(e7); //BA.debugLineNum = 145;BA.debugLine="ToastMessageShow(LastException.Message, True)";
@@ -598,7 +598,7 @@ mostCurrent._btndown.SetVisibleAnimated((int) (200),anywheresoftware.b4a.keyword
  //BA.debugLineNum = 368;BA.debugLine="End Sub";
 return "";
 }
-public static String  _vvvvvvvvvvvv6(int _ms) throws Exception{
+public static String  _converttotimeformat(int _ms) throws Exception{
 int _seconds = 0;
 int _minutes = 0;
  //BA.debugLineNum = 319;BA.debugLine="Sub ConvertToTimeFormat(ms As Int) As String";
@@ -616,7 +616,7 @@ if (true) return anywheresoftware.b4a.keywords.Common.NumberFormat(_minutes,(int
  //BA.debugLineNum = 325;BA.debugLine="End Sub";
 return "";
 }
-public static void  _vvvvvvvvvvvv7(String _filename,String _loops) throws Exception{
+public static void  _doload(String _filename,String _loops) throws Exception{
 ResumableSub_DoLoad rsub = new ResumableSub_DoLoad(null,_filename,_loops);
 rsub.resume(processBA, null);
 }
@@ -652,7 +652,7 @@ if (true) break;
 case 1:
 //if
 this.state = 44;
-if (parent._vvvvvvvvvvv0) { 
+if (parent._playing1) { 
 this.state = 3;
 }if (true) break;
 
@@ -665,14 +665,14 @@ if (true) break;
 case 4:
 //if
 this.state = 9;
-if (parent._vvv0.IsPlaying()) { 
+if (parent._mp.IsPlaying()) { 
 this.state = 6;
 ;}if (true) break;
 
 case 6:
 //C
 this.state = 9;
-parent._vvv0.Stop();
+parent._mp.Stop();
 if (true) break;
 
 case 9:
@@ -694,7 +694,7 @@ case 12:
 this.state = 13;
 this.catchState = 38;
  //BA.debugLineNum = 203;BA.debugLine="MP.Initialize2(\"MP\")";
-parent._vvv0.Initialize2(processBA,"MP");
+parent._mp.Initialize2(processBA,"MP");
  //BA.debugLineNum = 204;BA.debugLine="Try";
 if (true) break;
 
@@ -710,7 +710,7 @@ case 15:
 this.state = 36;
 this.catchState = 17;
  //BA.debugLineNum = 205;BA.debugLine="MP.Load(File.DirInternal, FileName)";
-parent._vvv0.Load(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),_filename);
+parent._mp.Load(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),_filename);
  if (true) break;
 
 case 17:
@@ -747,7 +747,7 @@ case 23:
 //C
 this.state = 32;
  //BA.debugLineNum = 209;BA.debugLine="MP.Load(File.DirInternal, FileName)";
-parent._vvv0.Load(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),_filename);
+parent._mp.Load(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),_filename);
  //BA.debugLineNum = 210;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
@@ -782,9 +782,9 @@ case 28:
 //C
 this.state = 31;
  //BA.debugLineNum = 215;BA.debugLine="DownloadAndSaveFile(\"https://newlugandahymn";
-_vvvvvvvvvvv1("https://newlugandahymnal.onrender.com/midi/"+_filename.replace("midi\\",""),_filename);
+_downloadandsavefile("https://newlugandahymnal.onrender.com/midi/"+_filename.replace("midi\\",""),_filename);
  //BA.debugLineNum = 216;BA.debugLine="stop1";
-_vvvvvvvvvvvv2();
+_stop1();
  //BA.debugLineNum = 217;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
@@ -793,7 +793,7 @@ case 30:
 //C
 this.state = 31;
  //BA.debugLineNum = 219;BA.debugLine="stop1";
-_vvvvvvvvvvvv2();
+_stop1();
  //BA.debugLineNum = 220;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
@@ -815,13 +815,13 @@ case 34:
 this.state = 35;
 this.catchState = 38;
  //BA.debugLineNum = 226;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("03342365",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23342365",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 227;BA.debugLine="ToastMessageShow(\"Sorry, song is missing wait";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Sorry, song is missing wait for the next update"),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 228;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
  //BA.debugLineNum = 229;BA.debugLine="stop1";
-_vvvvvvvvvvvv2();
+_stop1();
  //BA.debugLineNum = 230;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
@@ -851,7 +851,7 @@ this.catchState = 0;
  //BA.debugLineNum = 235;BA.debugLine="ToastMessageShow(\"Sorry Your phone doesn't supp";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Sorry Your phone doesn't support this feature"),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 236;BA.debugLine="stop1";
-_vvvvvvvvvvvv2();
+_stop1();
  //BA.debugLineNum = 237;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
@@ -863,11 +863,11 @@ this.state = 40;
 this.catchState = 0;
 ;
  //BA.debugLineNum = 239;BA.debugLine="timer1.Initialize(\"timer1\", 1000)";
-parent._vvvv1.Initialize(processBA,"timer1",(long) (1000));
+parent._timer1.Initialize(processBA,"timer1",(long) (1000));
  //BA.debugLineNum = 240;BA.debugLine="timer1_Tick";
 _timer1_tick();
  //BA.debugLineNum = 241;BA.debugLine="MP.Looping = False";
-parent._vvv0.setLooping(anywheresoftware.b4a.keywords.Common.False);
+parent._mp.setLooping(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 242;BA.debugLine="Panel3.SetVisibleAnimated(100, True)";
 parent.mostCurrent._panel3.SetVisibleAnimated((int) (100),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 243;BA.debugLine="btnUp.Visible = False";
@@ -875,20 +875,20 @@ parent.mostCurrent._btnup.setVisible(anywheresoftware.b4a.keywords.Common.False)
  //BA.debugLineNum = 244;BA.debugLine="btnDown.Visible = True";
 parent.mostCurrent._btndown.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 245;BA.debugLine="leng = MP.Duration * loops + 6000";
-parent._vvvvvvvvvvvv4 = (long) (parent._vvv0.getDuration()*(double)(Double.parseDouble(_loops))+6000);
+parent._leng = (long) (parent._mp.getDuration()*(double)(Double.parseDouble(_loops))+6000);
  //BA.debugLineNum = 246;BA.debugLine="MP.Position = MP.Duration - 6000";
-parent._vvv0.setPosition((int) (parent._vvv0.getDuration()-6000));
+parent._mp.setPosition((int) (parent._mp.getDuration()-6000));
  //BA.debugLineNum = 247;BA.debugLine="pos = 0";
-parent._vvvvvvvvvvvv1 = (long) (0);
+parent._pos = (long) (0);
  //BA.debugLineNum = 248;BA.debugLine="loos = loops + 1";
-parent._vvvvvvvvvvvv5 = (int) ((double)(Double.parseDouble(_loops))+1);
+parent._loos = (int) ((double)(Double.parseDouble(_loops))+1);
  //BA.debugLineNum = 249;BA.debugLine="If MP.Duration > 90000 Then";
 if (true) break;
 
 case 40:
 //if
 this.state = 43;
-if (parent._vvv0.getDuration()>90000) { 
+if (parent._mp.getDuration()>90000) { 
 this.state = 42;
 }if (true) break;
 
@@ -896,11 +896,11 @@ case 42:
 //C
 this.state = 43;
  //BA.debugLineNum = 250;BA.debugLine="loos = 1";
-parent._vvvvvvvvvvvv5 = (int) (1);
+parent._loos = (int) (1);
  //BA.debugLineNum = 251;BA.debugLine="MP.Position = 0";
-parent._vvv0.setPosition((int) (0));
+parent._mp.setPosition((int) (0));
  //BA.debugLineNum = 252;BA.debugLine="loopable = True";
-parent._vvvvvvvvvvvv3 = anywheresoftware.b4a.keywords.Common.True;
+parent._loopable = anywheresoftware.b4a.keywords.Common.True;
  if (true) break;
 
 case 43:
@@ -908,13 +908,13 @@ case 43:
 this.state = 44;
 ;
  //BA.debugLineNum = 256;BA.debugLine="Log(\"test me \"&codes.vol)";
-anywheresoftware.b4a.keywords.Common.LogImpl("03342395","test me "+parent.mostCurrent._vvvv7._vv2 /*String*/ ,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23342395","test me "+parent.mostCurrent._codes._vol /*String*/ ,0);
  //BA.debugLineNum = 257;BA.debugLine="barVolume.Value = codes.vol";
-parent.mostCurrent._barvolume.setValue((int)(Double.parseDouble(parent.mostCurrent._vvvv7._vv2 /*String*/ )));
+parent.mostCurrent._barvolume.setValue((int)(Double.parseDouble(parent.mostCurrent._codes._vol /*String*/ )));
  //BA.debugLineNum = 258;BA.debugLine="MP.Play";
-parent._vvv0.Play();
+parent._mp.Play();
  //BA.debugLineNum = 259;BA.debugLine="timer1.Enabled = True";
-parent._vvvv1.setEnabled(anywheresoftware.b4a.keywords.Common.True);
+parent._timer1.setEnabled(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 260;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
@@ -933,11 +933,11 @@ case 46:
 this.state = 49;
 this.catchState = 48;
  //BA.debugLineNum = 263;BA.debugLine="MP.Initialize2(\"MP\")";
-parent._vvv0.Initialize2(processBA,"MP");
+parent._mp.Initialize2(processBA,"MP");
  //BA.debugLineNum = 264;BA.debugLine="playing1 = True";
-parent._vvvvvvvvvvv0 = anywheresoftware.b4a.keywords.Common.True;
+parent._playing1 = anywheresoftware.b4a.keywords.Common.True;
  //BA.debugLineNum = 265;BA.debugLine="DoLoad(FileName, loops)";
-_vvvvvvvvvvvv7(_filename,_loops);
+_doload(_filename,_loops);
  if (true) break;
 
 case 48:
@@ -945,7 +945,7 @@ case 48:
 this.state = 49;
 this.catchState = 0;
  //BA.debugLineNum = 267;BA.debugLine="Log(LastException.Message)";
-anywheresoftware.b4a.keywords.Common.LogImpl("03342406",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23342406",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
  if (true) break;
 if (true) break;
 
@@ -970,7 +970,7 @@ processBA.setLastException(e0);}
 }
 public static void  _msgbox_result(int _result) throws Exception{
 }
-public static void  _vvvvvvvvvvv1(String _link,String _filename) throws Exception{
+public static void  _downloadandsavefile(String _link,String _filename) throws Exception{
 ResumableSub_DownloadAndSaveFile rsub = new ResumableSub_DownloadAndSaveFile(null,_link,_filename);
 rsub.resume(processBA, null);
 }
@@ -1065,7 +1065,7 @@ _j = new com.LugandaHymnalNew.httpjob();
  //BA.debugLineNum = 388;BA.debugLine="j.Initialize(\"\", Me)";
 _j._initialize /*String*/ (processBA,"",songs.getObject());
  //BA.debugLineNum = 389;BA.debugLine="j.Download(link)";
-_j._vvvvvv4 /*String*/ (_link);
+_j._download /*String*/ (_link);
  //BA.debugLineNum = 390;BA.debugLine="Wait For (j) JobDone(j As HttpJob)";
 anywheresoftware.b4a.keywords.Common.WaitFor("jobdone", processBA, this, (Object)(_j));
 this.state = 26;
@@ -1081,7 +1081,7 @@ if (true) break;
 case 11:
 //if
 this.state = 24;
-if (_j._vvvvvvvvv2 /*boolean*/ ) { 
+if (_j._success /*boolean*/ ) { 
 this.state = 13;
 }else {
 this.state = 15;
@@ -1094,7 +1094,7 @@ this.state = 24;
 _out = new anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper();
 _out = anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),_filename,anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 393;BA.debugLine="File.Copy2(j.GetInputStream, out)";
-anywheresoftware.b4a.keywords.Common.File.Copy2((java.io.InputStream)(_j._vvvvvvv2 /*anywheresoftware.b4a.objects.streams.File.InputStreamWrapper*/ ().getObject()),(java.io.OutputStream)(_out.getObject()));
+anywheresoftware.b4a.keywords.Common.File.Copy2((java.io.InputStream)(_j._getinputstream /*anywheresoftware.b4a.objects.streams.File.InputStreamWrapper*/ ().getObject()),(java.io.OutputStream)(_out.getObject()));
  //BA.debugLineNum = 394;BA.debugLine="out.Close";
 _out.Close();
  //BA.debugLineNum = 395;BA.debugLine="WebView1.LoadUrl(\"file://\" & File.Combine(File.D";
@@ -1110,7 +1110,7 @@ if (true) break;
 case 16:
 //select
 this.state = 23;
-switch (BA.switchObjectToInt(_j._vvvvvvvvvv1 /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse*/ .getStatusCode(),(int) (-1),(int) (404))) {
+switch (BA.switchObjectToInt(_j._response /*anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse*/ .getStatusCode(),(int) (-1),(int) (404))) {
 case 0: {
 this.state = 18;
 if (true) break;
@@ -1160,7 +1160,7 @@ this.state = -1;
  //BA.debugLineNum = 406;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
  //BA.debugLineNum = 407;BA.debugLine="j.Release";
-_j._vvvvvvvv0 /*String*/ ();
+_j._release /*String*/ ();
  //BA.debugLineNum = 408;BA.debugLine="End Sub";
 if (true) break;
 
@@ -1173,13 +1173,13 @@ public static void  _jobdone(com.LugandaHymnalNew.httpjob _j) throws Exception{
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 19;BA.debugLine="Sub Globals";
  //BA.debugLineNum = 26;BA.debugLine="Private JI As DefaultJavascriptInterface";
-mostCurrent._vvvvvvvvvvv2 = new uk.co.martinpearman.b4a.webkit.DefaultJavascriptInterface();
+mostCurrent._ji = new uk.co.martinpearman.b4a.webkit.DefaultJavascriptInterface();
  //BA.debugLineNum = 27;BA.debugLine="Private WVE As WebViewExtras";
-mostCurrent._vvvvvvvvvvv3 = new uk.co.martinpearman.b4a.webkit.WebViewExtras();
+mostCurrent._wve = new uk.co.martinpearman.b4a.webkit.WebViewExtras();
  //BA.debugLineNum = 28;BA.debugLine="Private DWV As DefaultWebChromeClient";
-mostCurrent._vvvvvvvvvvv4 = new uk.co.martinpearman.b4a.webkit.DefaultWebChromeClient();
+mostCurrent._dwv = new uk.co.martinpearman.b4a.webkit.DefaultWebChromeClient();
  //BA.debugLineNum = 29;BA.debugLine="Private DWV1 As DefaultWebViewClient";
-mostCurrent._vvvvvvvvvvv5 = new uk.co.martinpearman.b4a.webkit.DefaultWebViewClient();
+mostCurrent._dwv1 = new uk.co.martinpearman.b4a.webkit.DefaultWebViewClient();
  //BA.debugLineNum = 30;BA.debugLine="Private s_start  As Long";
 _s_start = 0L;
  //BA.debugLineNum = 31;BA.debugLine="Private err_txt As EditText";
@@ -1199,49 +1199,49 @@ mostCurrent._btnup = new anywheresoftware.b4a.objects.ButtonWrapper();
  //BA.debugLineNum = 38;BA.debugLine="Private btnDown As Button";
 mostCurrent._btndown = new anywheresoftware.b4a.objects.ButtonWrapper();
  //BA.debugLineNum = 39;BA.debugLine="Dim load As Boolean";
-_vvvvvvvvvvv6 = false;
+_load = false;
  //BA.debugLineNum = 40;BA.debugLine="Dim leng As Long";
-_vvvvvvvvvvvv4 = 0L;
+_leng = 0L;
  //BA.debugLineNum = 41;BA.debugLine="Dim pos As Long";
-_vvvvvvvvvvvv1 = 0L;
+_pos = 0L;
  //BA.debugLineNum = 42;BA.debugLine="Dim Inpos As Long";
-_vvvvvvvvvvvv0 = 0L;
+_inpos = 0L;
  //BA.debugLineNum = 43;BA.debugLine="Dim count As Int";
-_vvvvvvvvvvv7 = 0;
+_count = 0;
  //BA.debugLineNum = 44;BA.debugLine="Dim loos As Int";
-_vvvvvvvvvvvv5 = 0;
+_loos = 0;
  //BA.debugLineNum = 45;BA.debugLine="Private WebView1 As WebView";
 mostCurrent._webview1 = new anywheresoftware.b4a.objects.WebViewWrapper();
  //BA.debugLineNum = 46;BA.debugLine="Dim playing1 As Boolean = False";
-_vvvvvvvvvvv0 = anywheresoftware.b4a.keywords.Common.False;
+_playing1 = anywheresoftware.b4a.keywords.Common.False;
  //BA.debugLineNum = 47;BA.debugLine="Dim loopable As Boolean = False";
-_vvvvvvvvvvvv3 = anywheresoftware.b4a.keywords.Common.False;
+_loopable = anywheresoftware.b4a.keywords.Common.False;
  //BA.debugLineNum = 48;BA.debugLine="Private Panel2 As Panel";
 mostCurrent._panel2 = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 49;BA.debugLine="Dim rp As RuntimePermissions";
-mostCurrent._vvvvvvvvvvvvv1 = new anywheresoftware.b4a.objects.RuntimePermissions();
+mostCurrent._rp = new anywheresoftware.b4a.objects.RuntimePermissions();
  //BA.debugLineNum = 50;BA.debugLine="End Sub";
 return "";
 }
 public static String  _looping_checkedchange(boolean _checked) throws Exception{
  //BA.debugLineNum = 360;BA.debugLine="Sub Looping_CheckedChange(Checked As Boolean)";
  //BA.debugLineNum = 361;BA.debugLine="MP.Looping = Checked";
-_vvv0.setLooping(_checked);
+_mp.setLooping(_checked);
  //BA.debugLineNum = 362;BA.debugLine="End Sub";
 return "";
 }
 public static String  _mp_complete() throws Exception{
  //BA.debugLineNum = 271;BA.debugLine="Sub MP_Complete";
  //BA.debugLineNum = 272;BA.debugLine="count = count + 1";
-_vvvvvvvvvvv7 = (int) (_vvvvvvvvvvv7+1);
+_count = (int) (_count+1);
  //BA.debugLineNum = 273;BA.debugLine="Log(count)";
-anywheresoftware.b4a.keywords.Common.LogImpl("03407874",BA.NumberToString(_vvvvvvvvvvv7),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23407874",BA.NumberToString(_count),0);
  //BA.debugLineNum = 274;BA.debugLine="MP.Play";
-_vvv0.Play();
+_mp.Play();
  //BA.debugLineNum = 275;BA.debugLine="End Sub";
 return "";
 }
-public static String  _vvvvvvvvvvvvv2() throws Exception{
+public static String  _openabaana() throws Exception{
  //BA.debugLineNum = 193;BA.debugLine="Sub openAbaana";
  //BA.debugLineNum = 194;BA.debugLine="StartActivity(\"abaana\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("abaana"));
@@ -1251,38 +1251,38 @@ return "";
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 7;BA.debugLine="Sub Process_Globals";
  //BA.debugLineNum = 10;BA.debugLine="Dim p As Phone";
-_vvv5 = new anywheresoftware.b4a.phone.Phone();
+_p = new anywheresoftware.b4a.phone.Phone();
  //BA.debugLineNum = 11;BA.debugLine="Dim SN As String";
-_vvv6 = "";
+_sn = "";
  //BA.debugLineNum = 12;BA.debugLine="Dim SB As String";
-_vvv7 = "";
+_sb = "";
  //BA.debugLineNum = 13;BA.debugLine="Dim MP As MediaPlayer";
-_vvv0 = new anywheresoftware.b4a.objects.MediaPlayerWrapper();
+_mp = new anywheresoftware.b4a.objects.MediaPlayerWrapper();
  //BA.debugLineNum = 14;BA.debugLine="Dim timer1 As Timer";
-_vvvv1 = new anywheresoftware.b4a.objects.Timer();
+_timer1 = new anywheresoftware.b4a.objects.Timer();
  //BA.debugLineNum = 15;BA.debugLine="Dim counter As Int";
-_vvvv2 = 0;
+_counter = 0;
  //BA.debugLineNum = 16;BA.debugLine="Dim sw As Boolean = False";
-_vvvv3 = anywheresoftware.b4a.keywords.Common.False;
+_sw = anywheresoftware.b4a.keywords.Common.False;
  //BA.debugLineNum = 17;BA.debugLine="End Sub";
 return "";
 }
-public static String  _vvvvvvvvvvvvv3(String _songn,String _e_err) throws Exception{
+public static String  _senderror(String _songn,String _e_err) throws Exception{
  //BA.debugLineNum = 277;BA.debugLine="Sub SendError(SongN As String, E_err As String)";
  //BA.debugLineNum = 278;BA.debugLine="Log(\"kiai\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("03473409","kiai",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23473409","kiai",0);
  //BA.debugLineNum = 279;BA.debugLine="Panel2.Visible = True";
 mostCurrent._panel2.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 280;BA.debugLine="Panel2.BringToFront";
 mostCurrent._panel2.BringToFront();
  //BA.debugLineNum = 281;BA.debugLine="SN = SongN";
-_vvv6 = _songn;
+_sn = _songn;
  //BA.debugLineNum = 282;BA.debugLine="SB = E_err";
-_vvv7 = _e_err;
+_sb = _e_err;
  //BA.debugLineNum = 283;BA.debugLine="End Sub";
 return "";
 }
-public static String  _vvvvvvvvvvvvv4(String _smes) throws Exception{
+public static String  _sharemessage(String _smes) throws Exception{
 anywheresoftware.b4a.objects.IntentWrapper _in = null;
  //BA.debugLineNum = 184;BA.debugLine="Sub ShareMessage(sMes As String)";
  //BA.debugLineNum = 185;BA.debugLine="Dim in As Intent";
@@ -1300,19 +1300,19 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_in.getObj
  //BA.debugLineNum = 191;BA.debugLine="End Sub";
 return "";
 }
-public static String  _vvvvvvvvvvvvv5() throws Exception{
+public static String  _stop() throws Exception{
  //BA.debugLineNum = 289;BA.debugLine="Sub Stop";
  //BA.debugLineNum = 290;BA.debugLine="Try";
 try { //BA.debugLineNum = 291;BA.debugLine="MP.Stop";
-_vvv0.Stop();
+_mp.Stop();
  //BA.debugLineNum = 292;BA.debugLine="count = 0";
-_vvvvvvvvvvv7 = (int) (0);
+_count = (int) (0);
  //BA.debugLineNum = 293;BA.debugLine="loopable = False";
-_vvvvvvvvvvvv3 = anywheresoftware.b4a.keywords.Common.False;
+_loopable = anywheresoftware.b4a.keywords.Common.False;
  } 
        catch (Exception e6) {
 			processBA.setLastException(e6); //BA.debugLineNum = 295;BA.debugLine="Log(LastException.Message)";
-anywheresoftware.b4a.keywords.Common.LogImpl("03604486",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23604486",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
  };
  //BA.debugLineNum = 297;BA.debugLine="Panel3.SetLayoutAnimated(200dip, 5dip,-160dip,100";
 mostCurrent._panel3.SetLayoutAnimated(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (200)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (5)),(int) (-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (160))),(int) (anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA)-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (10))),mostCurrent._panel3.getHeight());
@@ -1321,7 +1321,7 @@ mostCurrent._panel3.SetVisibleAnimated((int) (200),anywheresoftware.b4a.keywords
  //BA.debugLineNum = 299;BA.debugLine="End Sub";
 return "";
 }
-public static String  _vvvvvvvvvvvv2() throws Exception{
+public static String  _stop1() throws Exception{
 String _javascript = "";
  //BA.debugLineNum = 284;BA.debugLine="Sub stop1";
  //BA.debugLineNum = 285;BA.debugLine="Dim Javascript As String";
@@ -1329,11 +1329,11 @@ _javascript = "";
  //BA.debugLineNum = 286;BA.debugLine="Javascript = \"stop()\"";
 _javascript = "stop()";
  //BA.debugLineNum = 287;BA.debugLine="WVE.ExecuteJavascript(Javascript)";
-mostCurrent._vvvvvvvvvvv3.ExecuteJavascript(_javascript);
+mostCurrent._wve.ExecuteJavascript(_javascript);
  //BA.debugLineNum = 288;BA.debugLine="End Sub";
 return "";
 }
-public static String  _vvvvvvvvvvvvv6() throws Exception{
+public static String  _swipeleft() throws Exception{
 String _javascript = "";
  //BA.debugLineNum = 162;BA.debugLine="Private Sub swipeLeft";
  //BA.debugLineNum = 163;BA.debugLine="Dim Javascript As String";
@@ -1341,11 +1341,11 @@ _javascript = "";
  //BA.debugLineNum = 164;BA.debugLine="Javascript=\"N_next()\"";
 _javascript = "N_next()";
  //BA.debugLineNum = 165;BA.debugLine="WVE.ExecuteJavascript(Javascript)";
-mostCurrent._vvvvvvvvvvv3.ExecuteJavascript(_javascript);
+mostCurrent._wve.ExecuteJavascript(_javascript);
  //BA.debugLineNum = 166;BA.debugLine="End Sub";
 return "";
 }
-public static String  _vvvvvvvvvvvvv7() throws Exception{
+public static String  _swiperight() throws Exception{
 String _javascript = "";
  //BA.debugLineNum = 157;BA.debugLine="Private Sub swipeRight";
  //BA.debugLineNum = 158;BA.debugLine="Dim Javascript As String";
@@ -1353,30 +1353,30 @@ _javascript = "";
  //BA.debugLineNum = 159;BA.debugLine="Javascript=\"P_prev()\"";
 _javascript = "P_prev()";
  //BA.debugLineNum = 160;BA.debugLine="WVE.ExecuteJavascript(Javascript)";
-mostCurrent._vvvvvvvvvvv3.ExecuteJavascript(_javascript);
+mostCurrent._wve.ExecuteJavascript(_javascript);
  //BA.debugLineNum = 161;BA.debugLine="End Sub";
 return "";
 }
 public static String  _timer1_tick() throws Exception{
  //BA.debugLineNum = 301;BA.debugLine="Sub timer1_Tick";
  //BA.debugLineNum = 302;BA.debugLine="If MP.IsPlaying Then";
-if (_vvv0.IsPlaying()) { 
+if (_mp.IsPlaying()) { 
  //BA.debugLineNum = 303;BA.debugLine="barPosition.Value = pos / leng * 100";
-mostCurrent._barposition.setValue((int) (_vvvvvvvvvvvv1/(double)_vvvvvvvvvvvv4*100));
+mostCurrent._barposition.setValue((int) (_pos/(double)_leng*100));
  //BA.debugLineNum = 305;BA.debugLine="lblPosition.Text = \"Position: \" & ConvertToTimeF";
-mostCurrent._lblposition.setText(BA.ObjectToCharSequence("Position: "+_vvvvvvvvvvvv6((int) (_vvvvvvvvvvvv1))+" ("+_vvvvvvvvvvvv6((int) (_vvvvvvvvvvvv4))+")"));
+mostCurrent._lblposition.setText(BA.ObjectToCharSequence("Position: "+_converttotimeformat((int) (_pos))+" ("+_converttotimeformat((int) (_leng))+")"));
  //BA.debugLineNum = 308;BA.debugLine="pos = pos + 1000";
-_vvvvvvvvvvvv1 = (long) (_vvvvvvvvvvvv1+1000);
+_pos = (long) (_pos+1000);
  //BA.debugLineNum = 309;BA.debugLine="If count >= loos And count >= 2 Then";
-if (_vvvvvvvvvvv7>=_vvvvvvvvvvvv5 && _vvvvvvvvvvv7>=2) { 
+if (_count>=_loos && _count>=2) { 
  //BA.debugLineNum = 310;BA.debugLine="stop1";
-_vvvvvvvvvvvv2();
+_stop1();
  //BA.debugLineNum = 311;BA.debugLine="count = 0";
-_vvvvvvvvvvv7 = (int) (0);
+_count = (int) (0);
  //BA.debugLineNum = 312;BA.debugLine="timer1.Enabled = False";
-_vvvv1.setEnabled(anywheresoftware.b4a.keywords.Common.False);
+_timer1.setEnabled(anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 313;BA.debugLine="pos = 0";
-_vvvvvvvvvvvv1 = (long) (0);
+_pos = (long) (0);
  };
  }else {
  };
@@ -1386,11 +1386,11 @@ return "";
 public static boolean  _webview1_overrideurl(String _url) throws Exception{
  //BA.debugLineNum = 106;BA.debugLine="Private Sub WebView1_OverrideUrl (Url As String) A";
  //BA.debugLineNum = 107;BA.debugLine="load = True";
-_vvvvvvvvvvv6 = anywheresoftware.b4a.keywords.Common.True;
+_load = anywheresoftware.b4a.keywords.Common.True;
  //BA.debugLineNum = 108;BA.debugLine="If Url.Contains(\"#\") Then";
 if (_url.contains("#")) { 
  //BA.debugLineNum = 109;BA.debugLine="Log(\"Me am try\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("02752515","Me am try",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("22752515","Me am try",0);
  }else if(_url.contains("baana.html")) { 
  //BA.debugLineNum = 111;BA.debugLine="StartActivity(\"abaana\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("abaana"));
@@ -1398,9 +1398,9 @@ anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("abaana"))
 mostCurrent._activity.Finish();
  }else {
  //BA.debugLineNum = 114;BA.debugLine="WebView1.LoadUrl(codes.FixUrl(\"src\",Url))";
-mostCurrent._webview1.LoadUrl(mostCurrent._vvvv7._vvv2 /*String*/ (mostCurrent.activityBA,"src",_url));
+mostCurrent._webview1.LoadUrl(mostCurrent._codes._fixurl /*String*/ (mostCurrent.activityBA,"src",_url));
  //BA.debugLineNum = 116;BA.debugLine="Log(Url)";
-anywheresoftware.b4a.keywords.Common.LogImpl("02752522",_url,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("22752522",_url,0);
  };
  //BA.debugLineNum = 118;BA.debugLine="End Sub";
 return false;
@@ -1409,30 +1409,30 @@ public static String  _webview1_pagefinished(String _url) throws Exception{
 String _js = "";
  //BA.debugLineNum = 121;BA.debugLine="Private Sub WebView1_PageFinished (Url As String)";
  //BA.debugLineNum = 122;BA.debugLine="Log(Url)";
-anywheresoftware.b4a.keywords.Common.LogImpl("02818049",_url,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("22818049",_url,0);
  //BA.debugLineNum = 123;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
  //BA.debugLineNum = 124;BA.debugLine="btnUp_Click";
 _btnup_click();
  //BA.debugLineNum = 125;BA.debugLine="load = False";
-_vvvvvvvvvvv6 = anywheresoftware.b4a.keywords.Common.False;
+_load = anywheresoftware.b4a.keywords.Common.False;
  //BA.debugLineNum = 126;BA.debugLine="Try";
 try { //BA.debugLineNum = 127;BA.debugLine="If MP.IsPlaying Then";
-if (_vvv0.IsPlaying()) { 
+if (_mp.IsPlaying()) { 
  //BA.debugLineNum = 128;BA.debugLine="Dim js As String";
 _js = "";
  //BA.debugLineNum = 129;BA.debugLine="js = \"$('.play').css('display','none');$('.stop";
 _js = "$('.play').css('display','none');$('.stop').css('display','');";
  //BA.debugLineNum = 130;BA.debugLine="WVE.ExecuteJavascript(js)";
-mostCurrent._vvvvvvvvvvv3.ExecuteJavascript(_js);
+mostCurrent._wve.ExecuteJavascript(_js);
  };
  } 
        catch (Exception e12) {
 			processBA.setLastException(e12); //BA.debugLineNum = 133;BA.debugLine="Log(\"Not play\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("02818060","Not play",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("22818060","Not play",0);
  };
  //BA.debugLineNum = 135;BA.debugLine="load = False";
-_vvvvvvvvvvv6 = anywheresoftware.b4a.keywords.Common.False;
+_load = anywheresoftware.b4a.keywords.Common.False;
  //BA.debugLineNum = 136;BA.debugLine="End Sub";
 return "";
 }

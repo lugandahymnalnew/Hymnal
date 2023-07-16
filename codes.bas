@@ -154,7 +154,7 @@ End Sub
 
 Sub ConsentF
 	sql.Initialize(File.DirInternal, "MyDb.db", True)
-	sql.ExecNonQuery2("UPDATE table1 SET col1 = ?, col2 = ?, col3 = ? WHERE col1 = "&UserCode, Array As Object(UserCode, VerCode, VerCode))
+	sql.ExecNonQuery2("UPDATE table1 SET col1 = ?, col2 = ?, col3 = ? WHERE col1 = '"&UserCode&"'", Array As Object(UserCode, VerCode, VerCode))
 	'sql.ExecNonQuery2("INSERT INTO table1 VALUES (?, ?, ?)", Array As Object("Version","Null", 1.0.1))
 	Log("success")
 	sql.Close

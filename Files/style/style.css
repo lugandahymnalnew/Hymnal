@@ -1,6 +1,6 @@
 :root {
     --primary-color: hsl(207, 88%, 20%);
-    --secondary-color: hsl(207, 68%, 77%);
+    --secondary-color: hsl(208, 50%, 80%);
     --text-color: #333;
     --background-color: #FFF;
   }
@@ -86,7 +86,6 @@ small{
 }
 
 pre{
-    font-size: 1rem;
     overflow-x: auto;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;

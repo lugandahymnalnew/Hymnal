@@ -125,16 +125,16 @@ public class starter extends android.app.Service{
 	public android.os.IBinder onBind(android.content.Intent intent) {
 		return null;
 	}public anywheresoftware.b4a.keywords.Common __c = null;
-public com.LugandaHymnalNew.main _vvvv6 = null;
-public com.LugandaHymnalNew.codes _vvvv7 = null;
-public com.LugandaHymnalNew.songs _vvvvv1 = null;
-public com.LugandaHymnalNew.don _vvvvv2 = null;
-public com.LugandaHymnalNew.customwebviewerror _vvvvv3 = null;
-public com.LugandaHymnalNew.err _vvvvv4 = null;
-public com.LugandaHymnalNew.abaana _vvvvv5 = null;
-public com.LugandaHymnalNew.ebil _vvvvv6 = null;
-public com.LugandaHymnalNew.emisi _vvvvv7 = null;
-public com.LugandaHymnalNew.httputils2service _vvvvv0 = null;
+public com.LugandaHymnalNew.main _main = null;
+public com.LugandaHymnalNew.codes _codes = null;
+public com.LugandaHymnalNew.songs _songs = null;
+public com.LugandaHymnalNew.don _don = null;
+public com.LugandaHymnalNew.customwebviewerror _customwebviewerror = null;
+public com.LugandaHymnalNew.err _err = null;
+public com.LugandaHymnalNew.abaana _abaana = null;
+public com.LugandaHymnalNew.ebil _ebil = null;
+public com.LugandaHymnalNew.emisi _emisi = null;
+public com.LugandaHymnalNew.httputils2service _httputils2service = null;
 public static boolean  _application_error(anywheresoftware.b4a.objects.B4AException _error,String _stacktrace) throws Exception{
  //BA.debugLineNum = 47;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
  //BA.debugLineNum = 48;BA.debugLine="ToastMessageShow(Error.Message,True)";
@@ -149,11 +149,11 @@ return false;
 public static String  _mp_complete() throws Exception{
  //BA.debugLineNum = 34;BA.debugLine="Sub MP_Complete";
  //BA.debugLineNum = 35;BA.debugLine="songs.counter = songs.counter + 1";
-mostCurrent._vvvvv1._vvvv2 /*int*/  = (int) (mostCurrent._vvvvv1._vvvv2 /*int*/ +1);
+mostCurrent._songs._counter /*int*/  = (int) (mostCurrent._songs._counter /*int*/ +1);
  //BA.debugLineNum = 36;BA.debugLine="songs.MP.Play";
-mostCurrent._vvvvv1._vvv0 /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Play();
+mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Play();
  //BA.debugLineNum = 37;BA.debugLine="Log(\"in sev: \"&songs.counter)";
-anywheresoftware.b4a.keywords.Common.LogImpl("02162691","in sev: "+BA.NumberToString(mostCurrent._vvvvv1._vvvv2 /*int*/ ),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("22162691","in sev: "+BA.NumberToString(mostCurrent._songs._counter /*int*/ ),0);
  //BA.debugLineNum = 38;BA.debugLine="End Sub";
 return "";
 }
@@ -175,18 +175,18 @@ return "";
 public static String  _service_music(String _fname) throws Exception{
  //BA.debugLineNum = 22;BA.debugLine="Sub Service_Music(FName As String)";
  //BA.debugLineNum = 23;BA.debugLine="If songs.MP.IsInitialized = True Then";
-if (mostCurrent._vvvvv1._vvv0 /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .IsInitialized()==anywheresoftware.b4a.keywords.Common.True) { 
+if (mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .IsInitialized()==anywheresoftware.b4a.keywords.Common.True) { 
  //BA.debugLineNum = 25;BA.debugLine="songs.MP.Initialize2(\"MP\")";
-mostCurrent._vvvvv1._vvv0 /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Initialize2(processBA,"MP");
+mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Initialize2(processBA,"MP");
  //BA.debugLineNum = 26;BA.debugLine="songs.MP.Load(File.DirAssets, FName)";
-mostCurrent._vvvvv1._vvv0 /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Load(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),_fname);
+mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Load(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),_fname);
  //BA.debugLineNum = 27;BA.debugLine="Log(\"starter: \"&songs.MP.IsInitialized)";
-anywheresoftware.b4a.keywords.Common.LogImpl("02097157","starter: "+BA.ObjectToString(mostCurrent._vvvvv1._vvv0 /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .IsInitialized()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("22097157","starter: "+BA.ObjectToString(mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .IsInitialized()),0);
  //BA.debugLineNum = 28;BA.debugLine="Return";
 if (true) return "";
  };
  //BA.debugLineNum = 30;BA.debugLine="songs.MP.Initialize()";
-mostCurrent._vvvvv1._vvv0 /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Initialize();
+mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Initialize();
  //BA.debugLineNum = 31;BA.debugLine="Service_Music(FName)";
 _service_music(_fname);
  //BA.debugLineNum = 32;BA.debugLine="Return";
@@ -204,10 +204,10 @@ return "";
 public static String  _service_taskremoved() throws Exception{
  //BA.debugLineNum = 39;BA.debugLine="Sub Service_TaskRemoved";
  //BA.debugLineNum = 41;BA.debugLine="If songs.MP.IsInitialized = True Then";
-if (mostCurrent._vvvvv1._vvv0 /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .IsInitialized()==anywheresoftware.b4a.keywords.Common.True) { 
+if (mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .IsInitialized()==anywheresoftware.b4a.keywords.Common.True) { 
  //BA.debugLineNum = 42;BA.debugLine="If songs.MP.IsPlaying = True Then songs.MP.Stop";
-if (mostCurrent._vvvvv1._vvv0 /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .IsPlaying()==anywheresoftware.b4a.keywords.Common.True) { 
-mostCurrent._vvvvv1._vvv0 /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Stop();};
+if (mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .IsPlaying()==anywheresoftware.b4a.keywords.Common.True) { 
+mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Stop();};
  };
  //BA.debugLineNum = 44;BA.debugLine="End Sub";
 return "";

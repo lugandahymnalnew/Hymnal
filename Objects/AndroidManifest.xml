@@ -2,8 +2,8 @@
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.LugandaHymnalNew"
-	android:versionCode="11"
-	android:versionName="1.0.43"
+	android:versionCode="12"
+	android:versionName="1.0.44"
 	android:installLocation="preferExternal">
 	
 	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="31"/>
@@ -14,7 +14,6 @@
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.CALL_PHONE"/>
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-	<uses-permission android:name="android.permission.WAKE_LOCK"/>
 	<application
 		android:icon="@drawable/icon"
 		android:label="Ennyimba Za Kristo"
@@ -88,12 +87,8 @@
 			android:screenOrientation="portrait"
 			android:exported="true">
 		</activity>
-		<service
-			android:name=".httputils2service"
-			android:exported="true">
-		</service>
 		<receiver
-			android:name=".httputils2service$httputils2service_BR"
+			android:name=".httputils2service"
 			android:exported="true">
 		</receiver>
 	</application>

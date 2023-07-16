@@ -41,12 +41,12 @@ Module9=SSLUtils
 NumberOfFiles=10
 NumberOfLibraries=7
 NumberOfModules=10
-Version=12.2
+Version=12.5
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: Ennyimba Za Kristo
-	#VersionCode: 11
-	#VersionName: 1.0.43
+	#VersionCode: 12
+	#VersionName: 1.0.44
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: True
@@ -172,8 +172,12 @@ Private Sub err_but_Click
 End Sub
 
 Private Sub allow_Click
-	codes.ConsentF
-	Activity_Create(True)
+	Try
+		codes.ConsentF
+		Activity_Create(True)
+	Catch
+		MsgboxAsync(LastException.Message,"This is the error")
+	End Try
 End Sub
 
 Private Sub deny_Click

@@ -8,78 +8,31 @@
 package androidx.core;
 
 public final class R {
-  public static final class anim {
-    public static final int fragment_close_enter=0x7f010000;
-    public static final int fragment_close_exit=0x7f010001;
-    public static final int fragment_fade_enter=0x7f010002;
-    public static final int fragment_fade_exit=0x7f010003;
-    public static final int fragment_fast_out_extra_slow_in=0x7f010004;
-    public static final int fragment_open_enter=0x7f010005;
-    public static final int fragment_open_exit=0x7f010006;
-  }
   public static final class attr {
     /**
-     * Alpha multiplier applied to the base color.
      * <p>May be a floating point value, such as "<code>1.2</code>".
      */
-    public static final int alpha=0x7f020000;
+    public static final int alpha=0x7f010000;
     /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int coordinatorLayoutStyle=0x7f020001;
+    public static final int font=0x7f010001;
     /**
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     */
-    public static final int drawerLayoutStyle=0x7f020002;
-    /**
-     * <p>May be a dimension value, which is a floating point number appended with a
-     * unit such as "<code>14.5sp</code>".
-     * Available units are: px (pixels), dp (density-independent pixels),
-     * sp (scaled pixels based on preferred font size), in (inches), and
-     * mm (millimeters).
-     */
-    public static final int elevation=0x7f020003;
-    /**
-     * The reference to the font file to be used. This should be a file in the res/font folder
-     * and should therefore have an R reference value. E.g. @font/myfont
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     */
-    public static final int font=0x7f020004;
-    /**
-     * The authority of the Font Provider to be used for the request.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderAuthority=0x7f020005;
+    public static final int fontProviderAuthority=0x7f010002;
     /**
-     * The sets of hashes for the certificates the provider should be signed with. This is
-     * used to verify the identity of the provider, and is only required if the provider is not
-     * part of the system image. This value may point to one list or a list of lists, where each
-     * individual list represents one collection of signature hashes. Refer to your font provider's
-     * documentation for these values.
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int fontProviderCerts=0x7f020006;
+    public static final int fontProviderCerts=0x7f010003;
     /**
-     * The strategy to be used when fetching font data from a font provider in XML layouts.
-     * This attribute is ignored when the resource is loaded from code, as it is equivalent to the
-     * choice of API between {@link
-     * androidx.core.content.res.ResourcesCompat#getFont(Context, int)} (blocking) and
-     * {@link
-     * androidx.core.content.res.ResourcesCompat#getFont(Context, int, FontCallback, Handler)}
-     * (async).
      * <p>Must be one of the following constant values.</p>
      * <table>
      * <colgroup align="left" />
@@ -98,9 +51,8 @@ public final class R {
      * default typeface will be used instead.</td></tr>
      * </table>
      */
-    public static final int fontProviderFetchStrategy=0x7f020007;
+    public static final int fontProviderFetchStrategy=0x7f010004;
     /**
-     * The length of the timeout during fetching.
      * <p>May be an integer value, such as "<code>100</code>".
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -112,25 +64,23 @@ public final class R {
      * timeout and wait until a reply is received from the font provider.</td></tr>
      * </table>
      */
-    public static final int fontProviderFetchTimeout=0x7f020008;
+    public static final int fontProviderFetchTimeout=0x7f010005;
     /**
-     * The package for the Font Provider to be used for the request. This is used to verify
-     * the identity of the provider.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderPackage=0x7f020009;
+    public static final int fontProviderPackage=0x7f010006;
     /**
-     * The query to be sent over to the provider. Refer to your font provider's documentation
-     * on the format of this string.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontProviderQuery=0x7f02000a;
+    public static final int fontProviderQuery=0x7f010007;
     /**
-     * The style of the given font file. This will be used when the font is being loaded into
-     * the font stack and will override any style information in the font's header tables. If
-     * unspecified, the value in the font's header tables will be used.
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     */
+    public static final int fontProviderSystemFontFamily=0x7f010008;
+    /**
      * <p>Must be one of the following constant values.</p>
      * <table>
      * <colgroup align="left" />
@@ -141,342 +91,229 @@ public final class R {
      * <tr><td>normal</td><td>0</td><td></td></tr>
      * </table>
      */
-    public static final int fontStyle=0x7f02000b;
+    public static final int fontStyle=0x7f010009;
     /**
-     * The variation settings to be applied to the font. The string should be in the following
-     * format: "'tag1' value1, 'tag2' value2, ...". If the default variation settings should be
-     * used, or the font used does not support variation settings, this attribute needs not be
-     * specified.
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
      */
-    public static final int fontVariationSettings=0x7f02000c;
+    public static final int fontVariationSettings=0x7f01000a;
     /**
-     * The weight of the given font file. This will be used when the font is being loaded into
-     * the font stack and will override any weight information in the font's header tables. Must
-     * be a positive number, a multiple of 100, and between 100 and 900, inclusive. The most
-     * common values are 400 for regular weight and 700 for bold weight. If unspecified, the value
-     * in the font's header tables will be used.
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int fontWeight=0x7f02000d;
+    public static final int fontWeight=0x7f01000b;
     /**
-     * A reference to an array of integers representing the
-     * locations of horizontal keylines in dp from the starting edge.
-     * Child views can refer to these keylines for alignment using
-     * layout_keyline="index" where index is a 0-based index into
-     * this array.
+     * <p>May be a floating point value, such as "<code>1.2</code>".
+     */
+    public static final int lStar=0x7f01000c;
+    /**
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int keylines=0x7f02000e;
+    public static final int nestedScrollViewStyle=0x7f01000d;
     /**
-     * The id of an anchor view that this view should position relative to.
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
      * attribute in the form
      * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
      */
-    public static final int layout_anchor=0x7f02000f;
+    public static final int queryPatterns=0x7f01000e;
     /**
-     * Specifies how an object should position relative to an anchor, on both the X and Y axes,
-     * within its parent's bounds.
-     * <p>Must be one or more (separated by '|') of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>bottom</td><td>50</td><td>Push object to the bottom of its container, not changing its size.</td></tr>
-     * <tr><td>center</td><td>11</td><td>Place the object in the center of its container in both the vertical and horizontal axis, not changing its size.</td></tr>
-     * <tr><td>center_horizontal</td><td>1</td><td>Place object in the horizontal center of its container, not changing its size.</td></tr>
-     * <tr><td>center_vertical</td><td>10</td><td>Place object in the vertical center of its container, not changing its size.</td></tr>
-     * <tr><td>clip_horizontal</td><td>8</td><td>Additional option that can be set to have the left and/or right edges of
-     * the child clipped to its container's bounds.
-     * The clip will be based on the horizontal gravity: a left gravity will clip the right
-     * edge, a right gravity will clip the left edge, and neither will clip both edges.</td></tr>
-     * <tr><td>clip_vertical</td><td>80</td><td>Additional option that can be set to have the top and/or bottom edges of
-     * the child clipped to its container's bounds.
-     * The clip will be based on the vertical gravity: a top gravity will clip the bottom
-     * edge, a bottom gravity will clip the top edge, and neither will clip both edges.</td></tr>
-     * <tr><td>end</td><td>800005</td><td>Push object to the end of its container, not changing its size.</td></tr>
-     * <tr><td>fill</td><td>77</td><td>Grow the horizontal and vertical size of the object if needed so it completely fills its container.</td></tr>
-     * <tr><td>fill_horizontal</td><td>7</td><td>Grow the horizontal size of the object if needed so it completely fills its container.</td></tr>
-     * <tr><td>fill_vertical</td><td>70</td><td>Grow the vertical size of the object if needed so it completely fills its container.</td></tr>
-     * <tr><td>left</td><td>3</td><td>Push object to the left of its container, not changing its size.</td></tr>
-     * <tr><td>right</td><td>5</td><td>Push object to the right of its container, not changing its size.</td></tr>
-     * <tr><td>start</td><td>800003</td><td>Push object to the beginning of its container, not changing its size.</td></tr>
-     * <tr><td>top</td><td>30</td><td>Push object to the top of its container, not changing its size.</td></tr>
-     * </table>
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
      */
-    public static final int layout_anchorGravity=0x7f020010;
+    public static final int shortcutMatchRequired=0x7f01000f;
     /**
-     * The class name of a Behavior class defining special runtime behavior
-     * for this child view.
-     * <p>May be a string value, using '\\;' to escape characters such as
-     * '\\n' or '\\uxxxx' for a unicode character;
-     */
-    public static final int layout_behavior=0x7f020011;
-    /**
-     * Specifies how this view dodges the inset edges of the CoordinatorLayout.
-     * <p>Must be one or more (separated by '|') of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>all</td><td>77</td><td>Dodge all the inset edges.</td></tr>
-     * <tr><td>bottom</td><td>50</td><td>Dodge the bottom inset edge.</td></tr>
-     * <tr><td>end</td><td>800005</td><td>Dodge the end inset edge.</td></tr>
-     * <tr><td>left</td><td>3</td><td>Dodge the left inset edge.</td></tr>
-     * <tr><td>none</td><td>0</td><td>Don't dodge any edges</td></tr>
-     * <tr><td>right</td><td>5</td><td>Dodge the right inset edge.</td></tr>
-     * <tr><td>start</td><td>800003</td><td>Dodge the start inset edge.</td></tr>
-     * <tr><td>top</td><td>30</td><td>Dodge the top inset edge.</td></tr>
-     * </table>
-     */
-    public static final int layout_dodgeInsetEdges=0x7f020012;
-    /**
-     * Specifies how this view insets the CoordinatorLayout and make some other views
-     * dodge it.
-     * <p>Must be one of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>bottom</td><td>50</td><td>Inset the bottom edge.</td></tr>
-     * <tr><td>end</td><td>800005</td><td>Inset the end edge.</td></tr>
-     * <tr><td>left</td><td>3</td><td>Inset the left edge.</td></tr>
-     * <tr><td>none</td><td>0</td><td>Don't inset.</td></tr>
-     * <tr><td>right</td><td>5</td><td>Inset the right edge.</td></tr>
-     * <tr><td>start</td><td>800003</td><td>Inset the start edge.</td></tr>
-     * <tr><td>top</td><td>30</td><td>Inset the top edge.</td></tr>
-     * </table>
-     */
-    public static final int layout_insetEdge=0x7f020013;
-    /**
-     * The index of a keyline this view should position relative to.
-     * android:layout_gravity will affect how the view aligns to the
-     * specified keyline.
      * <p>May be an integer value, such as "<code>100</code>".
      */
-    public static final int layout_keyline=0x7f020014;
-    /**
-     * Drawable to display behind the status bar when the view is set to draw behind it.
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
-     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
-     * "<code>#<i>aarrggbb</i></code>".
-     */
-    public static final int statusBarBackground=0x7f020015;
-    /**
-     * Background color for SwipeRefreshLayout progress spinner.
-     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
-     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
-     * "<code>#<i>aarrggbb</i></code>".
-     */
-    public static final int swipeRefreshLayoutProgressSpinnerBackgroundColor=0x7f020016;
-    /**
-     * The index of the font in the tcc font file. If the font file referenced is not in the
-     * tcc format, this attribute needs not be specified.
-     * <p>May be an integer value, such as "<code>100</code>".
-     */
-    public static final int ttcIndex=0x7f020017;
+    public static final int ttcIndex=0x7f010010;
   }
   public static final class color {
-    public static final int androidx_core_ripple_material_light=0x7f030000;
-    public static final int androidx_core_secondary_text_default_material_light=0x7f030001;
-    public static final int notification_action_color_filter=0x7f030002;
-    public static final int notification_icon_bg_color=0x7f030003;
-    public static final int notification_material_background_media_default_color=0x7f030004;
-    public static final int primary_text_default_material_dark=0x7f030005;
-    public static final int secondary_text_default_material_dark=0x7f030006;
+    public static final int androidx_core_ripple_material_light=0x7f020000;
+    public static final int androidx_core_secondary_text_default_material_light=0x7f020001;
+    public static final int notification_action_color_filter=0x7f020002;
+    public static final int notification_icon_bg_color=0x7f020003;
   }
   public static final class dimen {
-    public static final int compat_button_inset_horizontal_material=0x7f040000;
-    public static final int compat_button_inset_vertical_material=0x7f040001;
-    public static final int compat_button_padding_horizontal_material=0x7f040002;
-    public static final int compat_button_padding_vertical_material=0x7f040003;
-    public static final int compat_control_corner_material=0x7f040004;
-    public static final int compat_notification_large_icon_max_height=0x7f040005;
-    public static final int compat_notification_large_icon_max_width=0x7f040006;
-    public static final int def_drawer_elevation=0x7f040007;
-    public static final int notification_action_icon_size=0x7f040008;
-    public static final int notification_action_text_size=0x7f040009;
-    public static final int notification_big_circle_margin=0x7f04000a;
-    public static final int notification_content_margin_start=0x7f04000b;
-    public static final int notification_large_icon_height=0x7f04000c;
-    public static final int notification_large_icon_width=0x7f04000d;
-    public static final int notification_main_column_padding_top=0x7f04000e;
-    public static final int notification_media_narrow_margin=0x7f04000f;
-    public static final int notification_right_icon_size=0x7f040010;
-    public static final int notification_right_side_padding_top=0x7f040011;
-    public static final int notification_small_icon_background_padding=0x7f040012;
-    public static final int notification_small_icon_size_as_large=0x7f040013;
-    public static final int notification_subtext_size=0x7f040014;
-    public static final int notification_top_pad=0x7f040015;
-    public static final int notification_top_pad_large_text=0x7f040016;
-    public static final int subtitle_corner_radius=0x7f040017;
-    public static final int subtitle_outline_width=0x7f040018;
-    public static final int subtitle_shadow_offset=0x7f040019;
-    public static final int subtitle_shadow_radius=0x7f04001a;
+    public static final int compat_button_inset_horizontal_material=0x7f030000;
+    public static final int compat_button_inset_vertical_material=0x7f030001;
+    public static final int compat_button_padding_horizontal_material=0x7f030002;
+    public static final int compat_button_padding_vertical_material=0x7f030003;
+    public static final int compat_control_corner_material=0x7f030004;
+    public static final int compat_notification_large_icon_max_height=0x7f030005;
+    public static final int compat_notification_large_icon_max_width=0x7f030006;
+    public static final int notification_action_icon_size=0x7f030007;
+    public static final int notification_action_text_size=0x7f030008;
+    public static final int notification_big_circle_margin=0x7f030009;
+    public static final int notification_content_margin_start=0x7f03000a;
+    public static final int notification_large_icon_height=0x7f03000b;
+    public static final int notification_large_icon_width=0x7f03000c;
+    public static final int notification_main_column_padding_top=0x7f03000d;
+    public static final int notification_media_narrow_margin=0x7f03000e;
+    public static final int notification_right_icon_size=0x7f03000f;
+    public static final int notification_right_side_padding_top=0x7f030010;
+    public static final int notification_small_icon_background_padding=0x7f030011;
+    public static final int notification_small_icon_size_as_large=0x7f030012;
+    public static final int notification_subtext_size=0x7f030013;
+    public static final int notification_top_pad=0x7f030014;
+    public static final int notification_top_pad_large_text=0x7f030015;
   }
   public static final class drawable {
-    public static final int icon=0x7f050000;
-    public static final int notification_action_background=0x7f050001;
-    public static final int notification_bg=0x7f050002;
-    public static final int notification_bg_low=0x7f050003;
-    public static final int notification_bg_low_normal=0x7f050004;
-    public static final int notification_bg_low_pressed=0x7f050005;
-    public static final int notification_bg_normal=0x7f050006;
-    public static final int notification_bg_normal_pressed=0x7f050007;
-    public static final int notification_icon_background=0x7f050008;
-    public static final int notification_template_icon_bg=0x7f050009;
-    public static final int notification_template_icon_low_bg=0x7f05000a;
-    public static final int notification_tile_bg=0x7f05000b;
-    public static final int notify_panel_notification_icon_bg=0x7f05000c;
+    public static final int icon=0x7f040000;
+    public static final int notification_action_background=0x7f040001;
+    public static final int notification_bg=0x7f040002;
+    public static final int notification_bg_low=0x7f040003;
+    public static final int notification_bg_low_normal=0x7f040004;
+    public static final int notification_bg_low_pressed=0x7f040005;
+    public static final int notification_bg_normal=0x7f040006;
+    public static final int notification_bg_normal_pressed=0x7f040007;
+    public static final int notification_icon_background=0x7f040008;
+    public static final int notification_template_icon_bg=0x7f040009;
+    public static final int notification_template_icon_low_bg=0x7f04000a;
+    public static final int notification_tile_bg=0x7f04000b;
+    public static final int notify_panel_notification_icon_bg=0x7f04000c;
   }
   public static final class id {
-    public static final int accessibility_action_clickable_span=0x7f060000;
-    public static final int accessibility_custom_action_0=0x7f060001;
-    public static final int accessibility_custom_action_1=0x7f060002;
-    public static final int accessibility_custom_action_10=0x7f060003;
-    public static final int accessibility_custom_action_11=0x7f060004;
-    public static final int accessibility_custom_action_12=0x7f060005;
-    public static final int accessibility_custom_action_13=0x7f060006;
-    public static final int accessibility_custom_action_14=0x7f060007;
-    public static final int accessibility_custom_action_15=0x7f060008;
-    public static final int accessibility_custom_action_16=0x7f060009;
-    public static final int accessibility_custom_action_17=0x7f06000a;
-    public static final int accessibility_custom_action_18=0x7f06000b;
-    public static final int accessibility_custom_action_19=0x7f06000c;
-    public static final int accessibility_custom_action_2=0x7f06000d;
-    public static final int accessibility_custom_action_20=0x7f06000e;
-    public static final int accessibility_custom_action_21=0x7f06000f;
-    public static final int accessibility_custom_action_22=0x7f060010;
-    public static final int accessibility_custom_action_23=0x7f060011;
-    public static final int accessibility_custom_action_24=0x7f060012;
-    public static final int accessibility_custom_action_25=0x7f060013;
-    public static final int accessibility_custom_action_26=0x7f060014;
-    public static final int accessibility_custom_action_27=0x7f060015;
-    public static final int accessibility_custom_action_28=0x7f060016;
-    public static final int accessibility_custom_action_29=0x7f060017;
-    public static final int accessibility_custom_action_3=0x7f060018;
-    public static final int accessibility_custom_action_30=0x7f060019;
-    public static final int accessibility_custom_action_31=0x7f06001a;
-    public static final int accessibility_custom_action_4=0x7f06001b;
-    public static final int accessibility_custom_action_5=0x7f06001c;
-    public static final int accessibility_custom_action_6=0x7f06001d;
-    public static final int accessibility_custom_action_7=0x7f06001e;
-    public static final int accessibility_custom_action_8=0x7f06001f;
-    public static final int accessibility_custom_action_9=0x7f060020;
-    public static final int action0=0x7f060021;
-    public static final int action_container=0x7f060022;
-    public static final int action_divider=0x7f060023;
-    public static final int action_image=0x7f060024;
-    public static final int action_text=0x7f060025;
-    public static final int actions=0x7f060026;
-    public static final int all=0x7f060027;
-    public static final int async=0x7f060028;
-    public static final int blocking=0x7f060029;
-    public static final int bottom=0x7f06002a;
-    public static final int cancel_action=0x7f06002b;
-    public static final int center=0x7f06002c;
-    public static final int center_horizontal=0x7f06002d;
-    public static final int center_vertical=0x7f06002e;
-    public static final int chronometer=0x7f06002f;
-    public static final int clip_horizontal=0x7f060030;
-    public static final int clip_vertical=0x7f060031;
-    public static final int dialog_button=0x7f060032;
-    public static final int end=0x7f060033;
-    public static final int end_padder=0x7f060034;
-    public static final int fill=0x7f060035;
-    public static final int fill_horizontal=0x7f060036;
-    public static final int fill_vertical=0x7f060037;
-    public static final int forever=0x7f060038;
-    public static final int fragment_container_view_tag=0x7f060039;
-    public static final int icon=0x7f06003a;
-    public static final int icon_group=0x7f06003b;
-    public static final int info=0x7f06003c;
-    public static final int italic=0x7f06003d;
-    public static final int left=0x7f06003e;
-    public static final int line1=0x7f06003f;
-    public static final int line3=0x7f060040;
-    public static final int media_actions=0x7f060041;
-    public static final int none=0x7f060042;
-    public static final int normal=0x7f060043;
-    public static final int notification_background=0x7f060044;
-    public static final int notification_main_column=0x7f060045;
-    public static final int notification_main_column_container=0x7f060046;
-    public static final int right=0x7f060047;
-    public static final int right_icon=0x7f060048;
-    public static final int right_side=0x7f060049;
-    public static final int start=0x7f06004a;
-    public static final int status_bar_latest_event_content=0x7f06004b;
-    public static final int tag_accessibility_actions=0x7f06004c;
-    public static final int tag_accessibility_clickable_spans=0x7f06004d;
-    public static final int tag_accessibility_heading=0x7f06004e;
-    public static final int tag_accessibility_pane_title=0x7f06004f;
-    public static final int tag_screen_reader_focusable=0x7f060050;
-    public static final int tag_transition_group=0x7f060051;
-    public static final int tag_unhandled_key_event_manager=0x7f060052;
-    public static final int tag_unhandled_key_listeners=0x7f060053;
-    public static final int text=0x7f060054;
-    public static final int text2=0x7f060055;
-    public static final int time=0x7f060056;
-    public static final int title=0x7f060057;
-    public static final int top=0x7f060058;
-    public static final int visible_removing_fragment_view_tag=0x7f060059;
+    public static final int accessibility_action_clickable_span=0x7f050000;
+    public static final int accessibility_custom_action_0=0x7f050001;
+    public static final int accessibility_custom_action_1=0x7f050002;
+    public static final int accessibility_custom_action_10=0x7f050003;
+    public static final int accessibility_custom_action_11=0x7f050004;
+    public static final int accessibility_custom_action_12=0x7f050005;
+    public static final int accessibility_custom_action_13=0x7f050006;
+    public static final int accessibility_custom_action_14=0x7f050007;
+    public static final int accessibility_custom_action_15=0x7f050008;
+    public static final int accessibility_custom_action_16=0x7f050009;
+    public static final int accessibility_custom_action_17=0x7f05000a;
+    public static final int accessibility_custom_action_18=0x7f05000b;
+    public static final int accessibility_custom_action_19=0x7f05000c;
+    public static final int accessibility_custom_action_2=0x7f05000d;
+    public static final int accessibility_custom_action_20=0x7f05000e;
+    public static final int accessibility_custom_action_21=0x7f05000f;
+    public static final int accessibility_custom_action_22=0x7f050010;
+    public static final int accessibility_custom_action_23=0x7f050011;
+    public static final int accessibility_custom_action_24=0x7f050012;
+    public static final int accessibility_custom_action_25=0x7f050013;
+    public static final int accessibility_custom_action_26=0x7f050014;
+    public static final int accessibility_custom_action_27=0x7f050015;
+    public static final int accessibility_custom_action_28=0x7f050016;
+    public static final int accessibility_custom_action_29=0x7f050017;
+    public static final int accessibility_custom_action_3=0x7f050018;
+    public static final int accessibility_custom_action_30=0x7f050019;
+    public static final int accessibility_custom_action_31=0x7f05001a;
+    public static final int accessibility_custom_action_4=0x7f05001b;
+    public static final int accessibility_custom_action_5=0x7f05001c;
+    public static final int accessibility_custom_action_6=0x7f05001d;
+    public static final int accessibility_custom_action_7=0x7f05001e;
+    public static final int accessibility_custom_action_8=0x7f05001f;
+    public static final int accessibility_custom_action_9=0x7f050020;
+    public static final int action_container=0x7f050021;
+    public static final int action_divider=0x7f050022;
+    public static final int action_image=0x7f050023;
+    public static final int action_text=0x7f050024;
+    public static final int actions=0x7f050025;
+    public static final int async=0x7f050026;
+    public static final int blocking=0x7f050027;
+    public static final int chronometer=0x7f050028;
+    public static final int dialog_button=0x7f050029;
+    public static final int forever=0x7f05002a;
+    public static final int icon=0x7f05002b;
+    public static final int icon_group=0x7f05002c;
+    public static final int info=0x7f05002d;
+    public static final int italic=0x7f05002e;
+    public static final int line1=0x7f05002f;
+    public static final int line3=0x7f050030;
+    public static final int normal=0x7f050031;
+    public static final int notification_background=0x7f050032;
+    public static final int notification_main_column=0x7f050033;
+    public static final int notification_main_column_container=0x7f050034;
+    public static final int right_icon=0x7f050035;
+    public static final int right_side=0x7f050036;
+    public static final int tag_accessibility_actions=0x7f050037;
+    public static final int tag_accessibility_clickable_spans=0x7f050038;
+    public static final int tag_accessibility_heading=0x7f050039;
+    public static final int tag_accessibility_pane_title=0x7f05003a;
+    public static final int tag_on_apply_window_listener=0x7f05003b;
+    public static final int tag_on_receive_content_listener=0x7f05003c;
+    public static final int tag_on_receive_content_mime_types=0x7f05003d;
+    public static final int tag_screen_reader_focusable=0x7f05003e;
+    public static final int tag_state_description=0x7f05003f;
+    public static final int tag_transition_group=0x7f050040;
+    public static final int tag_unhandled_key_event_manager=0x7f050041;
+    public static final int tag_unhandled_key_listeners=0x7f050042;
+    public static final int tag_window_insets_animation_callback=0x7f050043;
+    public static final int text=0x7f050044;
+    public static final int text2=0x7f050045;
+    public static final int time=0x7f050046;
+    public static final int title=0x7f050047;
+    public static final int view_tree_lifecycle_owner=0x7f050048;
   }
   public static final class integer {
-    public static final int cancel_button_image_alpha=0x7f070000;
-    public static final int status_bar_notification_info_maxnum=0x7f070001;
+    public static final int status_bar_notification_info_maxnum=0x7f060000;
   }
   public static final class layout {
-    public static final int custom_dialog=0x7f080000;
-    public static final int notification_action=0x7f080001;
-    public static final int notification_action_tombstone=0x7f080002;
-    public static final int notification_media_action=0x7f080003;
-    public static final int notification_media_cancel_action=0x7f080004;
-    public static final int notification_template_big_media=0x7f080005;
-    public static final int notification_template_big_media_custom=0x7f080006;
-    public static final int notification_template_big_media_narrow=0x7f080007;
-    public static final int notification_template_big_media_narrow_custom=0x7f080008;
-    public static final int notification_template_custom_big=0x7f080009;
-    public static final int notification_template_icon_group=0x7f08000a;
-    public static final int notification_template_lines_media=0x7f08000b;
-    public static final int notification_template_media=0x7f08000c;
-    public static final int notification_template_media_custom=0x7f08000d;
-    public static final int notification_template_part_chronometer=0x7f08000e;
-    public static final int notification_template_part_time=0x7f08000f;
+    public static final int custom_dialog=0x7f070000;
+    public static final int notification_action=0x7f070001;
+    public static final int notification_action_tombstone=0x7f070002;
+    public static final int notification_template_custom_big=0x7f070003;
+    public static final int notification_template_icon_group=0x7f070004;
+    public static final int notification_template_part_chronometer=0x7f070005;
+    public static final int notification_template_part_time=0x7f070006;
   }
   public static final class string {
-    public static final int status_bar_notification_info_overflow=0x7f090000;
+    public static final int status_bar_notification_info_overflow=0x7f080000;
   }
   public static final class style {
-    public static final int LightTheme=0x7f0a0000;
-    public static final int LowerCaseMenu=0x7f0a0001;
-    public static final int TextAppearance_Compat_Notification=0x7f0a0002;
-    public static final int TextAppearance_Compat_Notification_Info=0x7f0a0003;
-    public static final int TextAppearance_Compat_Notification_Info_Media=0x7f0a0004;
-    public static final int TextAppearance_Compat_Notification_Line2=0x7f0a0005;
-    public static final int TextAppearance_Compat_Notification_Line2_Media=0x7f0a0006;
-    public static final int TextAppearance_Compat_Notification_Media=0x7f0a0007;
-    public static final int TextAppearance_Compat_Notification_Time=0x7f0a0008;
-    public static final int TextAppearance_Compat_Notification_Time_Media=0x7f0a0009;
-    public static final int TextAppearance_Compat_Notification_Title=0x7f0a000a;
-    public static final int TextAppearance_Compat_Notification_Title_Media=0x7f0a000b;
-    public static final int Widget_Compat_NotificationActionContainer=0x7f0a000c;
-    public static final int Widget_Compat_NotificationActionText=0x7f0a000d;
-    public static final int Widget_Support_CoordinatorLayout=0x7f0a000e;
+    public static final int LightTheme=0x7f090000;
+    public static final int LowerCaseMenu=0x7f090001;
+    public static final int TextAppearance_Compat_Notification=0x7f090002;
+    public static final int TextAppearance_Compat_Notification_Info=0x7f090003;
+    public static final int TextAppearance_Compat_Notification_Line2=0x7f090004;
+    public static final int TextAppearance_Compat_Notification_Time=0x7f090005;
+    public static final int TextAppearance_Compat_Notification_Title=0x7f090006;
+    public static final int Widget_Compat_NotificationActionContainer=0x7f090007;
+    public static final int Widget_Compat_NotificationActionText=0x7f090008;
   }
   public static final class styleable {
+    /**
+     * Attributes that can be used with a Capability.
+     * <p>Includes the following attributes:</p>
+     * <table>
+     * <colgroup align="left" />
+     * <colgroup align="left" />
+     * <tr><th>Attribute</th><th>Description</th></tr>
+     * <tr><td><code>{@link #Capability_queryPatterns com.LugandaHymnalNew:queryPatterns}</code></td><td></td></tr>
+     * <tr><td><code>{@link #Capability_shortcutMatchRequired com.LugandaHymnalNew:shortcutMatchRequired}</code></td><td></td></tr>
+     * </table>
+     * @see #Capability_queryPatterns
+     * @see #Capability_shortcutMatchRequired
+     */
+    public static final int[] Capability={
+      0x7f01000e, 0x7f01000f
+    };
+    /**
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#queryPatterns}
+     * attribute's value can be found in the {@link #Capability} array.
+     *
+     * <p>May be a reference to another resource, in the form
+     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
+     * attribute in the form
+     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
+     *
+     * @attr name com.LugandaHymnalNew:queryPatterns
+     */
+    public static final int Capability_queryPatterns=0;
+    /**
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#shortcutMatchRequired}
+     * attribute's value can be found in the {@link #Capability} array.
+     *
+     * <p>May be a boolean value, such as "<code>true</code>" or
+     * "<code>false</code>".
+     *
+     * @attr name com.LugandaHymnalNew:shortcutMatchRequired
+     */
+    public static final int Capability_shortcutMatchRequired=1;
     /**
      * Attributes that can be used with a ColorStateListItem.
      * <p>Includes the following attributes:</p>
@@ -486,19 +323,23 @@ public final class R {
      * <tr><th>Attribute</th><th>Description</th></tr>
      * <tr><td><code>{@link #ColorStateListItem_android_color android:color}</code></td><td></td></tr>
      * <tr><td><code>{@link #ColorStateListItem_android_alpha android:alpha}</code></td><td></td></tr>
-     * <tr><td><code>{@link #ColorStateListItem_alpha com.LugandaHymnalNew:alpha}</code></td><td>Alpha multiplier applied to the base color.</td></tr>
+     * <tr><td><code>{@link #ColorStateListItem_android_lStar android:lStar}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ColorStateListItem_alpha com.LugandaHymnalNew:alpha}</code></td><td></td></tr>
+     * <tr><td><code>{@link #ColorStateListItem_lStar com.LugandaHymnalNew:lStar}</code></td><td></td></tr>
      * </table>
      * @see #ColorStateListItem_android_color
      * @see #ColorStateListItem_android_alpha
+     * @see #ColorStateListItem_android_lStar
      * @see #ColorStateListItem_alpha
+     * @see #ColorStateListItem_lStar
      */
     public static final int[] ColorStateListItem={
-      0x010101a5, 0x0101031f, 0x7f020000
+      0x010101a5, 0x0101031f, 0x01010647, 0x7f010000, 
+      0x7f01000c
     };
     /**
-     * <p>
-     * @attr description
-     * Base color for this state.
+     * <p>This symbol is the offset where the {@link android.R.attr#color}
+     * attribute's value can be found in the {@link #ColorStateListItem} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -517,274 +358,32 @@ public final class R {
      */
     public static final int ColorStateListItem_android_alpha=1;
     /**
-     * <p>
-     * @attr description
-     * Alpha multiplier applied to the base color.
+     * <p>This symbol is the offset where the {@link android.R.attr#lStar}
+     * attribute's value can be found in the {@link #ColorStateListItem} array.
+     *
+     * <p>May be a floating point value, such as "<code>1.2</code>".
+     *
+     * @attr name android:lStar
+     */
+    public static final int ColorStateListItem_android_lStar=2;
+    /**
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#alpha}
+     * attribute's value can be found in the {@link #ColorStateListItem} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
      * @attr name com.LugandaHymnalNew:alpha
      */
-    public static final int ColorStateListItem_alpha=2;
+    public static final int ColorStateListItem_alpha=3;
     /**
-     * Attributes that can be used with a CoordinatorLayout.
-     * <p>Includes the following attributes:</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_keylines com.LugandaHymnalNew:keylines}</code></td><td>A reference to an array of integers representing the
-     * locations of horizontal keylines in dp from the starting edge.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_statusBarBackground com.LugandaHymnalNew:statusBarBackground}</code></td><td>Drawable to display behind the status bar when the view is set to draw behind it.</td></tr>
-     * </table>
-     * @see #CoordinatorLayout_keylines
-     * @see #CoordinatorLayout_statusBarBackground
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#lStar}
+     * attribute's value can be found in the {@link #ColorStateListItem} array.
+     *
+     * <p>May be a floating point value, such as "<code>1.2</code>".
+     *
+     * @attr name com.LugandaHymnalNew:lStar
      */
-    public static final int[] CoordinatorLayout={
-      0x7f02000e, 0x7f020015
-    };
-    /**
-     * <p>
-     * @attr description
-     * A reference to an array of integers representing the
-     * locations of horizontal keylines in dp from the starting edge.
-     * Child views can refer to these keylines for alignment using
-     * layout_keyline="index" where index is a 0-based index into
-     * this array.
-     *
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     *
-     * @attr name com.LugandaHymnalNew:keylines
-     */
-    public static final int CoordinatorLayout_keylines=0;
-    /**
-     * <p>
-     * @attr description
-     * Drawable to display behind the status bar when the view is set to draw behind it.
-     *
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
-     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
-     * "<code>#<i>aarrggbb</i></code>".
-     *
-     * @attr name com.LugandaHymnalNew:statusBarBackground
-     */
-    public static final int CoordinatorLayout_statusBarBackground=1;
-    /**
-     * Attributes that can be used with a CoordinatorLayout_Layout.
-     * <p>Includes the following attributes:</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_android_layout_gravity android:layout_gravity}</code></td><td></td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchor com.LugandaHymnalNew:layout_anchor}</code></td><td>The id of an anchor view that this view should position relative to.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_anchorGravity com.LugandaHymnalNew:layout_anchorGravity}</code></td><td>Specifies how an object should position relative to an anchor, on both the X and Y axes,
-     * within its parent's bounds.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_behavior com.LugandaHymnalNew:layout_behavior}</code></td><td>The class name of a Behavior class defining special runtime behavior
-     * for this child view.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_dodgeInsetEdges com.LugandaHymnalNew:layout_dodgeInsetEdges}</code></td><td>Specifies how this view dodges the inset edges of the CoordinatorLayout.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_insetEdge com.LugandaHymnalNew:layout_insetEdge}</code></td><td>Specifies how this view insets the CoordinatorLayout and make some other views
-     * dodge it.</td></tr>
-     * <tr><td><code>{@link #CoordinatorLayout_Layout_layout_keyline com.LugandaHymnalNew:layout_keyline}</code></td><td>The index of a keyline this view should position relative to.</td></tr>
-     * </table>
-     * @see #CoordinatorLayout_Layout_android_layout_gravity
-     * @see #CoordinatorLayout_Layout_layout_anchor
-     * @see #CoordinatorLayout_Layout_layout_anchorGravity
-     * @see #CoordinatorLayout_Layout_layout_behavior
-     * @see #CoordinatorLayout_Layout_layout_dodgeInsetEdges
-     * @see #CoordinatorLayout_Layout_layout_insetEdge
-     * @see #CoordinatorLayout_Layout_layout_keyline
-     */
-    public static final int[] CoordinatorLayout_Layout={
-      0x010100b3, 0x7f02000f, 0x7f020010, 0x7f020011, 
-      0x7f020012, 0x7f020013, 0x7f020014
-    };
-    /**
-     * <p>This symbol is the offset where the {@link android.R.attr#layout_gravity}
-     * attribute's value can be found in the {@link #CoordinatorLayout_Layout} array.
-     *
-     * <p>Must be one or more (separated by '|') of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>bottom</td><td>50</td><td></td></tr>
-     * <tr><td>center</td><td>11</td><td></td></tr>
-     * <tr><td>center_horizontal</td><td>1</td><td></td></tr>
-     * <tr><td>center_vertical</td><td>10</td><td></td></tr>
-     * <tr><td>clip_horizontal</td><td>8</td><td></td></tr>
-     * <tr><td>clip_vertical</td><td>80</td><td></td></tr>
-     * <tr><td>end</td><td>800005</td><td></td></tr>
-     * <tr><td>fill</td><td>77</td><td></td></tr>
-     * <tr><td>fill_horizontal</td><td>7</td><td></td></tr>
-     * <tr><td>fill_vertical</td><td>70</td><td></td></tr>
-     * <tr><td>left</td><td>3</td><td></td></tr>
-     * <tr><td>right</td><td>5</td><td></td></tr>
-     * <tr><td>start</td><td>800003</td><td></td></tr>
-     * <tr><td>top</td><td>30</td><td></td></tr>
-     * </table>
-     *
-     * @attr name android:layout_gravity
-     */
-    public static final int CoordinatorLayout_Layout_android_layout_gravity=0;
-    /**
-     * <p>
-     * @attr description
-     * The id of an anchor view that this view should position relative to.
-     *
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     *
-     * @attr name com.LugandaHymnalNew:layout_anchor
-     */
-    public static final int CoordinatorLayout_Layout_layout_anchor=1;
-    /**
-     * <p>
-     * @attr description
-     * Specifies how an object should position relative to an anchor, on both the X and Y axes,
-     * within its parent's bounds.
-     *
-     * <p>Must be one or more (separated by '|') of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>bottom</td><td>50</td><td>Push object to the bottom of its container, not changing its size.</td></tr>
-     * <tr><td>center</td><td>11</td><td>Place the object in the center of its container in both the vertical and horizontal axis, not changing its size.</td></tr>
-     * <tr><td>center_horizontal</td><td>1</td><td>Place object in the horizontal center of its container, not changing its size.</td></tr>
-     * <tr><td>center_vertical</td><td>10</td><td>Place object in the vertical center of its container, not changing its size.</td></tr>
-     * <tr><td>clip_horizontal</td><td>8</td><td>Additional option that can be set to have the left and/or right edges of
-     * the child clipped to its container's bounds.
-     * The clip will be based on the horizontal gravity: a left gravity will clip the right
-     * edge, a right gravity will clip the left edge, and neither will clip both edges.</td></tr>
-     * <tr><td>clip_vertical</td><td>80</td><td>Additional option that can be set to have the top and/or bottom edges of
-     * the child clipped to its container's bounds.
-     * The clip will be based on the vertical gravity: a top gravity will clip the bottom
-     * edge, a bottom gravity will clip the top edge, and neither will clip both edges.</td></tr>
-     * <tr><td>end</td><td>800005</td><td>Push object to the end of its container, not changing its size.</td></tr>
-     * <tr><td>fill</td><td>77</td><td>Grow the horizontal and vertical size of the object if needed so it completely fills its container.</td></tr>
-     * <tr><td>fill_horizontal</td><td>7</td><td>Grow the horizontal size of the object if needed so it completely fills its container.</td></tr>
-     * <tr><td>fill_vertical</td><td>70</td><td>Grow the vertical size of the object if needed so it completely fills its container.</td></tr>
-     * <tr><td>left</td><td>3</td><td>Push object to the left of its container, not changing its size.</td></tr>
-     * <tr><td>right</td><td>5</td><td>Push object to the right of its container, not changing its size.</td></tr>
-     * <tr><td>start</td><td>800003</td><td>Push object to the beginning of its container, not changing its size.</td></tr>
-     * <tr><td>top</td><td>30</td><td>Push object to the top of its container, not changing its size.</td></tr>
-     * </table>
-     *
-     * @attr name com.LugandaHymnalNew:layout_anchorGravity
-     */
-    public static final int CoordinatorLayout_Layout_layout_anchorGravity=2;
-    /**
-     * <p>
-     * @attr description
-     * The class name of a Behavior class defining special runtime behavior
-     * for this child view.
-     *
-     * <p>May be a string value, using '\\;' to escape characters such as
-     * '\\n' or '\\uxxxx' for a unicode character;
-     *
-     * @attr name com.LugandaHymnalNew:layout_behavior
-     */
-    public static final int CoordinatorLayout_Layout_layout_behavior=3;
-    /**
-     * <p>
-     * @attr description
-     * Specifies how this view dodges the inset edges of the CoordinatorLayout.
-     *
-     * <p>Must be one or more (separated by '|') of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>all</td><td>77</td><td>Dodge all the inset edges.</td></tr>
-     * <tr><td>bottom</td><td>50</td><td>Dodge the bottom inset edge.</td></tr>
-     * <tr><td>end</td><td>800005</td><td>Dodge the end inset edge.</td></tr>
-     * <tr><td>left</td><td>3</td><td>Dodge the left inset edge.</td></tr>
-     * <tr><td>none</td><td>0</td><td>Don't dodge any edges</td></tr>
-     * <tr><td>right</td><td>5</td><td>Dodge the right inset edge.</td></tr>
-     * <tr><td>start</td><td>800003</td><td>Dodge the start inset edge.</td></tr>
-     * <tr><td>top</td><td>30</td><td>Dodge the top inset edge.</td></tr>
-     * </table>
-     *
-     * @attr name com.LugandaHymnalNew:layout_dodgeInsetEdges
-     */
-    public static final int CoordinatorLayout_Layout_layout_dodgeInsetEdges=4;
-    /**
-     * <p>
-     * @attr description
-     * Specifies how this view insets the CoordinatorLayout and make some other views
-     * dodge it.
-     *
-     * <p>Must be one of the following constant values.</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-     * <tr><td>bottom</td><td>50</td><td>Inset the bottom edge.</td></tr>
-     * <tr><td>end</td><td>800005</td><td>Inset the end edge.</td></tr>
-     * <tr><td>left</td><td>3</td><td>Inset the left edge.</td></tr>
-     * <tr><td>none</td><td>0</td><td>Don't inset.</td></tr>
-     * <tr><td>right</td><td>5</td><td>Inset the right edge.</td></tr>
-     * <tr><td>start</td><td>800003</td><td>Inset the start edge.</td></tr>
-     * <tr><td>top</td><td>30</td><td>Inset the top edge.</td></tr>
-     * </table>
-     *
-     * @attr name com.LugandaHymnalNew:layout_insetEdge
-     */
-    public static final int CoordinatorLayout_Layout_layout_insetEdge=5;
-    /**
-     * <p>
-     * @attr description
-     * The index of a keyline this view should position relative to.
-     * android:layout_gravity will affect how the view aligns to the
-     * specified keyline.
-     *
-     * <p>May be an integer value, such as "<code>100</code>".
-     *
-     * @attr name com.LugandaHymnalNew:layout_keyline
-     */
-    public static final int CoordinatorLayout_Layout_layout_keyline=6;
-    /**
-     * Attributes that can be used with a DrawerLayout.
-     * <p>Includes the following attributes:</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #DrawerLayout_elevation com.LugandaHymnalNew:elevation}</code></td><td></td></tr>
-     * </table>
-     * @see #DrawerLayout_elevation
-     */
-    public static final int[] DrawerLayout={
-      0x7f020003
-    };
-    /**
-     * <p>
-     * @attr description
-     * The height difference between the drawer and the base surface. Only takes effect on API 21 and above
-     *
-     * <p>May be a dimension value, which is a floating point number appended with a
-     * unit such as "<code>14.5sp</code>".
-     * Available units are: px (pixels), dp (density-independent pixels),
-     * sp (scaled pixels based on preferred font size), in (inches), and
-     * mm (millimeters).
-     *
-     * @attr name com.LugandaHymnalNew:elevation
-     */
-    public static final int DrawerLayout_elevation=0;
+    public static final int ColorStateListItem_lStar=4;
     /**
      * Attributes that can be used with a FontFamily.
      * <p>Includes the following attributes:</p>
@@ -792,12 +391,13 @@ public final class R {
      * <colgroup align="left" />
      * <colgroup align="left" />
      * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderAuthority com.LugandaHymnalNew:fontProviderAuthority}</code></td><td>The authority of the Font Provider to be used for the request.</td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderCerts com.LugandaHymnalNew:fontProviderCerts}</code></td><td>The sets of hashes for the certificates the provider should be signed with.</td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy com.LugandaHymnalNew:fontProviderFetchStrategy}</code></td><td>The strategy to be used when fetching font data from a font provider in XML layouts.</td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout com.LugandaHymnalNew:fontProviderFetchTimeout}</code></td><td>The length of the timeout during fetching.</td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderPackage com.LugandaHymnalNew:fontProviderPackage}</code></td><td>The package for the Font Provider to be used for the request.</td></tr>
-     * <tr><td><code>{@link #FontFamily_fontProviderQuery com.LugandaHymnalNew:fontProviderQuery}</code></td><td>The query to be sent over to the provider.</td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderAuthority com.LugandaHymnalNew:fontProviderAuthority}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderCerts com.LugandaHymnalNew:fontProviderCerts}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchStrategy com.LugandaHymnalNew:fontProviderFetchStrategy}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderFetchTimeout com.LugandaHymnalNew:fontProviderFetchTimeout}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderPackage com.LugandaHymnalNew:fontProviderPackage}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderQuery com.LugandaHymnalNew:fontProviderQuery}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamily_fontProviderSystemFontFamily com.LugandaHymnalNew:fontProviderSystemFontFamily}</code></td><td></td></tr>
      * </table>
      * @see #FontFamily_fontProviderAuthority
      * @see #FontFamily_fontProviderCerts
@@ -805,15 +405,15 @@ public final class R {
      * @see #FontFamily_fontProviderFetchTimeout
      * @see #FontFamily_fontProviderPackage
      * @see #FontFamily_fontProviderQuery
+     * @see #FontFamily_fontProviderSystemFontFamily
      */
     public static final int[] FontFamily={
-      0x7f020005, 0x7f020006, 0x7f020007, 0x7f020008, 
-      0x7f020009, 0x7f02000a
+      0x7f010002, 0x7f010003, 0x7f010004, 0x7f010005, 
+      0x7f010006, 0x7f010007, 0x7f010008
     };
     /**
-     * <p>
-     * @attr description
-     * The authority of the Font Provider to be used for the request.
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#fontProviderAuthority}
+     * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
@@ -822,13 +422,8 @@ public final class R {
      */
     public static final int FontFamily_fontProviderAuthority=0;
     /**
-     * <p>
-     * @attr description
-     * The sets of hashes for the certificates the provider should be signed with. This is
-     * used to verify the identity of the provider, and is only required if the provider is not
-     * part of the system image. This value may point to one list or a list of lists, where each
-     * individual list represents one collection of signature hashes. Refer to your font provider's
-     * documentation for these values.
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#fontProviderCerts}
+     * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -839,15 +434,8 @@ public final class R {
      */
     public static final int FontFamily_fontProviderCerts=1;
     /**
-     * <p>
-     * @attr description
-     * The strategy to be used when fetching font data from a font provider in XML layouts.
-     * This attribute is ignored when the resource is loaded from code, as it is equivalent to the
-     * choice of API between {@link
-     * androidx.core.content.res.ResourcesCompat#getFont(Context, int)} (blocking) and
-     * {@link
-     * androidx.core.content.res.ResourcesCompat#getFont(Context, int, FontCallback, Handler)}
-     * (async).
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#fontProviderFetchStrategy}
+     * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -871,9 +459,8 @@ public final class R {
      */
     public static final int FontFamily_fontProviderFetchStrategy=2;
     /**
-     * <p>
-     * @attr description
-     * The length of the timeout during fetching.
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#fontProviderFetchTimeout}
+     * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      * <p>Must be one of the following constant values.</p>
@@ -890,10 +477,8 @@ public final class R {
      */
     public static final int FontFamily_fontProviderFetchTimeout=3;
     /**
-     * <p>
-     * @attr description
-     * The package for the Font Provider to be used for the request. This is used to verify
-     * the identity of the provider.
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#fontProviderPackage}
+     * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
@@ -902,10 +487,8 @@ public final class R {
      */
     public static final int FontFamily_fontProviderPackage=4;
     /**
-     * <p>
-     * @attr description
-     * The query to be sent over to the provider. Refer to your font provider's documentation
-     * on the format of this string.
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#fontProviderQuery}
+     * attribute's value can be found in the {@link #FontFamily} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
@@ -913,6 +496,16 @@ public final class R {
      * @attr name com.LugandaHymnalNew:fontProviderQuery
      */
     public static final int FontFamily_fontProviderQuery=5;
+    /**
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#fontProviderSystemFontFamily}
+     * attribute's value can be found in the {@link #FontFamily} array.
+     *
+     * <p>May be a string value, using '\\;' to escape characters such as
+     * '\\n' or '\\uxxxx' for a unicode character;
+     *
+     * @attr name com.LugandaHymnalNew:fontProviderSystemFontFamily
+     */
+    public static final int FontFamily_fontProviderSystemFontFamily=6;
     /**
      * Attributes that can be used with a FontFamilyFont.
      * <p>Includes the following attributes:</p>
@@ -925,11 +518,11 @@ public final class R {
      * <tr><td><code>{@link #FontFamilyFont_android_fontStyle android:fontStyle}</code></td><td></td></tr>
      * <tr><td><code>{@link #FontFamilyFont_android_ttcIndex android:ttcIndex}</code></td><td></td></tr>
      * <tr><td><code>{@link #FontFamilyFont_android_fontVariationSettings android:fontVariationSettings}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_font com.LugandaHymnalNew:font}</code></td><td>The reference to the font file to be used.</td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontStyle com.LugandaHymnalNew:fontStyle}</code></td><td>The style of the given font file.</td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontVariationSettings com.LugandaHymnalNew:fontVariationSettings}</code></td><td>The variation settings to be applied to the font.</td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_fontWeight com.LugandaHymnalNew:fontWeight}</code></td><td>The weight of the given font file.</td></tr>
-     * <tr><td><code>{@link #FontFamilyFont_ttcIndex com.LugandaHymnalNew:ttcIndex}</code></td><td>The index of the font in the tcc font file.</td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_font com.LugandaHymnalNew:font}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontStyle com.LugandaHymnalNew:fontStyle}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontVariationSettings com.LugandaHymnalNew:fontVariationSettings}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_fontWeight com.LugandaHymnalNew:fontWeight}</code></td><td></td></tr>
+     * <tr><td><code>{@link #FontFamilyFont_ttcIndex com.LugandaHymnalNew:ttcIndex}</code></td><td></td></tr>
      * </table>
      * @see #FontFamilyFont_android_font
      * @see #FontFamilyFont_android_fontWeight
@@ -944,8 +537,8 @@ public final class R {
      */
     public static final int[] FontFamilyFont={
       0x01010532, 0x01010533, 0x0101053f, 0x0101056f, 
-      0x01010570, 0x7f020004, 0x7f02000b, 0x7f02000c, 
-      0x7f02000d, 0x7f020017
+      0x01010570, 0x7f010001, 0x7f010009, 0x7f01000a, 
+      0x7f01000b, 0x7f010010
     };
     /**
      * <p>This symbol is the offset where the {@link android.R.attr#font}
@@ -969,9 +562,8 @@ public final class R {
      */
     public static final int FontFamilyFont_android_fontWeight=1;
     /**
-     * <p>
-     * @attr description
-     * References to the framework attrs
+     * <p>This symbol is the offset where the {@link android.R.attr#fontStyle}
+     * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1006,10 +598,8 @@ public final class R {
      */
     public static final int FontFamilyFont_android_fontVariationSettings=4;
     /**
-     * <p>
-     * @attr description
-     * The reference to the font file to be used. This should be a file in the res/font folder
-     * and should therefore have an R reference value. E.g. @font/myfont
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#font}
+     * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be a reference to another resource, in the form
      * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
@@ -1020,11 +610,8 @@ public final class R {
      */
     public static final int FontFamilyFont_font=5;
     /**
-     * <p>
-     * @attr description
-     * The style of the given font file. This will be used when the font is being loaded into
-     * the font stack and will override any style information in the font's header tables. If
-     * unspecified, the value in the font's header tables will be used.
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#fontStyle}
+     * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1040,12 +627,8 @@ public final class R {
      */
     public static final int FontFamilyFont_fontStyle=6;
     /**
-     * <p>
-     * @attr description
-     * The variation settings to be applied to the font. The string should be in the following
-     * format: "'tag1' value1, 'tag2' value2, ...". If the default variation settings should be
-     * used, or the font used does not support variation settings, this attribute needs not be
-     * specified.
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#fontVariationSettings}
+     * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be a string value, using '\\;' to escape characters such as
      * '\\n' or '\\uxxxx' for a unicode character;
@@ -1054,13 +637,8 @@ public final class R {
      */
     public static final int FontFamilyFont_fontVariationSettings=7;
     /**
-     * <p>
-     * @attr description
-     * The weight of the given font file. This will be used when the font is being loaded into
-     * the font stack and will override any weight information in the font's header tables. Must
-     * be a positive number, a multiple of 100, and between 100 and 900, inclusive. The most
-     * common values are 400 for regular weight and 700 for bold weight. If unspecified, the value
-     * in the font's header tables will be used.
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#fontWeight}
+     * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
@@ -1068,102 +646,14 @@ public final class R {
      */
     public static final int FontFamilyFont_fontWeight=8;
     /**
-     * <p>
-     * @attr description
-     * The index of the font in the tcc font file. If the font file referenced is not in the
-     * tcc format, this attribute needs not be specified.
+     * <p>This symbol is the offset where the {@link com.LugandaHymnalNew.R.attr#ttcIndex}
+     * attribute's value can be found in the {@link #FontFamilyFont} array.
      *
      * <p>May be an integer value, such as "<code>100</code>".
      *
      * @attr name com.LugandaHymnalNew:ttcIndex
      */
     public static final int FontFamilyFont_ttcIndex=9;
-    /**
-     * Attributes that can be used with a Fragment.
-     * <p>Includes the following attributes:</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #Fragment_android_name android:name}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Fragment_android_id android:id}</code></td><td></td></tr>
-     * <tr><td><code>{@link #Fragment_android_tag android:tag}</code></td><td></td></tr>
-     * </table>
-     * @see #Fragment_android_name
-     * @see #Fragment_android_id
-     * @see #Fragment_android_tag
-     */
-    public static final int[] Fragment={
-      0x01010003, 0x010100d0, 0x010100d1
-    };
-    /**
-     * <p>This symbol is the offset where the {@link android.R.attr#name}
-     * attribute's value can be found in the {@link #Fragment} array.
-     *
-     * <p>May be a string value, using '\\;' to escape characters such as
-     * '\\n' or '\\uxxxx' for a unicode character;
-     *
-     * @attr name android:name
-     */
-    public static final int Fragment_android_name=0;
-    /**
-     * <p>This symbol is the offset where the {@link android.R.attr#id}
-     * attribute's value can be found in the {@link #Fragment} array.
-     *
-     * <p>May be a reference to another resource, in the form
-     * "<code>@[+][<i>package</i>:]<i>type</i>/<i>name</i></code>" or a theme
-     * attribute in the form
-     * "<code>?[<i>package</i>:]<i>type</i>/<i>name</i></code>".
-     *
-     * @attr name android:id
-     */
-    public static final int Fragment_android_id=1;
-    /**
-     * <p>This symbol is the offset where the {@link android.R.attr#tag}
-     * attribute's value can be found in the {@link #Fragment} array.
-     *
-     * <p>May be a string value, using '\\;' to escape characters such as
-     * '\\n' or '\\uxxxx' for a unicode character;
-     *
-     * @attr name android:tag
-     */
-    public static final int Fragment_android_tag=2;
-    /**
-     * Attributes that can be used with a FragmentContainerView.
-     * <p>Includes the following attributes:</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #FragmentContainerView_android_name android:name}</code></td><td></td></tr>
-     * <tr><td><code>{@link #FragmentContainerView_android_tag android:tag}</code></td><td></td></tr>
-     * </table>
-     * @see #FragmentContainerView_android_name
-     * @see #FragmentContainerView_android_tag
-     */
-    public static final int[] FragmentContainerView={
-      0x01010003, 0x010100d1
-    };
-    /**
-     * <p>This symbol is the offset where the {@link android.R.attr#name}
-     * attribute's value can be found in the {@link #FragmentContainerView} array.
-     *
-     * <p>May be a string value, using '\\;' to escape characters such as
-     * '\\n' or '\\uxxxx' for a unicode character;
-     *
-     * @attr name android:name
-     */
-    public static final int FragmentContainerView_android_name=0;
-    /**
-     * <p>This symbol is the offset where the {@link android.R.attr#tag}
-     * attribute's value can be found in the {@link #FragmentContainerView} array.
-     *
-     * <p>May be a string value, using '\\;' to escape characters such as
-     * '\\n' or '\\uxxxx' for a unicode character;
-     *
-     * @attr name android:tag
-     */
-    public static final int FragmentContainerView_android_tag=1;
     /**
      * Attributes that can be used with a GradientColor.
      * <p>Includes the following attributes:</p>
@@ -1203,9 +693,8 @@ public final class R {
       0x01010510, 0x01010511, 0x01010512, 0x01010513
     };
     /**
-     * <p>
-     * @attr description
-     * Start color of the gradient.
+     * <p>This symbol is the offset where the {@link android.R.attr#startColor}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -1215,9 +704,8 @@ public final class R {
      */
     public static final int GradientColor_android_startColor=0;
     /**
-     * <p>
-     * @attr description
-     * End color of the gradient.
+     * <p>This symbol is the offset where the {@link android.R.attr#endColor}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -1227,9 +715,8 @@ public final class R {
      */
     public static final int GradientColor_android_endColor=1;
     /**
-     * <p>
-     * @attr description
-     * Type of gradient. The default type is linear.
+     * <p>This symbol is the offset where the {@link android.R.attr#type}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1246,9 +733,8 @@ public final class R {
      */
     public static final int GradientColor_android_type=2;
     /**
-     * <p>
-     * @attr description
-     * X coordinate of the center of the gradient within the path.
+     * <p>This symbol is the offset where the {@link android.R.attr#centerX}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      * <p>May be a fractional value, which is a floating point number appended with
@@ -1260,9 +746,8 @@ public final class R {
      */
     public static final int GradientColor_android_centerX=3;
     /**
-     * <p>
-     * @attr description
-     * Y coordinate of the center of the gradient within the path.
+     * <p>This symbol is the offset where the {@link android.R.attr#centerY}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      * <p>May be a fractional value, which is a floating point number appended with
@@ -1274,9 +759,8 @@ public final class R {
      */
     public static final int GradientColor_android_centerY=4;
     /**
-     * <p>
-     * @attr description
-     * Radius of the gradient, used only with radial gradient.
+     * <p>This symbol is the offset where the {@link android.R.attr#gradientRadius}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      * <p>May be a dimension value, which is a floating point number appended with a
@@ -1293,9 +777,8 @@ public final class R {
      */
     public static final int GradientColor_android_gradientRadius=5;
     /**
-     * <p>
-     * @attr description
-     * Defines the tile mode of the gradient. SweepGradient doesn't support tiling.
+     * <p>This symbol is the offset where the {@link android.R.attr#tileMode}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>Must be one of the following constant values.</p>
      * <table>
@@ -1313,9 +796,8 @@ public final class R {
      */
     public static final int GradientColor_android_tileMode=6;
     /**
-     * <p>
-     * @attr description
-     * Optional center color.
+     * <p>This symbol is the offset where the {@link android.R.attr#centerColor}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -1325,10 +807,8 @@ public final class R {
      */
     public static final int GradientColor_android_centerColor=7;
     /**
-     * <p>
-     * @attr description
-     * X coordinate of the start point origin of the gradient.
-     * Defined in same coordinates as the path itself
+     * <p>This symbol is the offset where the {@link android.R.attr#startX}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
@@ -1336,10 +816,8 @@ public final class R {
      */
     public static final int GradientColor_android_startX=8;
     /**
-     * <p>
-     * @attr description
-     * Y coordinate of the start point of the gradient within the shape.
-     * Defined in same coordinates as the path itself
+     * <p>This symbol is the offset where the {@link android.R.attr#startY}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
@@ -1347,10 +825,8 @@ public final class R {
      */
     public static final int GradientColor_android_startY=9;
     /**
-     * <p>
-     * @attr description
-     * X coordinate of the end point origin of the gradient.
-     * Defined in same coordinates as the path itself
+     * <p>This symbol is the offset where the {@link android.R.attr#endX}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
@@ -1358,10 +834,8 @@ public final class R {
      */
     public static final int GradientColor_android_endX=10;
     /**
-     * <p>
-     * @attr description
-     * Y coordinate of the end point of the gradient within the shape.
-     * Defined in same coordinates as the path itself
+     * <p>This symbol is the offset where the {@link android.R.attr#endY}
+     * attribute's value can be found in the {@link #GradientColor} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
@@ -1385,9 +859,8 @@ public final class R {
       0x010101a5, 0x01010514
     };
     /**
-     * <p>
-     * @attr description
-     * The current color for the offset inside the gradient.
+     * <p>This symbol is the offset where the {@link android.R.attr#color}
+     * attribute's value can be found in the {@link #GradientColorItem} array.
      *
      * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
      * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
@@ -1397,41 +870,13 @@ public final class R {
      */
     public static final int GradientColorItem_android_color=0;
     /**
-     * <p>
-     * @attr description
-     * The offset (or ratio) of this current color item inside the gradient.
-     * The value is only meaningful when it is between 0 and 1.
+     * <p>This symbol is the offset where the {@link android.R.attr#offset}
+     * attribute's value can be found in the {@link #GradientColorItem} array.
      *
      * <p>May be a floating point value, such as "<code>1.2</code>".
      *
      * @attr name android:offset
      */
     public static final int GradientColorItem_android_offset=1;
-    /**
-     * Attributes that can be used with a SwipeRefreshLayout.
-     * <p>Includes the following attributes:</p>
-     * <table>
-     * <colgroup align="left" />
-     * <colgroup align="left" />
-     * <tr><th>Attribute</th><th>Description</th></tr>
-     * <tr><td><code>{@link #SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor com.LugandaHymnalNew:swipeRefreshLayoutProgressSpinnerBackgroundColor}</code></td><td>Background color for SwipeRefreshLayout progress spinner.</td></tr>
-     * </table>
-     * @see #SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor
-     */
-    public static final int[] SwipeRefreshLayout={
-      0x7f020016
-    };
-    /**
-     * <p>
-     * @attr description
-     * Background color for SwipeRefreshLayout progress spinner.
-     *
-     * <p>May be a color value, in the form of "<code>#<i>rgb</i></code>",
-     * "<code>#<i>argb</i></code>", "<code>#<i>rrggbb</i></code>", or
-     * "<code>#<i>aarrggbb</i></code>".
-     *
-     * @attr name com.LugandaHymnalNew:swipeRefreshLayoutProgressSpinnerBackgroundColor
-     */
-    public static final int SwipeRefreshLayout_swipeRefreshLayoutProgressSpinnerBackgroundColor=0;
   }
 }

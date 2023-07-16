@@ -336,19 +336,19 @@ public class ebil extends Activity implements B4AActivity{
     }
 
 public anywheresoftware.b4a.keywords.Common __c = null;
-public uk.co.martinpearman.b4a.webkit.WebViewExtras _vvvvvvvvvvv3 = null;
-public uk.co.martinpearman.b4a.webkit.DefaultWebViewClient _vvvvvvvvvvvvvv1 = null;
+public uk.co.martinpearman.b4a.webkit.WebViewExtras _wve = null;
+public uk.co.martinpearman.b4a.webkit.DefaultWebViewClient _dwvc = null;
 public anywheresoftware.b4a.objects.WebViewWrapper _webview1 = null;
-public com.LugandaHymnalNew.main _vvvv6 = null;
-public com.LugandaHymnalNew.codes _vvvv7 = null;
-public com.LugandaHymnalNew.starter _vvvv0 = null;
-public com.LugandaHymnalNew.songs _vvvvv1 = null;
-public com.LugandaHymnalNew.don _vvvvv2 = null;
-public com.LugandaHymnalNew.customwebviewerror _vvvvv3 = null;
-public com.LugandaHymnalNew.err _vvvvv4 = null;
-public com.LugandaHymnalNew.abaana _vvvvv5 = null;
-public com.LugandaHymnalNew.emisi _vvvvv7 = null;
-public com.LugandaHymnalNew.httputils2service _vvvvv0 = null;
+public com.LugandaHymnalNew.main _main = null;
+public com.LugandaHymnalNew.codes _codes = null;
+public com.LugandaHymnalNew.starter _starter = null;
+public com.LugandaHymnalNew.songs _songs = null;
+public com.LugandaHymnalNew.don _don = null;
+public com.LugandaHymnalNew.customwebviewerror _customwebviewerror = null;
+public com.LugandaHymnalNew.err _err = null;
+public com.LugandaHymnalNew.abaana _abaana = null;
+public com.LugandaHymnalNew.emisi _emisi = null;
+public com.LugandaHymnalNew.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -362,15 +362,15 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
  //BA.debugLineNum = 24;BA.debugLine="Activity.LoadLayout(\"dom\")";
 mostCurrent._activity.LoadLayout("dom",mostCurrent.activityBA);
  //BA.debugLineNum = 26;BA.debugLine="DWVC.Initialize(\"WebViewClient\")";
-mostCurrent._vvvvvvvvvvvvvv1.Initialize(mostCurrent.activityBA,"WebViewClient");
+mostCurrent._dwvc.Initialize(mostCurrent.activityBA,"WebViewClient");
  //BA.debugLineNum = 27;BA.debugLine="WVE.Initialize(WebView1)";
-mostCurrent._vvvvvvvvvvv3.Initialize((android.webkit.WebView)(mostCurrent._webview1.getObject()));
+mostCurrent._wve.Initialize((android.webkit.WebView)(mostCurrent._webview1.getObject()));
  //BA.debugLineNum = 28;BA.debugLine="WVE.SetWebViewClient(DWVC)";
-mostCurrent._vvvvvvvvvvv3.SetWebViewClient((android.webkit.WebViewClient)(mostCurrent._vvvvvvvvvvvvvv1.getObject()));
+mostCurrent._wve.SetWebViewClient((android.webkit.WebViewClient)(mostCurrent._dwvc.getObject()));
  //BA.debugLineNum = 29;BA.debugLine="ProgressDialogShow2(\"GUMIKIRIZA\",False)";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow2(mostCurrent.activityBA,BA.ObjectToCharSequence("GUMIKIRIZA"),anywheresoftware.b4a.keywords.Common.False);
  //BA.debugLineNum = 30;BA.debugLine="WVE.LoadUrl(\"https://www.adventist.org\")";
-mostCurrent._vvvvvvvvvvv3.LoadUrl("https://www.adventist.org");
+mostCurrent._wve.LoadUrl("https://www.adventist.org");
  //BA.debugLineNum = 31;BA.debugLine="End Sub";
 return "";
 }
@@ -387,9 +387,9 @@ return "";
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
  //BA.debugLineNum = 16;BA.debugLine="Private WVE As WebViewExtras";
-mostCurrent._vvvvvvvvvvv3 = new uk.co.martinpearman.b4a.webkit.WebViewExtras();
+mostCurrent._wve = new uk.co.martinpearman.b4a.webkit.WebViewExtras();
  //BA.debugLineNum = 17;BA.debugLine="Private DWVC As DefaultWebViewClient";
-mostCurrent._vvvvvvvvvvvvvv1 = new uk.co.martinpearman.b4a.webkit.DefaultWebViewClient();
+mostCurrent._dwvc = new uk.co.martinpearman.b4a.webkit.DefaultWebViewClient();
  //BA.debugLineNum = 18;BA.debugLine="Private WebView1 As WebView";
 mostCurrent._webview1 = new anywheresoftware.b4a.objects.WebViewWrapper();
  //BA.debugLineNum = 19;BA.debugLine="End Sub";
@@ -410,7 +410,7 @@ return "";
 public static String  _webviewclient_receivederror(int _errorcode,String _description,String _failingurl) throws Exception{
  //BA.debugLineNum = 32;BA.debugLine="Sub WebViewClient_ReceivedError(ErrorCode As Int,";
  //BA.debugLineNum = 33;BA.debugLine="WVE.LoadHtml(customwebviewerror.GetErrorPageHtml(";
-mostCurrent._vvvvvvvvvvv3.LoadHtml(mostCurrent._vvvvv3._vvvv4 /*String*/ (mostCurrent.activityBA,_description));
+mostCurrent._wve.LoadHtml(mostCurrent._customwebviewerror._geterrorpagehtml /*String*/ (mostCurrent.activityBA,_description));
  //BA.debugLineNum = 34;BA.debugLine="End Sub";
 return "";
 }

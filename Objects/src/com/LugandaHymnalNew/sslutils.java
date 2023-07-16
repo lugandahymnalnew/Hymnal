@@ -24,17 +24,17 @@ public class sslutils extends B4AClass.ImplB4AClass implements BA.SubDelegator{
     }
 
  public anywheresoftware.b4a.keywords.Common __c = null;
-public com.LugandaHymnalNew.main _vvvv6 = null;
-public com.LugandaHymnalNew.codes _vvvv7 = null;
-public com.LugandaHymnalNew.starter _vvvv0 = null;
-public com.LugandaHymnalNew.songs _vvvvv1 = null;
-public com.LugandaHymnalNew.don _vvvvv2 = null;
-public com.LugandaHymnalNew.customwebviewerror _vvvvv3 = null;
-public com.LugandaHymnalNew.err _vvvvv4 = null;
-public com.LugandaHymnalNew.abaana _vvvvv5 = null;
-public com.LugandaHymnalNew.ebil _vvvvv6 = null;
-public com.LugandaHymnalNew.emisi _vvvvv7 = null;
-public com.LugandaHymnalNew.httputils2service _vvvvv0 = null;
+public com.LugandaHymnalNew.main _main = null;
+public com.LugandaHymnalNew.codes _codes = null;
+public com.LugandaHymnalNew.starter _starter = null;
+public com.LugandaHymnalNew.songs _songs = null;
+public com.LugandaHymnalNew.don _don = null;
+public com.LugandaHymnalNew.customwebviewerror _customwebviewerror = null;
+public com.LugandaHymnalNew.err _err = null;
+public com.LugandaHymnalNew.abaana _abaana = null;
+public com.LugandaHymnalNew.ebil _ebil = null;
+public com.LugandaHymnalNew.emisi _emisi = null;
+public com.LugandaHymnalNew.httputils2service _httputils2service = null;
 public String  _class_globals() throws Exception{
  //BA.debugLineNum = 1;BA.debugLine="Sub Class_Globals";
  //BA.debugLineNum = 3;BA.debugLine="End Sub";

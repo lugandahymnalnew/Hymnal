@@ -337,16 +337,16 @@ public class err extends Activity implements B4AActivity{
 
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _errmsg = null;
-public com.LugandaHymnalNew.main _vvvv6 = null;
-public com.LugandaHymnalNew.codes _vvvv7 = null;
-public com.LugandaHymnalNew.starter _vvvv0 = null;
-public com.LugandaHymnalNew.songs _vvvvv1 = null;
-public com.LugandaHymnalNew.don _vvvvv2 = null;
-public com.LugandaHymnalNew.customwebviewerror _vvvvv3 = null;
-public com.LugandaHymnalNew.abaana _vvvvv5 = null;
-public com.LugandaHymnalNew.ebil _vvvvv6 = null;
-public com.LugandaHymnalNew.emisi _vvvvv7 = null;
-public com.LugandaHymnalNew.httputils2service _vvvvv0 = null;
+public com.LugandaHymnalNew.main _main = null;
+public com.LugandaHymnalNew.codes _codes = null;
+public com.LugandaHymnalNew.starter _starter = null;
+public com.LugandaHymnalNew.songs _songs = null;
+public com.LugandaHymnalNew.don _don = null;
+public com.LugandaHymnalNew.customwebviewerror _customwebviewerror = null;
+public com.LugandaHymnalNew.abaana _abaana = null;
+public com.LugandaHymnalNew.ebil _ebil = null;
+public com.LugandaHymnalNew.emisi _emisi = null;
+public com.LugandaHymnalNew.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -387,7 +387,7 @@ return "";
 public static String  _sendmsg_click() throws Exception{
  //BA.debugLineNum = 46;BA.debugLine="Sub SendMsg_Click";
  //BA.debugLineNum = 47;BA.debugLine="codes.SendEmail(\"\", ErrMsg.Text)";
-mostCurrent._vvvv7._vvv4 /*String*/ (mostCurrent.activityBA,"",mostCurrent._errmsg.getText());
+mostCurrent._codes._sendemail /*String*/ (mostCurrent.activityBA,"",mostCurrent._errmsg.getText());
  //BA.debugLineNum = 48;BA.debugLine="ErrMsg.Text = \"\"";
 mostCurrent._errmsg.setText(BA.ObjectToCharSequence(""));
  //BA.debugLineNum = 49;BA.debugLine="Activity.Finish";

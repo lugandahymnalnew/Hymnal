@@ -336,21 +336,21 @@ public class abaana extends Activity implements B4AActivity{
     }
 
 public anywheresoftware.b4a.keywords.Common __c = null;
-public uk.co.martinpearman.b4a.webkit.WebViewExtras _vvvvvvvvvvv3 = null;
-public uk.co.martinpearman.b4a.webkit.DefaultJavascriptInterface _vvvvvvvvvvvvvv4 = null;
-public uk.co.martinpearman.b4a.webkit.DefaultWebChromeClient _vvvvvvvvvvvvvv1 = null;
-public uk.co.martinpearman.b4a.webkit.DefaultWebViewClient _vvvvvvvvvvvvvv5 = null;
+public uk.co.martinpearman.b4a.webkit.WebViewExtras _wve = null;
+public uk.co.martinpearman.b4a.webkit.DefaultJavascriptInterface _j1 = null;
+public uk.co.martinpearman.b4a.webkit.DefaultWebChromeClient _dwvc = null;
+public uk.co.martinpearman.b4a.webkit.DefaultWebViewClient _dwvc1 = null;
 public anywheresoftware.b4a.objects.WebViewWrapper _webview1 = null;
-public com.LugandaHymnalNew.main _vvvv6 = null;
-public com.LugandaHymnalNew.codes _vvvv7 = null;
-public com.LugandaHymnalNew.starter _vvvv0 = null;
-public com.LugandaHymnalNew.songs _vvvvv1 = null;
-public com.LugandaHymnalNew.don _vvvvv2 = null;
-public com.LugandaHymnalNew.customwebviewerror _vvvvv3 = null;
-public com.LugandaHymnalNew.err _vvvvv4 = null;
-public com.LugandaHymnalNew.ebil _vvvvv6 = null;
-public com.LugandaHymnalNew.emisi _vvvvv7 = null;
-public com.LugandaHymnalNew.httputils2service _vvvvv0 = null;
+public com.LugandaHymnalNew.main _main = null;
+public com.LugandaHymnalNew.codes _codes = null;
+public com.LugandaHymnalNew.starter _starter = null;
+public com.LugandaHymnalNew.songs _songs = null;
+public com.LugandaHymnalNew.don _don = null;
+public com.LugandaHymnalNew.customwebviewerror _customwebviewerror = null;
+public com.LugandaHymnalNew.err _err = null;
+public com.LugandaHymnalNew.ebil _ebil = null;
+public com.LugandaHymnalNew.emisi _emisi = null;
+public com.LugandaHymnalNew.httputils2service _httputils2service = null;
 
 public static void initializeProcessGlobals() {
              try {
@@ -364,19 +364,19 @@ public static String  _activity_create(boolean _firsttime) throws Exception{
  //BA.debugLineNum = 25;BA.debugLine="Activity.LoadLayout(\"dom\")";
 mostCurrent._activity.LoadLayout("dom",mostCurrent.activityBA);
  //BA.debugLineNum = 26;BA.debugLine="J1.Initialize";
-mostCurrent._vvvvvvvvvvvvvv4.Initialize(mostCurrent.activityBA);
+mostCurrent._j1.Initialize(mostCurrent.activityBA);
  //BA.debugLineNum = 27;BA.debugLine="WVE.Initialize(WebView1)";
-mostCurrent._vvvvvvvvvvv3.Initialize((android.webkit.WebView)(mostCurrent._webview1.getObject()));
+mostCurrent._wve.Initialize((android.webkit.WebView)(mostCurrent._webview1.getObject()));
  //BA.debugLineNum = 28;BA.debugLine="DWVC.Initialize(\"WebView1\")";
-mostCurrent._vvvvvvvvvvvvvv1.Initialize(mostCurrent.activityBA,"WebView1");
+mostCurrent._dwvc.Initialize(mostCurrent.activityBA,"WebView1");
  //BA.debugLineNum = 29;BA.debugLine="DWVC1.Initialize(\"WebView1\")";
-mostCurrent._vvvvvvvvvvvvvv5.Initialize(mostCurrent.activityBA,"WebView1");
+mostCurrent._dwvc1.Initialize(mostCurrent.activityBA,"WebView1");
  //BA.debugLineNum = 30;BA.debugLine="WVE.AddJavascriptInterface(J1,\"B4A\")";
-mostCurrent._vvvvvvvvvvv3.AddJavascriptInterface((Object)(mostCurrent._vvvvvvvvvvvvvv4),"B4A");
+mostCurrent._wve.AddJavascriptInterface((Object)(mostCurrent._j1),"B4A");
  //BA.debugLineNum = 31;BA.debugLine="WVE.SetWebChromeClient(DWVC)";
-mostCurrent._vvvvvvvvvvv3.SetWebChromeClient((android.webkit.WebChromeClient)(mostCurrent._vvvvvvvvvvvvvv1.getObject()));
+mostCurrent._wve.SetWebChromeClient((android.webkit.WebChromeClient)(mostCurrent._dwvc.getObject()));
  //BA.debugLineNum = 32;BA.debugLine="WVE.SetWebViewClient(DWVC1)";
-mostCurrent._vvvvvvvvvvv3.SetWebViewClient((android.webkit.WebViewClient)(mostCurrent._vvvvvvvvvvvvvv5.getObject()));
+mostCurrent._wve.SetWebViewClient((android.webkit.WebViewClient)(mostCurrent._dwvc1.getObject()));
  //BA.debugLineNum = 33;BA.debugLine="WebView1.LoadUrl(\"file:///android_asset/src%5Cpag";
 mostCurrent._webview1.LoadUrl("file:///android_asset/src%5Cpages%5Cabaana.html");
  //BA.debugLineNum = 34;BA.debugLine="End Sub";
@@ -395,19 +395,19 @@ return "";
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
  //BA.debugLineNum = 15;BA.debugLine="Private WVE As WebViewExtras";
-mostCurrent._vvvvvvvvvvv3 = new uk.co.martinpearman.b4a.webkit.WebViewExtras();
+mostCurrent._wve = new uk.co.martinpearman.b4a.webkit.WebViewExtras();
  //BA.debugLineNum = 16;BA.debugLine="Private J1 As DefaultJavascriptInterface";
-mostCurrent._vvvvvvvvvvvvvv4 = new uk.co.martinpearman.b4a.webkit.DefaultJavascriptInterface();
+mostCurrent._j1 = new uk.co.martinpearman.b4a.webkit.DefaultJavascriptInterface();
  //BA.debugLineNum = 17;BA.debugLine="Private DWVC As DefaultWebChromeClient";
-mostCurrent._vvvvvvvvvvvvvv1 = new uk.co.martinpearman.b4a.webkit.DefaultWebChromeClient();
+mostCurrent._dwvc = new uk.co.martinpearman.b4a.webkit.DefaultWebChromeClient();
  //BA.debugLineNum = 18;BA.debugLine="Private DWVC1 As DefaultWebViewClient";
-mostCurrent._vvvvvvvvvvvvvv5 = new uk.co.martinpearman.b4a.webkit.DefaultWebViewClient();
+mostCurrent._dwvc1 = new uk.co.martinpearman.b4a.webkit.DefaultWebViewClient();
  //BA.debugLineNum = 19;BA.debugLine="Private WebView1 As WebView";
 mostCurrent._webview1 = new anywheresoftware.b4a.objects.WebViewWrapper();
  //BA.debugLineNum = 20;BA.debugLine="End Sub";
 return "";
 }
-public static String  _vvvvvvvvvvvvvv6() throws Exception{
+public static String  _openmenu() throws Exception{
  //BA.debugLineNum = 40;BA.debugLine="Sub openMenu";
  //BA.debugLineNum = 41;BA.debugLine="StartActivity(\"songs\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("songs"));
@@ -421,7 +421,7 @@ public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 10;BA.debugLine="End Sub";
 return "";
 }
-public static String  _vvvvvvvvvvvvv4(String _smes) throws Exception{
+public static String  _sharemessage(String _smes) throws Exception{
 anywheresoftware.b4a.objects.IntentWrapper _in = null;
  //BA.debugLineNum = 48;BA.debugLine="Sub ShareMessage(sMes As String)";
  //BA.debugLineNum = 49;BA.debugLine="Dim in As Intent";
@@ -449,7 +449,7 @@ return "";
 public static String  _webview1_receivederror(int _errorcode,String _description,String _failingurl) throws Exception{
  //BA.debugLineNum = 36;BA.debugLine="Sub WebView1_ReceivedError(ErrorCode As Int, Descr";
  //BA.debugLineNum = 37;BA.debugLine="WebView1.LoadHtml(customwebviewerror.GetErrorPage";
-mostCurrent._webview1.LoadHtml(mostCurrent._vvvvv3._vvvv4 /*String*/ (mostCurrent.activityBA,_description));
+mostCurrent._webview1.LoadHtml(mostCurrent._customwebviewerror._geterrorpagehtml /*String*/ (mostCurrent.activityBA,_description));
  //BA.debugLineNum = 38;BA.debugLine="End Sub";
 return "";
 }

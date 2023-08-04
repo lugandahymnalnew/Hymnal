@@ -482,7 +482,7 @@ _pos = (long) (((_pos-6000)/(double)(_mp.getDuration()))*_mp.getDuration()+_mp.g
  //BA.debugLineNum = 93;BA.debugLine="stop1";
 _stop1();
  //BA.debugLineNum = 94;BA.debugLine="Log(\"me\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("22621451","me",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("81703947","me",0);
  };
  };
  //BA.debugLineNum = 97;BA.debugLine="End Sub";
@@ -510,14 +510,14 @@ _mp.setPosition((int) (_mp.getDuration()-(6000-(_value/(double)100*_leng))));
  //BA.debugLineNum = 343;BA.debugLine="pos = Value / 100 * leng";
 _pos = (long) (_value/(double)100*_leng);
  //BA.debugLineNum = 344;BA.debugLine="Log((Value / 100 *leng))";
-anywheresoftware.b4a.keywords.Common.LogImpl("23866634",BA.NumberToString((_value/(double)100*_leng)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("82949130",BA.NumberToString((_value/(double)100*_leng)),0);
  //BA.debugLineNum = 345;BA.debugLine="count = 0";
 _count = (int) (0);
  }else {
  //BA.debugLineNum = 347;BA.debugLine="MP.Position = ((Value / 100 * leng) - 6000) Mod";
 _mp.setPosition((int) (((_value/(double)100*_leng)-6000)%_mp.getDuration()));
  //BA.debugLineNum = 348;BA.debugLine="Log(\"get count: \"&MP.Position&\":\"&MP.Duration)";
-anywheresoftware.b4a.keywords.Common.LogImpl("23866638","get count: "+BA.NumberToString(_mp.getPosition())+":"+BA.NumberToString(_mp.getDuration()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("82949134","get count: "+BA.NumberToString(_mp.getPosition())+":"+BA.NumberToString(_mp.getDuration()),0);
  //BA.debugLineNum = 349;BA.debugLine="pos = Value / 100 * leng";
 _pos = (long) (_value/(double)100*_leng);
  //BA.debugLineNum = 350;BA.debugLine="ckcount = ((Value / 100 * leng) - 6000) / MP.Du";
@@ -527,7 +527,7 @@ _count = (int) (_ckcount+1);
  };
  };
  //BA.debugLineNum = 356;BA.debugLine="Log(\"get count: \"&count&\" : \"&loos)";
-anywheresoftware.b4a.keywords.Common.LogImpl("23866646","get count: "+BA.NumberToString(_count)+" : "+BA.NumberToString(_loos),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("82949142","get count: "+BA.NumberToString(_count)+" : "+BA.NumberToString(_loos),0);
  //BA.debugLineNum = 357;BA.debugLine="timer1_Tick 'immediately update the progress labe";
 _timer1_tick();
  //BA.debugLineNum = 358;BA.debugLine="End Sub";
@@ -538,7 +538,7 @@ public static String  _barvolume_valuechanged(int _value,boolean _userchanged) t
  //BA.debugLineNum = 328;BA.debugLine="MP.SetVolume(barVolume.Value / 100, barVolume.Val";
 _mp.SetVolume((float) (mostCurrent._barvolume.getValue()/(double)100),(float) (mostCurrent._barvolume.getValue()/(double)100));
  //BA.debugLineNum = 329;BA.debugLine="Log(\"Value: \"&barVolume.Value)";
-anywheresoftware.b4a.keywords.Common.LogImpl("23801090","Value: "+BA.NumberToString(mostCurrent._barvolume.getValue()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("82883586","Value: "+BA.NumberToString(mostCurrent._barvolume.getValue()),0);
  //BA.debugLineNum = 331;BA.debugLine="codes.update_Setting(\"Volume\",barVolume.Value)";
 mostCurrent._codes._update_setting /*String*/ (mostCurrent.activityBA,"Volume",BA.NumberToString(mostCurrent._barvolume.getValue()));
  //BA.debugLineNum = 332;BA.debugLine="End Sub";
@@ -815,7 +815,7 @@ case 34:
 this.state = 35;
 this.catchState = 38;
  //BA.debugLineNum = 226;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("23342365",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("82424861",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA)),0);
  //BA.debugLineNum = 227;BA.debugLine="ToastMessageShow(\"Sorry, song is missing wait";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("Sorry, song is missing wait for the next update"),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 228;BA.debugLine="ProgressDialogHide";
@@ -908,7 +908,7 @@ case 43:
 this.state = 44;
 ;
  //BA.debugLineNum = 256;BA.debugLine="Log(\"test me \"&codes.vol)";
-anywheresoftware.b4a.keywords.Common.LogImpl("23342395","test me "+parent.mostCurrent._codes._vol /*String*/ ,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("82424891","test me "+parent.mostCurrent._codes._vol /*String*/ ,0);
  //BA.debugLineNum = 257;BA.debugLine="barVolume.Value = codes.vol";
 parent.mostCurrent._barvolume.setValue((int)(Double.parseDouble(parent.mostCurrent._codes._vol /*String*/ )));
  //BA.debugLineNum = 258;BA.debugLine="MP.Play";
@@ -945,7 +945,7 @@ case 48:
 this.state = 49;
 this.catchState = 0;
  //BA.debugLineNum = 267;BA.debugLine="Log(LastException.Message)";
-anywheresoftware.b4a.keywords.Common.LogImpl("23342406",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("82424902",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
  if (true) break;
 if (true) break;
 
@@ -998,7 +998,7 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 377;BA.debugLine="If File.Exists(File.DirInternal, fileName) Then";
+ //BA.debugLineNum = 378;BA.debugLine="If File.Exists(File.DirInternal, fileName) Then";
 if (true) break;
 
 case 1:
@@ -1011,9 +1011,9 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 378;BA.debugLine="Msgbox2Async(\"Do you want to overwrite?\", \"File";
+ //BA.debugLineNum = 379;BA.debugLine="Msgbox2Async(\"Do you want to overwrite?\", \"File";
 anywheresoftware.b4a.keywords.Common.Msgbox2Async(BA.ObjectToCharSequence("Do you want to overwrite?"),BA.ObjectToCharSequence("File exists"),"Yes","Cancel","No",(anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper(), (android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null)),processBA,BA.ObjectToBoolean("false"));
- //BA.debugLineNum = 379;BA.debugLine="Wait For MsgBox_Result(Result As Int)";
+ //BA.debugLineNum = 380;BA.debugLine="Wait For MsgBox_Result(Result As Int)";
 anywheresoftware.b4a.keywords.Common.WaitFor("msgbox_result", processBA, this, null);
 this.state = 25;
 return;
@@ -1022,7 +1022,7 @@ case 25:
 this.state = 4;
 _result = (Integer) result[0];
 ;
- //BA.debugLineNum = 380;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
+ //BA.debugLineNum = 381;BA.debugLine="If Result = DialogResponse.POSITIVE Then";
 if (true) break;
 
 case 4:
@@ -1037,14 +1037,14 @@ this.state = 8;
 case 6:
 //C
 this.state = 9;
- //BA.debugLineNum = 381;BA.debugLine="File.Delete(File.DirInternal, fileName)";
+ //BA.debugLineNum = 382;BA.debugLine="File.Delete(File.DirInternal, fileName)";
 anywheresoftware.b4a.keywords.Common.File.Delete(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),_filename);
  if (true) break;
 
 case 8:
 //C
 this.state = 9;
- //BA.debugLineNum = 383;BA.debugLine="Return";
+ //BA.debugLineNum = 384;BA.debugLine="Return";
 if (true) return ;
  if (true) break;
 
@@ -1058,15 +1058,15 @@ case 10:
 //C
 this.state = 11;
 ;
- //BA.debugLineNum = 386;BA.debugLine="ProgressDialogShow2(\"please wait, while song is b";
+ //BA.debugLineNum = 387;BA.debugLine="ProgressDialogShow2(\"please wait, while song is b";
 anywheresoftware.b4a.keywords.Common.ProgressDialogShow2(mostCurrent.activityBA,BA.ObjectToCharSequence("please wait, while song is beng downloaded"),anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 387;BA.debugLine="Dim j As HttpJob";
+ //BA.debugLineNum = 388;BA.debugLine="Dim j As HttpJob";
 _j = new com.LugandaHymnalNew.httpjob();
- //BA.debugLineNum = 388;BA.debugLine="j.Initialize(\"\", Me)";
+ //BA.debugLineNum = 389;BA.debugLine="j.Initialize(\"\", Me)";
 _j._initialize /*String*/ (processBA,"",songs.getObject());
- //BA.debugLineNum = 389;BA.debugLine="j.Download(link)";
+ //BA.debugLineNum = 390;BA.debugLine="j.Download(link)";
 _j._download /*String*/ (_link);
- //BA.debugLineNum = 390;BA.debugLine="Wait For (j) JobDone(j As HttpJob)";
+ //BA.debugLineNum = 391;BA.debugLine="Wait For (j) JobDone(j As HttpJob)";
 anywheresoftware.b4a.keywords.Common.WaitFor("jobdone", processBA, this, (Object)(_j));
 this.state = 26;
 return;
@@ -1075,7 +1075,7 @@ case 26:
 this.state = 11;
 _j = (com.LugandaHymnalNew.httpjob) result[0];
 ;
- //BA.debugLineNum = 391;BA.debugLine="If j.Success Then";
+ //BA.debugLineNum = 392;BA.debugLine="If j.Success Then";
 if (true) break;
 
 case 11:
@@ -1090,21 +1090,21 @@ this.state = 15;
 case 13:
 //C
 this.state = 24;
- //BA.debugLineNum = 392;BA.debugLine="Dim out As OutputStream = File.OpenOutput(File.D";
+ //BA.debugLineNum = 393;BA.debugLine="Dim out As OutputStream = File.OpenOutput(File.D";
 _out = new anywheresoftware.b4a.objects.streams.File.OutputStreamWrapper();
 _out = anywheresoftware.b4a.keywords.Common.File.OpenOutput(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),_filename,anywheresoftware.b4a.keywords.Common.False);
- //BA.debugLineNum = 393;BA.debugLine="File.Copy2(j.GetInputStream, out)";
+ //BA.debugLineNum = 394;BA.debugLine="File.Copy2(j.GetInputStream, out)";
 anywheresoftware.b4a.keywords.Common.File.Copy2((java.io.InputStream)(_j._getinputstream /*anywheresoftware.b4a.objects.streams.File.InputStreamWrapper*/ ().getObject()),(java.io.OutputStream)(_out.getObject()));
- //BA.debugLineNum = 394;BA.debugLine="out.Close";
+ //BA.debugLineNum = 395;BA.debugLine="out.Close";
 _out.Close();
- //BA.debugLineNum = 395;BA.debugLine="WebView1.LoadUrl(\"file://\" & File.Combine(File.D";
-parent.mostCurrent._webview1.LoadUrl("file://"+anywheresoftware.b4a.keywords.Common.File.Combine(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"src%5Cmenu.html"));
+ //BA.debugLineNum = 396;BA.debugLine="MsgboxAsync(\"Song added successfully\", \"Success\"";
+anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Song added successfully"),BA.ObjectToCharSequence("Success"),processBA);
  if (true) break;
 
 case 15:
 //C
 this.state = 16;
- //BA.debugLineNum = 397;BA.debugLine="Select j.Response.StatusCode";
+ //BA.debugLineNum = 399;BA.debugLine="Select j.Response.StatusCode";
 if (true) break;
 
 case 16:
@@ -1129,21 +1129,21 @@ if (true) break;
 case 18:
 //C
 this.state = 23;
- //BA.debugLineNum = 399;BA.debugLine="MsgboxAsync(\"Error: try\", \"Connection error\")";
-anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Error: try"),BA.ObjectToCharSequence("Connection error"),processBA);
+ //BA.debugLineNum = 401;BA.debugLine="MsgboxAsync(\"Error: try again with a good data";
+anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Error: try again with a good data connection"),BA.ObjectToCharSequence("Connection error"),processBA);
  if (true) break;
 
 case 20:
 //C
 this.state = 23;
- //BA.debugLineNum = 401;BA.debugLine="MsgboxAsync(\"Error: Song has not yet been adde";
+ //BA.debugLineNum = 403;BA.debugLine="MsgboxAsync(\"Error: Song has not yet been adde";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Error: Song has not yet been added, but please keep on trying. or report this error"),BA.ObjectToCharSequence("Sorry for inconvinience"),processBA);
  if (true) break;
 
 case 22:
 //C
 this.state = 23;
- //BA.debugLineNum = 403;BA.debugLine="MsgboxAsync(\"Error: the error is unknown\", \"Th";
+ //BA.debugLineNum = 405;BA.debugLine="MsgboxAsync(\"Error: the error is unknown\", \"Th";
 anywheresoftware.b4a.keywords.Common.MsgboxAsync(BA.ObjectToCharSequence("Error: the error is unknown"),BA.ObjectToCharSequence("There was an error"),processBA);
  if (true) break;
 
@@ -1157,11 +1157,11 @@ case 24:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 406;BA.debugLine="ProgressDialogHide";
+ //BA.debugLineNum = 408;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
- //BA.debugLineNum = 407;BA.debugLine="j.Release";
+ //BA.debugLineNum = 409;BA.debugLine="j.Release";
 _j._release /*String*/ ();
- //BA.debugLineNum = 408;BA.debugLine="End Sub";
+ //BA.debugLineNum = 410;BA.debugLine="End Sub";
 if (true) break;
 
             }
@@ -1235,7 +1235,7 @@ public static String  _mp_complete() throws Exception{
  //BA.debugLineNum = 272;BA.debugLine="count = count + 1";
 _count = (int) (_count+1);
  //BA.debugLineNum = 273;BA.debugLine="Log(count)";
-anywheresoftware.b4a.keywords.Common.LogImpl("23407874",BA.NumberToString(_count),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("82490370",BA.NumberToString(_count),0);
  //BA.debugLineNum = 274;BA.debugLine="MP.Play";
 _mp.Play();
  //BA.debugLineNum = 275;BA.debugLine="End Sub";
@@ -1270,7 +1270,7 @@ return "";
 public static String  _senderror(String _songn,String _e_err) throws Exception{
  //BA.debugLineNum = 277;BA.debugLine="Sub SendError(SongN As String, E_err As String)";
  //BA.debugLineNum = 278;BA.debugLine="Log(\"kiai\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("23473409","kiai",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("82555905","kiai",0);
  //BA.debugLineNum = 279;BA.debugLine="Panel2.Visible = True";
 mostCurrent._panel2.setVisible(anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 280;BA.debugLine="Panel2.BringToFront";
@@ -1312,7 +1312,7 @@ _loopable = anywheresoftware.b4a.keywords.Common.False;
  } 
        catch (Exception e6) {
 			processBA.setLastException(e6); //BA.debugLineNum = 295;BA.debugLine="Log(LastException.Message)";
-anywheresoftware.b4a.keywords.Common.LogImpl("23604486",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("82686982",anywheresoftware.b4a.keywords.Common.LastException(mostCurrent.activityBA).getMessage(),0);
  };
  //BA.debugLineNum = 297;BA.debugLine="Panel3.SetLayoutAnimated(200dip, 5dip,-160dip,100";
 mostCurrent._panel3.SetLayoutAnimated(anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (200)),anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (5)),(int) (-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (160))),(int) (anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA)-anywheresoftware.b4a.keywords.Common.DipToCurrent((int) (10))),mostCurrent._panel3.getHeight());
@@ -1390,7 +1390,7 @@ _load = anywheresoftware.b4a.keywords.Common.True;
  //BA.debugLineNum = 108;BA.debugLine="If Url.Contains(\"#\") Then";
 if (_url.contains("#")) { 
  //BA.debugLineNum = 109;BA.debugLine="Log(\"Me am try\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("22752515","Me am try",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("81835011","Me am try",0);
  }else if(_url.contains("baana.html")) { 
  //BA.debugLineNum = 111;BA.debugLine="StartActivity(\"abaana\")";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)("abaana"));
@@ -1400,7 +1400,7 @@ mostCurrent._activity.Finish();
  //BA.debugLineNum = 114;BA.debugLine="WebView1.LoadUrl(codes.FixUrl(\"src\",Url))";
 mostCurrent._webview1.LoadUrl(mostCurrent._codes._fixurl /*String*/ (mostCurrent.activityBA,"src",_url));
  //BA.debugLineNum = 116;BA.debugLine="Log(Url)";
-anywheresoftware.b4a.keywords.Common.LogImpl("22752522",_url,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("81835018",_url,0);
  };
  //BA.debugLineNum = 118;BA.debugLine="End Sub";
 return false;
@@ -1409,7 +1409,7 @@ public static String  _webview1_pagefinished(String _url) throws Exception{
 String _js = "";
  //BA.debugLineNum = 121;BA.debugLine="Private Sub WebView1_PageFinished (Url As String)";
  //BA.debugLineNum = 122;BA.debugLine="Log(Url)";
-anywheresoftware.b4a.keywords.Common.LogImpl("22818049",_url,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("81900545",_url,0);
  //BA.debugLineNum = 123;BA.debugLine="ProgressDialogHide";
 anywheresoftware.b4a.keywords.Common.ProgressDialogHide();
  //BA.debugLineNum = 124;BA.debugLine="btnUp_Click";
@@ -1429,7 +1429,7 @@ mostCurrent._wve.ExecuteJavascript(_js);
  } 
        catch (Exception e12) {
 			processBA.setLastException(e12); //BA.debugLineNum = 133;BA.debugLine="Log(\"Not play\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("22818060","Not play",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("81900556","Not play",0);
  };
  //BA.debugLineNum = 135;BA.debugLine="load = False";
 _load = anywheresoftware.b4a.keywords.Common.False;

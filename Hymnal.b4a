@@ -45,9 +45,9 @@ Version=12.5
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: Ennyimba Za Kristo
-	#VersionCode: 12
-	#VersionName: 1.0.44
-	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#VersionCode: 14
+	#VersionName: 1.0.46
+	'SupportedOrientations possible values: unspecified, landscape or portrait. 6
 	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: True
 
@@ -81,15 +81,19 @@ Sub Activity_Create(FirstTime As Boolean)
 					If codes.m.Get("app") <> LogAppVersion Then
 						moveFiles
 						codes.update_Setting("app",LogAppVersion)
+						MsgboxAsync("1. Made user interface light-theme"&CRLF&"2. User is able to download missing songs"&CRLF&"3. Have a nice worship experience."&CRLF&"4. Swipe left or right to open next or previous song."&CRLF&CRLF&"Thank you for choosing our app."&CRLF&"Tell us what you want in the next update","Whats New.")
 					End If
 				Else
 					codes.AddSetting("app",LogAppVersion)
+					MsgboxAsync("1. Made user interface light-theme"&CRLF&"2. User is able to download missing songs"&CRLF&"3. Have a nice worship experience."&CRLF&"4. Swipe left or right to open next or previous song."&CRLF&CRLF&"Thank you for choosing our app."&CRLF&"Tell us what you want in the next update","Whats New.")
+					
 				End If
 			Else
 				moveFiles
 				codes.AddSetting("app",LogAppVersion)
 				codes.AddSetting("copied","true")
-				Log("Error")
+				MsgboxAsync("1. Made user interface light-theme"&CRLF&"2. User is able to download missing songs"&CRLF&"3. Have a nice worship experience."&CRLF&"4. Swipe left or right to open next or previous song."&CRLF&CRLF&"Thank you for choosing our app."&CRLF&"Tell us what you want in the next update","Whats New.")
+				
 			End If
 		Catch
 			File.Delete(File.DirInternal, "MyDb.db")
@@ -108,9 +112,9 @@ Sub Activity_Create(FirstTime As Boolean)
 		'Log("see: "&codes.VerCode)
 		'Log("see1: "&codes.VeridCode)
 	Else
-		Log("see: "&codes.VerCode)
-		Log("see1: "&codes.VeridCode)
-		Log(codes.Vers)
+		'Log("see: "&codes.VerCode)
+		'Log("see1: "&codes.VeridCode)
+		'Log(codes.Vers)
 		Activity.LoadLayout("concent")
 		WV.Initialize("WV")
 		ScrollView1.Initialize("ScrollView1")

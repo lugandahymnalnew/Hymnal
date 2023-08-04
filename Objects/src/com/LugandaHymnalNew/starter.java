@@ -153,7 +153,7 @@ mostCurrent._songs._counter /*int*/  = (int) (mostCurrent._songs._counter /*int*
  //BA.debugLineNum = 36;BA.debugLine="songs.MP.Play";
 mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Play();
  //BA.debugLineNum = 37;BA.debugLine="Log(\"in sev: \"&songs.counter)";
-anywheresoftware.b4a.keywords.Common.LogImpl("22162691","in sev: "+BA.NumberToString(mostCurrent._songs._counter /*int*/ ),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("81245187","in sev: "+BA.NumberToString(mostCurrent._songs._counter /*int*/ ),0);
  //BA.debugLineNum = 38;BA.debugLine="End Sub";
 return "";
 }
@@ -181,7 +181,7 @@ mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Init
  //BA.debugLineNum = 26;BA.debugLine="songs.MP.Load(File.DirAssets, FName)";
 mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .Load(anywheresoftware.b4a.keywords.Common.File.getDirAssets(),_fname);
  //BA.debugLineNum = 27;BA.debugLine="Log(\"starter: \"&songs.MP.IsInitialized)";
-anywheresoftware.b4a.keywords.Common.LogImpl("22097157","starter: "+BA.ObjectToString(mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .IsInitialized()),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("81179653","starter: "+BA.ObjectToString(mostCurrent._songs._mp /*anywheresoftware.b4a.objects.MediaPlayerWrapper*/ .IsInitialized()),0);
  //BA.debugLineNum = 28;BA.debugLine="Return";
 if (true) return "";
  };

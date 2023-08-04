@@ -40,7 +40,7 @@ _sql.ExecNonQuery2("INSERT INTO settings VALUES (?, ?)",anywheresoftware.b4a.key
  } 
        catch (Exception e5) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e5); //BA.debugLineNum = 162;BA.debugLine="Log(LastException)";
-anywheresoftware.b4a.keywords.Common.LogImpl("21769477",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8851973",BA.ObjectToString(anywheresoftware.b4a.keywords.Common.LastException(_ba)),0);
  //BA.debugLineNum = 163;BA.debugLine="Return";
 if (true) return "";
  };
@@ -58,7 +58,7 @@ _sql.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"MyDb
  //BA.debugLineNum = 151;BA.debugLine="sql.ExecNonQuery2(\"UPDATE table1 SET col1 = ?, co";
 _sql.ExecNonQuery2("UPDATE table1 SET col1 = ?, col2 = ?, col3 = ? WHERE col1 = '"+_usercode+"'",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_usercode),(Object)(_vercode),(Object)(_vercode)}));
  //BA.debugLineNum = 153;BA.debugLine="Log(\"success\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("21703940","success",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8786436","success",0);
  //BA.debugLineNum = 154;BA.debugLine="sql.Close";
 _sql.Close();
  //BA.debugLineNum = 155;BA.debugLine="End Sub";
@@ -103,7 +103,7 @@ if (true) return "";
  //BA.debugLineNum = 88;BA.debugLine="Cursor.Position = 0";
 _cursor.setPosition((int) (0));
  //BA.debugLineNum = 89;BA.debugLine="Log(Cursor.GetString(\"col1\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("21507353",_cursor.GetString("col1"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8589849",_cursor.GetString("col1"),0);
  //BA.debugLineNum = 91;BA.debugLine="UserCode = Cursor.GetString(\"col1\")";
 _usercode = _cursor.GetString("col1");
  //BA.debugLineNum = 92;BA.debugLine="VerCode = Cursor.GetString(\"col2\")";
@@ -123,7 +123,7 @@ _cursor1.setPosition(_i);
  //BA.debugLineNum = 97;BA.debugLine="m.Put(Cursor1.GetString(\"col1\"),Cursor1.GetStri";
 _m.Put((Object)(_cursor1.GetString("col1")),(Object)(_cursor1.GetString("col2")));
  //BA.debugLineNum = 98;BA.debugLine="Log(\"load 1: \"&Cursor1.GetString(\"col2\"))";
-anywheresoftware.b4a.keywords.Common.LogImpl("21507362","load 1: "+_cursor1.GetString("col2"),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8589858","load 1: "+_cursor1.GetString("col2"),0);
  }
 };
  //BA.debugLineNum = 100;BA.debugLine="Vers = m.Get(\"Version\")";
@@ -133,7 +133,7 @@ _vol = BA.ObjectToString(_m.Get((Object)("Volume")));
  //BA.debugLineNum = 102;BA.debugLine="hide = m.Get(\"Hide\")";
 _hide = BA.ObjectToString(_m.Get((Object)("Hide")));
  //BA.debugLineNum = 103;BA.debugLine="Log(\"Load: \"&vol)";
-anywheresoftware.b4a.keywords.Common.LogImpl("21507367","Load: "+_vol,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8589863","Load: "+_vol,0);
  //BA.debugLineNum = 106;BA.debugLine="sql.close";
 _sql.Close();
  //BA.debugLineNum = 117;BA.debugLine="End Sub";
@@ -147,7 +147,7 @@ int _i = 0;
  //BA.debugLineNum = 119;BA.debugLine="If File.Exists(File.DirInternal,\"MyDb.db\") Then";
 if (anywheresoftware.b4a.keywords.Common.File.Exists(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"MyDb.db")) { 
  //BA.debugLineNum = 120;BA.debugLine="Log(\"yes\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("21572866","yes",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8655362","yes",0);
  }else {
  //BA.debugLineNum = 122;BA.debugLine="sql.Initialize(File.DirInternal, \"MyDb.db\", True";
 _sql.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"MyDb.db",anywheresoftware.b4a.keywords.Common.True);
@@ -183,13 +183,13 @@ _sql.ExecNonQuery2("INSERT INTO settings VALUES (?, ?)",anywheresoftware.b4a.key
  //BA.debugLineNum = 136;BA.debugLine="sql.Close";
 _sql.Close();
  //BA.debugLineNum = 137;BA.debugLine="Log(\"true\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("21572883","true",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8655379","true",0);
  } 
        catch (Exception e21) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e21); //BA.debugLineNum = 139;BA.debugLine="ToastMessageShow(\"sorry error in database\", Tru";
 anywheresoftware.b4a.keywords.Common.ToastMessageShow(BA.ObjectToCharSequence("sorry error in database"),anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 140;BA.debugLine="Log(\"failed\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("21572886","failed",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8655382","failed",0);
  };
  };
  //BA.debugLineNum = 143;BA.debugLine="End Sub";
@@ -212,7 +212,7 @@ _fil = _url.substring((int) (_url.indexOf("files/",(int) (0))+6));
  //BA.debugLineNum = 29;BA.debugLine="fil1 = fil";
 _fil1 = _fil;
  //BA.debugLineNum = 30;BA.debugLine="Log(\"file path: \"&fil)";
-anywheresoftware.b4a.keywords.Common.LogImpl("21376262","file path: "+_fil,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8458758","file path: "+_fil,0);
  //BA.debugLineNum = 31;BA.debugLine="If Url.Contains(\"files/\") Then";
 if (_url.contains("files/")) { 
  //BA.debugLineNum = 32;BA.debugLine="fil = Folder&\"%5C\"&fil.Replace(\"/\",\"%5C\")";
@@ -220,7 +220,7 @@ _fil = _folder+"%5C"+_fil.replace("/","%5C");
  //BA.debugLineNum = 33;BA.debugLine="TempUrl = Url.Replace(fil1,fil)";
 _tempurl = _url.replace(_fil1,_fil);
  //BA.debugLineNum = 34;BA.debugLine="Log(\"if: \"&TempUrl)";
-anywheresoftware.b4a.keywords.Common.LogImpl("21376266","if: "+_tempurl,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8458762","if: "+_tempurl,0);
  //BA.debugLineNum = 35;BA.debugLine="Return TempUrl";
 if (true) return _tempurl;
  }else {
@@ -318,13 +318,13 @@ public static String  _update_setting(anywheresoftware.b4a.BA _ba,String _para,S
 _sql.Initialize(anywheresoftware.b4a.keywords.Common.File.getDirInternal(),"MyDb.db",anywheresoftware.b4a.keywords.Common.True);
  //BA.debugLineNum = 171;BA.debugLine="Try";
 try { //BA.debugLineNum = 172;BA.debugLine="Log(val)";
-anywheresoftware.b4a.keywords.Common.LogImpl("21835011",_val,0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8917507",_val,0);
  //BA.debugLineNum = 173;BA.debugLine="sql.ExecNonQuery2(\"UPDATE settings SET col2 = ?";
 _sql.ExecNonQuery2("UPDATE settings SET col2 = ? WHERE col1 = '"+_para+"'",anywheresoftware.b4a.keywords.Common.ArrayToList(new Object[]{(Object)(_val)}));
  } 
        catch (Exception e6) {
 			(_ba.processBA == null ? _ba : _ba.processBA).setLastException(e6); //BA.debugLineNum = 175;BA.debugLine="Log(\"THis: \"&LastException.Message)";
-anywheresoftware.b4a.keywords.Common.LogImpl("21835014","THis: "+anywheresoftware.b4a.keywords.Common.LastException(_ba).getMessage(),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("8917510","THis: "+anywheresoftware.b4a.keywords.Common.LastException(_ba).getMessage(),0);
  };
  //BA.debugLineNum = 177;BA.debugLine="sql.close";
 _sql.Close();

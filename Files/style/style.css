@@ -1,8 +1,13 @@
 :root {
     --primary-color: hsl(207, 88%, 20%);
-    --secondary-color: hsl(208, 50%, 80%);
+    --secondary-color: hsl(26, 100%, 99%);
     --text-color: #333;
     --background-color: #FFF;
+  }
+  .mememe{
+    background: hsl(15, 29%, 81%);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
   }
 body{
     background: var(--secondary-color);
@@ -38,14 +43,15 @@ body::-webkit-scrollbar{
     overflow: hidden;
     margin: 5px 0;
 	border-radius: 1px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 .tittle{
-    background: rgb(2, 3, 66);
-    color: white;
+    box-shadow: 0 0 2px 2px darkgray;
 }
 .tittle-1{
-    background: white;
-
+    box-shadow: 0 0 5px 5px darkgray;
 }
 .No{
     width: 15%;
@@ -86,6 +92,7 @@ small{
 }
 
 pre{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     overflow-x: auto;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
@@ -178,7 +185,7 @@ div{
     width: 50%;
     position: fixed;
     bottom: 20px;
-    right: 2px;
+    right: 0;
 }
 #siz::before{
     content: 'Small';

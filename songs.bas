@@ -380,6 +380,7 @@ Private Sub btnDown_Click
 End Sub
 
 Sub DownloadAndSaveFile(link As String, fileName As String)
+	'MsgboxAsync(link, "this is link")
 	If File.Exists(File.DirInternal, fileName) Then
 		Msgbox2Async("Do you want to overwrite?", "File exists", "Yes", "Cancel", "No", Null, "false")
 		Wait For MsgBox_Result(Result As Int)
@@ -398,11 +399,12 @@ Sub DownloadAndSaveFile(link As String, fileName As String)
 		Dim out As OutputStream = File.OpenOutput(File.DirInternal, fileName, False)
 		File.Copy2(j.GetInputStream, out)
 		out.Close
-		WebView1.LoadUrl("file://" & File.Combine(File.DirInternal, "src%5Cmenu.html"))
+		MsgboxAsync("Song added successfully", "Success")
+		'WebView1.LoadUrl("file://" & File.Combine(File.DirInternal, "src%5Cmenu.html"))
 	Else 
 		Select j.Response.StatusCode
 			Case -1:
-				MsgboxAsync("Error: try", "Connection error")
+				MsgboxAsync("Error: try again with a good data connection", "Connection error")
 			Case 404:
 				MsgboxAsync("Error: Song has not yet been added, but please keep on trying. or report this error", "Sorry for inconvinience")
 			Case Else

@@ -487,7 +487,7 @@ _p = new anywheresoftware.b4a.phone.Phone.PhoneIntents();
  //BA.debugLineNum = 61;BA.debugLine="StartActivity(p.OpenBrowser(Link))";
 anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_p.OpenBrowser(_link)));
  //BA.debugLineNum = 62;BA.debugLine="Log(\"true\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("24784131","true",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("87208963","true",0);
  //BA.debugLineNum = 63;BA.debugLine="End Sub";
 return "";
 }

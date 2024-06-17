@@ -54,3 +54,16 @@ Sub SendMsg_Click
 	ErrMsg.Text = ""
 	Activity.Finish
 End Sub
+Sub Open_web(Link As String)
+	Dim p As PhoneIntents
+	StartActivity(p.OpenBrowser(Link))
+	Log("true")
+End Sub
+
+Private Sub Button1_Click
+	Open_web("https://play.google.com/store/apps/details?id=com.LugandaHymnalNew")
+End Sub
+
+Private Sub Button2_Click
+	Open_web("https://t.me/EnnyimbaZaKristo")
+End Sub

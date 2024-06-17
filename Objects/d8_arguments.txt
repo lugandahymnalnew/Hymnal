@@ -10,7 +10,7 @@ c:\android\tools\..\extras\b4a_remote\androidx\annotation\annotation-experimenta
 c:\android\tools\..\extras\b4a_remote\androidx\lifecycle\lifecycle-runtime\2.5.1\unpacked-lifecycle-runtime-2.5.1\jars\classes.zip
 c:\android\tools\..\extras\b4a_remote\androidx\versionedparcelable\versionedparcelable\1.1.1\unpacked-versionedparcelable-1.1.1\jars\classes.zip
 C:\Android\tools\..\extras\b4a_local\unpacked-core-63822318962000\dex_v1\core.zip
-C:\Android\tools\..\extras\b4a_local\unpacked-gestures-63822318962000\dex_v1\gestures.zip
+C:\Android\tools\..\extras\b4a_local\unpacked-json-63822318962000\dex_v1\json.zip
 C:\Android\tools\..\extras\b4a_local\unpacked-phone-63822318962000\dex_v1\phone.zip
 C:\Android\tools\..\extras\b4a_local\unpacked-runtimepermissions.androidx-63822318962000\dex_v1\runtimepermissions.zip
 C:\Android\tools\..\extras\b4a_local\unpacked-sql-63822318964000\dex_v1\sql.zip
@@ -76,6 +76,13 @@ D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\abaana$HandleKeyDelayed.de
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\abaana$ResumeMessage.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\abaana$WaitForLayout.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\abaana.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\adv$1.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\adv$B4AMenuItemsClickListener.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\adv$HandleKeyDelayed.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\adv$ResumableSub_Call.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\adv$ResumeMessage.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\adv$WaitForLayout.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\adv.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\codes.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\customwebviewerror.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\don$1.dex
@@ -97,6 +104,13 @@ D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\emisi$HandleKeyDelayed.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\emisi$ResumeMessage.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\emisi$WaitForLayout.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\emisi.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\ems$1.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\ems$B4AMenuItemsClickListener.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\ems$HandleKeyDelayed.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\ems$ResumableSub_Call.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\ems$ResumeMessage.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\ems$WaitForLayout.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\ems.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\err$1.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\err$B4AMenuItemsClickListener.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\err$HandleKeyDelayed.dex
@@ -133,6 +147,7 @@ D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\songs$ResumableSub_Downloa
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\songs$ResumeMessage.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\songs$WaitForLayout.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\songs.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\sqldb.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\sslutils.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\starter$1.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\starter$2.dex
@@ -144,3 +159,5 @@ D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\designerscripts\LS_error.d
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\designerscripts\LS_layout.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\designerscripts\LS_menu.dex
 D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\designerscripts\LS_song.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\designerscripts\LS_songs.dex
+D:\Projects\Hymnal\Objects\dexed\com\LugandaHymnalNew\designerscripts\LS_viewsong.dex

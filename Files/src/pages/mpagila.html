@@ -83,7 +83,8 @@
             <p>Email: kitarogz@gmail.com</p>
             <p>Facebook: Kita Rog Hope</p>
             <p>Whatsapp: +256 757 035774</p>
-            <p>&copy;kitaroghope 2022</p>
+			<p><a href="https://t.me/EnnyimbaZaKristo">Join Telegram channel</a></p>
+            <p>&copy;kitaroghope <nav id="yr"></nav></p>
         </div>
     </div>
     <script src="../../js/share.js" defer></script>
@@ -95,6 +96,13 @@
                 console.log(error.message)
             }
         }
+		function getCurrentYear() {
+		  const currentDate = new Date();
+		  const currentYear = currentDate.getFullYear();
+		  return currentYear;
+		}
+		var yr = document.getElementById('yr');
+		yr.innerText = getCurrentYear();
     </script>
 </body>
 </html>

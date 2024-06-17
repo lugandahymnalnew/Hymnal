@@ -25,12 +25,15 @@ public class sslutils extends B4AClass.ImplB4AClass implements BA.SubDelegator{
 
  public anywheresoftware.b4a.keywords.Common __c = null;
 public com.LugandaHymnalNew.main _main = null;
+public com.LugandaHymnalNew.songs _songs = null;
 public com.LugandaHymnalNew.codes _codes = null;
 public com.LugandaHymnalNew.starter _starter = null;
-public com.LugandaHymnalNew.songs _songs = null;
+public com.LugandaHymnalNew.sqldb _sqldb = null;
+public com.LugandaHymnalNew.err _err = null;
+public com.LugandaHymnalNew.adv _adv = null;
 public com.LugandaHymnalNew.don _don = null;
 public com.LugandaHymnalNew.customwebviewerror _customwebviewerror = null;
-public com.LugandaHymnalNew.err _err = null;
+public com.LugandaHymnalNew.ems _ems = null;
 public com.LugandaHymnalNew.abaana _abaana = null;
 public com.LugandaHymnalNew.ebil _ebil = null;
 public com.LugandaHymnalNew.emisi _emisi = null;

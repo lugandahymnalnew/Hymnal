@@ -25,28 +25,8 @@ Sub Service_Start (StartingIntent As Intent)
 	Service.StopAutomaticForeground 'Starter service can start in the foreground state in some edge cases.
 End Sub
 
-Sub Service_Music(FName As String)
-	If songs.MP.IsInitialized = True Then
-		'If songs.MP.IsPlaying = True Then songs.MP.Stop
-		songs.MP.Initialize2("MP")
-		songs.MP.Load(File.DirAssets, FName)
-		Log("starter: "&songs.MP.IsInitialized)
-		Return
-	End If
-	songs.MP.Initialize()
-	Service_Music(FName)
-	Return
-End Sub
-Sub MP_Complete
-	songs.counter = songs.counter + 1
-	songs.MP.Play
-	Log("in sev: "&songs.counter)
-End Sub
 Sub Service_TaskRemoved
 	'This event will be raised when the user removes the app from the recent apps list.
-	If songs.MP.IsInitialized = True Then
-		If songs.MP.IsPlaying = True Then songs.MP.Stop
-	End If
 End Sub
 
 'Return true to allow the OS default exceptions handler to handle the uncaught exception.

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body style="background: black; color: white;">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt corrupti optio vitae, cum soluta neque iste! Voluptatem veritatis facilis praesentium tempore nemo tempora, blanditiis recusandae ipsa laudantium molestias totam voluptatibus.</p>
+    <button onclick="show()">click</button>
+    <script>
+        function show(){
+            var arr = JSON.stringify([1,2,3,4,{me:"kita",you:"hope"},"kita",["kam","mpa","la"]]);
+            //var arr = {me:"kita",you:"goat"}
+            console.log("kita");
+            B4A.CallSub("tryBtn",true,arr);
+        }
+    </script>
+</body>
+</html>

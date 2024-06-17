@@ -1,17 +1,43 @@
 ﻿Build1=Default,com.LugandaHymnalNew,Full,NoAds
-File1=all.js
-File10=try.js
-File2=app logo.png
-File3=concent.bal
-File4=dom.bal
-File5=error.bal
-File6=Layout.bal
-File7=menu.bal
-File8=sidelogo.png
-File9=song.bal
+File1=1.html
+File10=Layout.bal
+File11=menu.bal
+File12=menu.html
+File13=mytry.html
+File14=share.js
+File15=sidelogo.png
+File16=song.bal
+File17=songs.bal
+File18=songs.db
+File19=songs.db-journal
+File2=all.js
+File20=style.css
+File21=stylem.css
+File22=swipe.js
+File23=viewsong.bal
+File3=all-1.js
+File4=app logo.png
+File5=concent.bal
+File6=dom.bal
+File7=error.bal
+File8=jquery.js
+File9=js.js
 FileGroup1=Default Group
 FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup19=Default Group
 FileGroup2=Default Group
+FileGroup20=Default Group
+FileGroup21=Default Group
+FileGroup22=Default Group
+FileGroup23=Default Group
 FileGroup3=Default Group
 FileGroup4=Default Group
 FileGroup5=Default Group
@@ -21,34 +47,37 @@ FileGroup8=Default Group
 FileGroup9=Default Group
 Group=Default Group
 Library1=core
-Library2=gestures
+Library2=json
 Library3=okhttputils2
 Library4=phone
 Library5=runtimepermissions
 Library6=sql
 Library7=webviewextras2
-ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="31"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="33"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
 Module1=abaana
-Module10=Starter
-Module2=codes
-Module3=customwebviewerror
-Module4=don
-Module5=ebil
-Module6=emisi
-Module7=err
-Module8=songs
-Module9=SSLUtils
-NumberOfFiles=10
+Module10=songs
+Module11=sqlDb
+Module12=SSLUtils
+Module13=Starter
+Module2=adv
+Module3=codes
+Module4=customwebviewerror
+Module5=don
+Module6=ebil
+Module7=emisi
+Module8=ems
+Module9=err
+NumberOfFiles=23
 NumberOfLibraries=7
-NumberOfModules=10
+NumberOfModules=13
 Version=12.5
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: Ennyimba Za Kristo
-	#VersionCode: 14
-	#VersionName: 1.0.46
-	'SupportedOrientations possible values: unspecified, landscape or portrait. 6
-	#SupportedOrientations: portrait
+	#VersionCode: 19
+	#VersionName: 1.0.49
+	'SupportedOrientations possible values: unspecified, landscape or portrait. '1.0.49, v19
+	#SupportedOrientations: unspecified
 	#CanInstallToExternalStorage: True
 
 #Region  Activity Attributes 
@@ -68,32 +97,71 @@ Sub Globals
 	Private WV As WebView
 	Private ScrollView1 As Panel
 	Private Label8 As Label
+	Private WebView1 As WebView
+	Dim JI As DefaultJavascriptInterface
+	Dim WVE As WebViewExtras
+	Dim DVC As DefaultWebViewClient
+	Private Button1 As Button
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 	'Activity.LoadLayout("")
-	codes.CreateCode
+	sqlDb.checkDB
+	codes.CreateCode 'Checks if user accepted the terms and conditions
+	'when the user has accepted the terms and condition
 	If codes.VerCode = codes.VeridCode Then
 		Try
+			'Creating an array of settings
+			Dim arr, arrV As List
+			arr.Initialize
+			arr.AddAll(Array As String("Song", "Seeker","Pos","Count","Loops","Lang"))
+			arrV.Initialize
+			arrV.AddAll(Array As String("", "1","2","1","1","lug"))
+			
+			'Checking if the new files have been copied
 			If codes.m.ContainsKey("copied") Then
-				Log("yeah: "&codes.m.Get("copied"))
+				
 				If codes.m.ContainsKey("copied") Then
+					
+					'checking if the app has been updated
 					If codes.m.Get("app") <> LogAppVersion Then
 						moveFiles
 						codes.update_Setting("app",LogAppVersion)
-						MsgboxAsync("1. Made user interface light-theme"&CRLF&"2. User is able to download missing songs"&CRLF&"3. Have a nice worship experience."&CRLF&"4. Swipe left or right to open next or previous song."&CRLF&CRLF&"Thank you for choosing our app."&CRLF&"Tell us what you want in the next update","Whats New.")
+						For i=0 To arr.Size-1
+							If codes.m.ContainsKey(arr.Get(i)) = False Then
+								codes.AddSetting(arr.Get(i),arrV.Get(i))
+							End If
+						Next
+						MsgboxAsync(codes.updateNotes,"Whats New.")
 					End If
 				Else
 					codes.AddSetting("app",LogAppVersion)
-					MsgboxAsync("1. Made user interface light-theme"&CRLF&"2. User is able to download missing songs"&CRLF&"3. Have a nice worship experience."&CRLF&"4. Swipe left or right to open next or previous song."&CRLF&CRLF&"Thank you for choosing our app."&CRLF&"Tell us what you want in the next update","Whats New.")
+					For i=0 To arr.Size-1
+						If codes.m.ContainsKey(arr.Get(i)) = False Then
+'							Log("jili")
+							codes.AddSetting(arr.Get(i),arrV.Get(i))
+						End If
+					Next
+'					codes.AddSetting("Song","")
+'					codes.AddSetting("Seeker","1")
+'					codes.AddSetting("Pos","2")
+'					codes.AddSetting("Count","1")
+'					codes.AddSetting("Loops","1")
+					codes.AddSetting("copied","true")
+					MsgboxAsync(codes.updateNotes,"Whats New.")
 					
 				End If
 			Else
 				moveFiles
 				codes.AddSetting("app",LogAppVersion)
+				For i=0 To arr.Size-1
+					If codes.m.ContainsKey(arr.Get(i)) = False Then
+'						Log("kili")
+						codes.AddSetting(arr.Get(i),arrV.Get(i))
+					End If
+				Next
 				codes.AddSetting("copied","true")
-				MsgboxAsync("1. Made user interface light-theme"&CRLF&"2. User is able to download missing songs"&CRLF&"3. Have a nice worship experience."&CRLF&"4. Swipe left or right to open next or previous song."&CRLF&CRLF&"Thank you for choosing our app."&CRLF&"Tell us what you want in the next update","Whats New.")
-				
+				MsgboxAsync(codes.updateNotes,"Whats New.")
 			End If
 		Catch
 			File.Delete(File.DirInternal, "MyDb.db")
@@ -102,6 +170,12 @@ Sub Activity_Create(FirstTime As Boolean)
 		End Try
 		Try
 			Activity.LoadLayout("menu")
+			JI.Initialize
+			WVE.Initialize(WebView1)
+			WVE.AddJavascriptInterface(JI,"B4A")
+			DVC.Initialize("Web")
+			WVE.SetWebViewClient(DVC)
+			'File.CopyAsync(File.DirInternal, "bible.db", File.DirDefaultExternal,"bible.db")
 			Label8.Text = "Version: "&LogAppVersion&CRLF&"By Rogers Kitamirike"&CRLF&"+256 757 035774"
 		Catch
 			Log(LastException.Message)
@@ -145,8 +219,9 @@ Private Sub menu_but_Click
 End Sub
 
 Private Sub Endag_but_Click
-	ToastMessageShow("Please, Wait for the next update",True)
-	Open_web("https://ictgoldenstar.blogspot.com/2022/08/ennyimba-za-kristo-2-privacy-policy.html")
+	StartActivity(ems)
+	'ToastMessageShow("Please, Wait for the next update",True)
+	'Open_web("https://ictgoldenstar.blogspot.com/2022/08/ennyimba-za-kristo-2-privacy-policy.html")
 End Sub
 Sub Open_web(Link As String)
 	Dim p As PhoneIntents
@@ -162,7 +237,10 @@ Private Sub Emisi_but_Click
 End Sub
 
 Private Sub ebil_but_Click
-	StartActivity(ebil)
+	StartActivity(adv)
+'	getBible
+'	Log("this ebil")
+	'StartActivity(ebil)
 End Sub
 
 Private Sub don_but_Click
@@ -199,28 +277,29 @@ Sub moveFiles
 	Dim kit As List = File.ListFiles(File.DirAssets)
 	ProgressDialogShow2("files initialising, please wait",False)
 	For Each ki As String In kit
-		Log(ki)
+		'Log(ki)
 		Select Case ki
 			Case "webkit", "webapk_dex_version.txt", "webapk8.dex", "stored-locales", "resources.pak", _
             "src\pages\1 - Copy (244) - Copy.html", "song.bal", "layout.bal", "menu.bal", "images", _
             "icudtl.dat", "app logo.png", "b4x_fontawesome.otf", "b4x_materialicons.ttf", "chrome_100_percent.pak"
-				Log("Skipped")
+				'Log("Skipped")
 			Case Else
 				If File.Exists(File.DirInternal, ki) Then
 					Try
 						File.Delete(File.DirInternal, ki)
 						Wait For (File.CopyAsync(File.DirAssets, ki, File.DirInternal, ki)) Complete (Success As Boolean)
-						Log("Success: " & Success)
+						'Log("Success: " & Success)
 					Catch
 						ToastMessageShow("simple error",True)
 						Log(LastException.Message)
 					End Try
 				Else
 					Wait For (File.CopyAsync(File.DirAssets, ki, File.DirInternal, ki)) Complete (Success As Boolean)
-					Log("Success: " & Success)
+					'Log("Success: " & Success)
 				End If
 		End Select
 	Next
+'		Log("files copied")
 	ProgressDialogHide
 End Sub
 Sub DownloadAndSaveFile(link As String, fileName As String)
@@ -256,3 +335,25 @@ Sub DownloadAndSaveFile(link As String, fileName As String)
 	j.Release
 End Sub
 
+Sub getBible
+	MsgboxAsync("This will be open in the next update","Coming Soon")
+	'WebView1.LoadUrl("https://newlugandahymnal.onrender.com/bb.html")
+	'ProgressDialogShow2("loading bible",False)
+End Sub
+
+Sub addDataToDb(tbname As String , chapter As String ,verses As String)
+	codes.addDataToDb(chapter, verses, tbname, "bible.db")
+End Sub
+
+Sub createTable(tbname As String,db As String)
+	MsgboxAsync("gotten","hello")
+	codes.createTable(tbname, db)
+End Sub
+
+Private Sub WebView1_PageFinished (Url As String)
+	ProgressDialogHide
+End Sub
+
+Private Sub WebView1_OverrideUrl (Url As String) As Boolean
+	ProgressDialogShow2("loading bible",False)
+End Sub

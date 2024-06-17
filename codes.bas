@@ -27,27 +27,6 @@ Sub Globals
 	'Dim Seqr As MidiSequencer
 End Sub
 
-Sub FixUrl(Folder As String, Url As String) As String
-	'Log("Orignal Url: "&Url)
-	Dim TempUrl As String
-	Dim fil,fil1 As String
-	fil = Url.SubString(Url.IndexOf2("files/",0)+6)
-	fil1 = fil	
-	Log("file path: "&fil)
-	If Url.Contains("files/") Then
-		fil = Folder&"%5C"&fil.Replace("/","%5C")
-		TempUrl = Url.Replace(fil1,fil)
-		Log("if: "&TempUrl)
-		Return TempUrl
-	Else
-		Dim t, t1 As String
-		t = Url.SubString(Url.IndexOf2("lNew/",0)+5)
-		t1 = t
-		t = "files/"&Folder&"%5C"&t.Replace("/","%5C")
-		TempUrl = Url.Replace(t1,t)
-		Return TempUrl
-	End If
-End Sub
 
 Sub SendEmail(SongNo As String, ErrMsg As String)
 	Try
@@ -101,25 +80,17 @@ Sub CreateCode
 		For i = 0 To Cursor1.RowCount - 1
 			Cursor1.Position = i
 			m.Put(Cursor1.GetString("col1"),Cursor1.GetString("col2"))
-			Log("load 1: "&Cursor1.GetString("col2"))
+			
+		Log(Cursor1.GetString("col1")&": "&Cursor1.GetString("col2"))
 		Next
 			Vers = m.Get("Version")
 			vol = m.Get("Volume")
 			hide = m.Get("Hide")
+			'm.Put("Song","")
 			Log("Load: "&vol)
 			'Log("load 1: "&)
 			'Log(m.Get("Version"))
 		sql.close
-	'	Return
-	'End Try
-	'sql.ExecNonQuery2("INSERT INTO table1 VALUES (?, ?, Null)", Array As Object(code, Ver))
-	'sql.ExecNonQuery2("INSERT INTO settings VALUES (?, ?)", Array As Object("Version","1.0.2"))
-	'sql.ExecNonQuery2("INSERT INTO settings VALUES (?, ?)", Array As Object("Volume",50))
-	'sql.ExecNonQuery2("INSERT INTO settings VALUES (?, ?)", Array As Object("Hide","False"))
-	'Log("1")
-	'sql.Close
-	'CreateCode
-	'Return
 End Sub
 Sub createTables
 	If File.Exists(File.DirInternal,"MyDb.db") Then
@@ -154,10 +125,21 @@ End Sub
 
 Sub ConsentF
 	sql.Initialize(File.DirInternal, "MyDb.db", True)
-	sql.ExecNonQuery2("UPDATE table1 SET col1 = ?, col2 = ?, col3 = ? WHERE col1 = '"&UserCode&"'", Array As Object(UserCode, VerCode, VerCode))
+	Log("consented")
+	sql.ExecNonQuery2("UPDATE table1 SET col1 = ?, col2 = ?, col3 = ? WHERE col1 = ?", Array As Object(UserCode, VerCode, VerCode, UserCode))
 	'sql.ExecNonQuery2("INSERT INTO table1 VALUES (?, ?, ?)", Array As Object("Version","Null", 1.0.1))
 	Log("success")
 	sql.Close
+End Sub
+
+Sub currentSong As String
+	Try
+		Dim cursor As Cursor
+		
+	Catch
+		Return LastException.Message
+		'Log(LastException)
+	End Try
 End Sub
 
 Sub AddSetting(para As String, val As String)
@@ -176,10 +158,88 @@ Sub update_Setting(para As String, val As String)
 	sql.Initialize(File.DirInternal, "MyDb.db", True)
 	Try
 		Log(val)
-		sql.ExecNonQuery2("UPDATE settings SET col2 = ? WHERE col1 = '"&para&"'", Array As Object(val))
+		sql.ExecNonQuery2("UPDATE settings SET col2 = ? WHERE col1 = ?", Array As Object(val, para))
 	Catch
 		Log("THis: "&LastException.Message)
 	End Try
 	sql.close
 End Sub
 
+Sub GetSetting(setting As String) As Object
+	Try
+'		Log("Seting: "&setting)
+		Dim cursor As Cursor
+		sql.Initialize(File.DirInternal, "MyDb.db", True)
+		cursor = sql.ExecQuery2("SELECT * FROM settings WHERE col1 = ?",Array As String(setting))
+		If cursor.RowCount > -1 Then
+			cursor.Position = 0
+			Return cursor.GetString("col2")
+		Else
+			Return "404"
+		End If
+	Catch
+		Log(LastException)
+		Return  "0"
+	End Try
+End Sub
+
+Sub checkValue(col As String, db As String, table As String) As Boolean
+	Try
+'		Log("Seting: "&setting)
+		Dim cursor As Cursor
+		sql.Initialize(File.DirInternal, db, True)
+		cursor = sql.ExecQuery2("SELECT * FROM '"&table&"' WHERE chapter = ?",Array As String(col))
+		cursor.Position = 0
+		Return True
+	Catch
+		'Log(LastException)
+		Return False
+	End Try
+End Sub
+
+Sub createTable(table As String, db As String)
+	Try
+		sql.Initialize(File.DirInternal, db, True)
+		sql.ExecNonQuery("CREATE TABLE IF NOT EXISTS '"&table&"' (chapter TEXT PRIMARY KEY , verses TEXT)")
+	Catch
+		Log(LastException.Message)
+	End Try
+End Sub
+
+Sub addDataToDb(col As String, val As String, table As String, db As String)
+	sql.Initialize(File.DirInternal, db, True)
+	Try
+		sql.ExecNonQuery2("INSERT INTO '"&table&"' VALUES (?, ?)", Array As Object(col,val))
+	Catch
+		Log(LastException)
+		Return
+	End Try
+	sql.Close
+End Sub
+
+Sub updateNotes As String
+	Dim s As String
+	s = "1. Some songs have been corrected. The ## ## has been fixed"&CRLF
+	s = s & "2. You can join the New Luganda hymnal community on telegram."&CRLF
+	s = s & "3. Have a nice worship experience."&CRLF
+	s = s & "4. Swipe left Or right To open Next Or previous song."&CRLF
+	s = s & "5. You can now tilt to get a wider view."&CRLF&CRLF
+	s = s & "Thank you For choosing our app."&CRLF
+	s = s & "Tell us what you want in the Next update using the Feedback section. You can also directly update the app from there."
+	
+	Return s
+End Sub
+
+Sub success(msg As String)
+	MsgboxAsync(msg, "Operation Successfull")
+End Sub
+
+Sub failure(msg As String)
+	MsgboxAsync(msg, "Operation failed")
+End Sub
+
+Sub Open_web(Link As String)
+	Dim p As PhoneIntents
+	StartActivity(p.OpenBrowser(Link))
+	Log("true")
+End Sub

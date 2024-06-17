@@ -20,6 +20,7 @@ Sub Process_Globals
 	Dim timer1 As Timer
 	Dim counter As Int
 	Dim sw As Boolean = False
+	
 End Sub
 
 Sub Globals
@@ -53,47 +54,73 @@ Sub Globals
 	Dim loopable As Boolean = False
 	Private Panel2 As Panel
 	Dim rp As RuntimePermissions
+	Dim songNumber As String
+	Dim menu As Boolean
 End Sub
 
 Sub Activity_Create(FirstTime As Boolean)
 '	Do Not forget To load the layout File created with the visual designer. For example:,
 '	Activity.LoadLayout("Layout1")
-	Activity.LoadLayout("song")
-	JI.Initialize
+Try	
+		
+		Activity.LoadLayout("song")
+		JI.Initialize
 '	WebView1.Initialize("WebView1")
-	WVE.Initialize(WebView1)
-	DWV.Initialize("WebView1")
-	DWV1.Initialize("WebView1")
-	WVE.AddJavascriptInterface(JI,"B4A")
-	WVE.SetWebChromeClient(DWV)
-	WVE.SetWebViewClient(DWV1)
-	WebView1.ZoomEnabled = False
-	Panel1.Visible = True
-'	Panel1.AddView(WebView1, 0, 0, 100%x, 100%y)
-'	WebView1.LoadHtml("www.google.com")
-	'WebView1.LoadUrl("file:///android_asset/src%5Cmenu.html")
-	
-	'WebView1.LoadUrl("about:blank") ' Load a blank page initially
-	'Wait For (WebView1) WebView1_PageFinished (Url As String)
-	WVE.GetSettings.SetAllowFileAccess(True) ' Enable file access
-	Dim internalPath As String = File.Combine(File.DirInternal, "src%5Cmenu.html")
-	Dim Url As String = "file://" & internalPath
-	WebView1.LoadUrl(Url)
-
-	ProgressDialogShow2("Gumikiriza",False)
-	WebView1.SendToBack
-	load = True
-	count = 0
+		WVE.Initialize(WebView1)
+		DWV.Initialize("WebView12")
+		DWV1.Initialize("WebView11")
+		WVE.SetWebChromeClient(DWV)
+		WVE.AddJavascriptInterface(JI,"B4A")
+		WebView1.ZoomEnabled = False
+		Panel1.Visible = True
+		If codes.GetSetting("Song") = "" Then
+			WebView1.LoadUrl("file:///android_asset/menu.html")
+		Else
+			Try
+				Log(codes.GetSetting("Song"))
+				leng = codes.GetSetting("Seeker")
+				swipe(codes.GetSetting("Song"))
+			Catch
+				SendError("Error",LastException.Message)
+				MsgboxAsync("Please, uninstall the app and re-install from playstore or xender","Instructions")
+			End Try
+		End If
+			ProgressDialogShow2("Gumikiriza",False)
+			WebView1.SendToBack
+			load = True
+			count = 0
+			songNumber = ""
+			menu = False
+			
+		'SendError("Error","This is an error")
+Catch
+	codes.SendEmail("Error", LastException.Message)
+	Log(LastException.Message)
+End Try
+		
 End Sub
 
 Sub Activity_Resume
+	'Log("Song Number: "&songNumber)
+	Try
+		leng = codes.GetSetting("Seeker")
+		pos = codes.GetSetting("Pos")
+		loos = codes.GetSetting("Loops")
+		count = codes.GetSetting("Count")
+	Catch
+		SendError("Error",LastException.Message)
+		MsgboxAsync("Please, uninstall the app and re-install from playstore or xender","Instructions")
+	End Try
 	If playing1 Then
 		If MP.IsPlaying = True Then 
 			'MP.Looping = True
 			If pos < MP.Position + 6000 Then
 				pos = MP.Position + 6000
 			Else
-				pos = ((pos-6000)/(MP.Duration))*MP.Duration + MP.Position + 6000
+				Dim kia As Int
+				kia = (pos-6000)/(MP.Duration)
+				Log("Division: "&kia)
+				pos = kia*MP.Duration + MP.Position + 6000
 			End If
 		Else
 			stop1
@@ -105,27 +132,27 @@ End Sub
 Sub Activity_Pause (UserClosed As Boolean)
 	If UserClosed = True Then
 		If playing1 Then MP.Stop
+		codes.update_Setting("Song","")
 		Return
 	End If
+		codes.update_Setting("Pos",pos)
 End Sub
+
+
 
 Private Sub WebView1_OverrideUrl (Url As String) As Boolean
 	load = True
-	If Url.Contains("#") Then
-		Log("Me am try")
-	Else If Url.Contains("baana.html") Then
-		StartActivity("abaana")
-		Activity.Finish
+	Log(Url)
+	If Url.Contains("menu") Or Url.Contains("index") Then
+		WebView1.LoadUrl(Url)
 	Else
-		WebView1.LoadUrl(codes.FixUrl("src",Url))
-		'ProgressDialogShow2("Gumikiriza",False)
-		Log(Url)
+		swipe(Url.SubString(22))
 	End If
 End Sub
 
 
 Private Sub WebView1_PageFinished (Url As String)
-	Log(Url)
+'	Log(Url)
 	ProgressDialogHide
 	btnUp_Click
 	load = False
@@ -134,6 +161,10 @@ Private Sub WebView1_PageFinished (Url As String)
 			Dim js As String
 			js = "$('.play').css('display','none');$('.stop').css('display','');"
 			WVE.ExecuteJavascript(js)
+			
+			Panel3.SetVisibleAnimated(100, True)
+			btnUp.Visible = False
+			btnDown.Visible = True
 		End If
 	Catch
 		Log("Not play")
@@ -151,35 +182,105 @@ Sub btn_ok_Click
 			ToastMessageShow(LastException.Message, True)
 		End Try
 		err_txt.Text = ""
-		Panel1.Visible=False
+		Panel2.Visible=False
 	End If
 End Sub
 
 Sub btn_cancle_Click
 	err_txt.Text = ""
-	Panel1.Visible=False
+	Panel2.Visible=False
 End Sub
 
-Private Sub swipeRight
-	Dim Javascript As String
-	Javascript="P_prev()"
-	WVE.ExecuteJavascript(Javascript)
+Sub loadIndex()
+	
 End Sub
-Private Sub swipeLeft
-	Dim Javascript As String
-	Javascript="N_next()"
-	WVE.ExecuteJavascript(Javascript)
+
+Private Sub swipe(h As String)
+	Dim s As Map
+	'Log(h)
+	songNumber = h
+	menu = True
+	s = sqlDb.getSongWithNumber(h)
+	
+	codes.update_Setting("Song",songNumber)
+	' Extract values from the 's' map
+	Dim no As String = s.Get("No")
+	Dim title As String = s.Get("Title")
+	Dim an As String = s.Get("An")
+	Dim sign As String = s.Get("Sign")
+	Dim comp As String = s.Get("Comp")
+	Dim sl As Map
+	Dim l As List
+	l.Initialize
+	sl.Initialize
+	sl = s.Get("Lyrics")
+
+	' Construct the HTML string in jsCode
+	Dim jsCode As String
+	jsCode = "<!DOCTYPE html>" & CRLF
+	jsCode = jsCode & "<html lang=""en"">" & CRLF
+	jsCode = jsCode & "<head>" & CRLF
+	jsCode = jsCode & "    <meta charset=""UTF-8"">" & CRLF
+	jsCode = jsCode & "    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">" & CRLF
+	jsCode = jsCode & "    <meta http-equiv=""X-UA-Compatible"" content=""ie=edge"">" & CRLF
+	jsCode = jsCode & "    <title></title>" & CRLF
+	jsCode = jsCode & "    <link rel=""stylesheet"" href=""file:///android_asset/style.css"">" & CRLF
+	jsCode = jsCode & "    <script src=""file:///android_asset/jquery.js"" defer></script>" & CRLF
+	jsCode = jsCode & "    <script src=""file:///android_asset/all-1.js"" defer></script>" & CRLF
+	jsCode = jsCode & "    <script src=""file:///android_asset/swipe.js"" defer></script>" & CRLF
+	jsCode = jsCode & "    <script src=""file:///android_asset/share.js"" defer></script>" & CRLF
+	jsCode = jsCode & "</head>" & CRLF
+	jsCode = jsCode & "<body>" & CRLF
+	jsCode = jsCode & "<div class=""tittle-1"">" & CRLF
+	jsCode = jsCode & "    <div class=""No"">" & no & "</div>" & CRLF
+	jsCode = jsCode & "    <div class=""song"">" & title & "</div>" & CRLF
+	jsCode = jsCode & "    <div class=""an"">" & an & "</div>" & CRLF
+	jsCode = jsCode & "    <div class=""sign"">" & sign & "</div>" & CRLF
+	jsCode = jsCode & "    <div class=""comp"">" & comp & "</div>" & CRLF
+	jsCode = jsCode & "</div>" & CRLF
+	jsCode = jsCode & "<div class=""hymn"">" & CRLF
+	jsCode = jsCode & "        <pre id=""txt"">" & CRLF
+	
+	For Each key As String In sl.Keys
+		If key.Contains("tanza") Then
+			jsCode = jsCode & key.SubString(7) &". "
+		End If
+		'jsCode = jsCode & "<b>"&key&"</b>" & CRLF
+		If GetType(sl.Get(key)) = "java.util.ArrayList" Then
+			l = sl.Get(key)
+			For Each line As String In l
+				jsCode = jsCode & line & CRLF
+			Next
+		Else
+			jsCode = jsCode & sl.Get(key) & CRLF
+		End If
+		jsCode = jsCode & CRLF
+	Next
+	jsCode = jsCode & CRLF
+	jsCode = jsCode & "        </pre>" & CRLF
+	jsCode = jsCode & "    </div>" & CRLF
+	jsCode = jsCode & "    <a href=""file:///android_asset/menu.html"">" & CRLF
+	jsCode = jsCode & "        <div class=""btn"">Back to Menu<br>" & CRLF
+	jsCode = jsCode & "            <small>&copy;Philippians 4:13</small>" & CRLF
+	jsCode = jsCode & "        </div>" & CRLF
+	jsCode = jsCode & "    </a>" & CRLF
+	jsCode = jsCode & " <div class=""slid""><input type=""range"" min=""0.5"" max=""5"" id=""siz"" value=""2"" step=""0.1"" onmousemove=""onc()"" onchange=""onc()""></div>" & CRLF
+	jsCode = jsCode & "</body>" & CRLF
+	jsCode = jsCode & "</html>"
+
+	' Load the HTML string into the WebView
+	WebView1.LoadHtml(jsCode)
 End Sub
+
 
 Sub Activity_KeyPress (KeyCode As Int) As Boolean
-	If KeyCode = KeyCodes.KEYCODE_BACK Then                           ' Hardware-Zurück Taste gedrückt
+	If KeyCode = KeyCodes.KEYCODE_BACK Then                 
 		If WebView1.Url.Contains("menu.html") Then
 			Activity.Finish
 			StartActivity(Main)
 		Else
-			'Stop
-			'Song_Menu.Visible = False
-			WebView1.LoadUrl("file:///data/user/0/com.LugandaHymnalNew/files/src%5Cmenu.html")
+			codes.update_Setting("Song","")
+			WebView1.LoadUrl("file:///android_asset/menu.html")
 			Return True
 		End If
 	Else
@@ -248,7 +349,6 @@ Sub DoLoad(FileName As String, loops As String)
 		Panel3.SetVisibleAnimated(100, True)
 		btnUp.Visible = False
 		btnDown.Visible = True
-		leng = MP.Duration * loops + 6000
 		MP.Position = MP.Duration - 6000
 		pos = 0
 		loos = loops + 1
@@ -257,9 +357,9 @@ Sub DoLoad(FileName As String, loops As String)
 			MP.Position = 0
 			loopable = True
 		End If
-		'Log("volume: "&codes.m.Get("'Volume'"))
-		'MP.SetVolume(codes.m.Get("'Volume'")/100, codes.m.Get("'Volume'")/100)
-		Log("test me "&codes.vol)
+		leng = MP.Duration * loos + 6000
+		codes.update_Setting("Seeker",leng)
+		codes.update_Setting("Loops",loos)
 		barVolume.Value = codes.vol
 		MP.Play
 		timer1.Enabled = True
@@ -276,14 +376,16 @@ End Sub
 
 Sub MP_Complete
 	count = count + 1
-	Log(count)
+	codes.update_Setting("Count",count)
+	'Log(count)
 	MP.Play
 End Sub
 
 Sub SendError(SongN As String, E_err As String)
-	Log("kiai")
+	'Log("kiai")
 	Panel2.Visible = True
-	Panel2.BringToFront
+	err_txt.Text = E_err
+	'Panel2.BringToFront
 	SN = SongN
 	SB = E_err
 End Sub
@@ -347,11 +449,11 @@ Sub barPosition_ValueChanged (Value As Int, UserChanged As Boolean)
 		If (Value / 100 * leng) < 6000 Then
 			MP.Position = MP.Duration - (6000-(Value / 100 * leng))
 			pos = Value / 100 * leng
-			Log((Value / 100 *leng))
+'			Log((Value / 100 *leng))
 			count = 0
 		Else
 			MP.Position = ((Value / 100 * leng) - 6000) Mod MP.Duration
-			Log("get count: "&MP.Position&":"&MP.Duration)
+'			Log("get count: "&MP.Position&":"&MP.Duration)
 			pos = Value / 100 * leng
 			ckcount = ((Value / 100 * leng) - 6000) / MP.Duration
 			count = ckcount + 1
@@ -359,8 +461,8 @@ Sub barPosition_ValueChanged (Value As Int, UserChanged As Boolean)
 		End If
 	End If
 	'Log("get count loopabble: "&MP.Position&" : "&MP.Duration&" : "&count)
-	Log("get count: "&count&" : "&loos)
-	timer1_Tick 'immediately update the progress label
+	'Log("get count: "&count&" : "&loos)
+	codes.update_Setting("Pos",pos)
 End Sub
 
 Sub Looping_CheckedChange(Checked As Boolean)

@@ -2,11 +2,11 @@
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.LugandaHymnalNew"
-	android:versionCode="14"
-	android:versionName="1.0.46"
+	android:versionCode="19"
+	android:versionName="1.0.49"
 	android:installLocation="preferExternal">
 	
-	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="31"/>
+	<uses-sdk android:minSdkVersion="4" android:targetSdkVersion="33"/>
 	<supports-screens android:largeScreens="true" 
 	    android:normalScreens="true" 
 	    android:smallScreens="true" 
@@ -23,13 +23,21 @@
 			android:launchMode="singleTop"
 			android:name=".main"
 			android:label="Ennyimba Za Kristo"
-			android:screenOrientation="portrait"
+			android:screenOrientation="unspecified"
 			android:exported="true">
 			<intent-filter>
 			   <action android:name="android.intent.action.MAIN" />
 			   <category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 			
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".songs"
+			android:label="Ennyimba Za Kristo"
+			android:screenOrientation="unspecified"
+			android:exported="true">
 		</activity>
 		<service
 			android:name=".starter"
@@ -42,9 +50,17 @@
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".songs"
+			android:name=".err"
 			android:label="Ennyimba Za Kristo"
-			android:screenOrientation="portrait"
+			android:screenOrientation="unspecified"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".adv"
+			android:label="Ennyimba Za Kristo"
+			android:screenOrientation="unspecified"
 			android:exported="true">
 		</activity>
 		<activity
@@ -52,15 +68,15 @@
 			android:launchMode="singleTop"
 			android:name=".don"
 			android:label="Ennyimba Za Kristo"
-			android:screenOrientation="portrait"
+			android:screenOrientation="unspecified"
 			android:exported="true">
 		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
-			android:name=".err"
+			android:name=".ems"
 			android:label="Ennyimba Za Kristo"
-			android:screenOrientation="portrait"
+			android:screenOrientation="unspecified"
 			android:exported="true">
 		</activity>
 		<activity
@@ -68,7 +84,7 @@
 			android:launchMode="singleTop"
 			android:name=".abaana"
 			android:label="Ennyimba Za Kristo"
-			android:screenOrientation="portrait"
+			android:screenOrientation="unspecified"
 			android:exported="true">
 		</activity>
 		<activity
@@ -76,7 +92,7 @@
 			android:launchMode="singleTop"
 			android:name=".ebil"
 			android:label="Ennyimba Za Kristo"
-			android:screenOrientation="portrait"
+			android:screenOrientation="unspecified"
 			android:exported="true">
 		</activity>
 		<activity
@@ -84,7 +100,7 @@
 			android:launchMode="singleTop"
 			android:name=".emisi"
 			android:label="Ennyimba Za Kristo"
-			android:screenOrientation="portrait"
+			android:screenOrientation="unspecified"
 			android:exported="true">
 		</activity>
 		<receiver

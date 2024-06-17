@@ -338,11 +338,14 @@ public class err extends Activity implements B4AActivity{
 public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.EditTextWrapper _errmsg = null;
 public com.LugandaHymnalNew.main _main = null;
+public com.LugandaHymnalNew.songs _songs = null;
 public com.LugandaHymnalNew.codes _codes = null;
 public com.LugandaHymnalNew.starter _starter = null;
-public com.LugandaHymnalNew.songs _songs = null;
+public com.LugandaHymnalNew.sqldb _sqldb = null;
+public com.LugandaHymnalNew.adv _adv = null;
 public com.LugandaHymnalNew.don _don = null;
 public com.LugandaHymnalNew.customwebviewerror _customwebviewerror = null;
+public com.LugandaHymnalNew.ems _ems = null;
 public com.LugandaHymnalNew.abaana _abaana = null;
 public com.LugandaHymnalNew.ebil _ebil = null;
 public com.LugandaHymnalNew.emisi _emisi = null;
@@ -372,11 +375,37 @@ public static String  _activity_resume() throws Exception{
  //BA.debugLineNum = 36;BA.debugLine="End Sub";
 return "";
 }
+public static String  _button1_click() throws Exception{
+ //BA.debugLineNum = 57;BA.debugLine="Private Sub Button1_Click";
+ //BA.debugLineNum = 58;BA.debugLine="Open_web(\"https://play.google.com/store/apps/deta";
+_open_web("https://play.google.com/store/apps/details?id=com.LugandaHymnalNew");
+ //BA.debugLineNum = 59;BA.debugLine="End Sub";
+return "";
+}
+public static String  _button2_click() throws Exception{
+ //BA.debugLineNum = 61;BA.debugLine="Private Sub Button2_Click";
+ //BA.debugLineNum = 62;BA.debugLine="Open_web(\"https://t.me/EnnyimbaZaKristo\")";
+_open_web("https://t.me/EnnyimbaZaKristo");
+ //BA.debugLineNum = 63;BA.debugLine="End Sub";
+return "";
+}
 public static String  _globals() throws Exception{
  //BA.debugLineNum = 12;BA.debugLine="Sub Globals";
  //BA.debugLineNum = 19;BA.debugLine="Private ErrMsg As EditText";
 mostCurrent._errmsg = new anywheresoftware.b4a.objects.EditTextWrapper();
  //BA.debugLineNum = 20;BA.debugLine="End Sub";
+return "";
+}
+public static String  _open_web(String _link) throws Exception{
+anywheresoftware.b4a.phone.Phone.PhoneIntents _p = null;
+ //BA.debugLineNum = 51;BA.debugLine="Sub Open_web(Link As String)";
+ //BA.debugLineNum = 52;BA.debugLine="Dim p As PhoneIntents";
+_p = new anywheresoftware.b4a.phone.Phone.PhoneIntents();
+ //BA.debugLineNum = 53;BA.debugLine="StartActivity(p.OpenBrowser(Link))";
+anywheresoftware.b4a.keywords.Common.StartActivity(processBA,(Object)(_p.OpenBrowser(_link)));
+ //BA.debugLineNum = 54;BA.debugLine="Log(\"true\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("54587523","true",0);
+ //BA.debugLineNum = 55;BA.debugLine="End Sub";
 return "";
 }
 public static String  _process_globals() throws Exception{
